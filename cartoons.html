@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fashion — Nova Vision</title>
-<meta name="description" content="AI-fashion съёмка Nova Vision — редакционная серия, сгенерированная нейросетями.">
+<title>Мультфильмы — Nova Vision</title>
+<meta name="description" content="AI-мультипликация Nova Vision — дизайн персонажей и анимация для проекта «Сбежавшие из плова».">
 <link rel="stylesheet" href="css/style.css">
 <style>
   .page-hero{
@@ -37,7 +37,27 @@
     margin-top: 24px;
   }
 
-  /* Editorial grid */
+  .case-band{
+    max-width: var(--wrap);
+    margin: 60px auto 0;
+    padding: 0 var(--gutter) 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    gap:24px;
+    flex-wrap:wrap;
+  }
+  .case-band h2{ font-size: clamp(26px, 4vw, 38px); }
+  .case-tag{
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color: var(--brass-dim);
+    border: 1px solid var(--line);
+    padding: 7px 14px;
+  }
+
   .spread{
     max-width: var(--wrap);
     margin: 0 auto;
@@ -70,7 +90,7 @@
     display:flex;
     justify-content:space-between;
     align-items:flex-end;
-    background: linear-gradient(0deg, rgba(20,17,13,0.78) 0%, rgba(20,17,13,0) 100%);
+    background: linear-gradient(0deg, rgba(20,17,13,0.82) 0%, rgba(20,17,13,0) 100%);
     color: var(--paper);
     opacity: 0;
     transform: translateY(6px);
@@ -133,9 +153,9 @@
     <a href="index.html" class="mast-logo">Nova <span class="dot">·</span> Vision</a>
     <nav class="mast-nav">
       <a href="index.html">Главная</a>
-      <a href="fashion.html" class="active">Fashion</a>
+      <a href="fashion.html">Fashion</a>
       <a href="product.html">Предметная съёмка</a>
-      <a href="cartoons.html">Мультфильмы</a>
+      <a href="cartoons.html" class="active">Мультфильмы</a>
       <a href="commercial.html">Коммерческая съёмка</a>
       <a href="process.html">Процесс</a>
       <a href="about.html">Обо мне</a>
@@ -149,64 +169,65 @@
 
 <section class="page-hero">
   <div class="page-hero-top">
-    <h1>Fashion</h1>
+    <h1>Мультфильмы</h1>
     <div class="page-meta">
-      Серия · Brooklyn Editorial<br>
-      9 кадров + видео<br>
-      Nano Banana Pro × Kling 3.0
+      Проект · Сбежавшие из плова<br>
+      8 персонажей + видео<br>
+      Nano Banana Pro
     </div>
   </div>
-  <p class="lede">Редакционная съёмка в духе нью-йоркской улицы: естественный свет, плёночная тональность, характер модели. Ни камеры, ни выезда на локацию — только генерация под задачу.</p>
+  <p class="lede">Полный цикл мультипликационного проекта: от разработки характеров и внешности персонажей до анимированного ролика. Ниже — герои и антагонист истории «Сбежавшие из плова».</p>
+</section>
+
+<section class="case-band reveal">
+  <h2>Кейс: «Сбежавшие из плова»</h2>
+  <span class="case-tag">Дизайн персонажей · 3D-мультипликация</span>
 </section>
 
 <section class="spread">
   <div class="look-row reveal">
-    <div class="look tall"><img src="assets/fashion/look-02.jpg" alt="Look 01"><div class="look-caption"><span class="num">Look 01</span><span class="loc">Brooklyn, NY</span></div></div>
-    <div class="look tall"><img src="assets/fashion/look-01.jpg" alt="Look 02"><div class="look-caption"><span class="num">Look 02</span><span class="loc">Brooklyn, NY</span></div></div>
+    <div class="look tall"><img src="assets/cartoons/plov-01.jpg" alt="Король-лепёшка"><div class="look-caption"><span class="num">Персонаж 01</span><span class="loc">Король-лепёшка</span></div></div>
+    <div class="look tall"><img src="assets/cartoons/plov-06.jpg" alt="Котёл-злодей"><div class="look-caption"><span class="num">Персонаж 02</span><span class="loc">Котёл — антагонист</span></div></div>
   </div>
 
   <div class="look-row rev reveal">
-    <div class="look wide"><img src="assets/fashion/look-06.jpg" alt="Look 03"><div class="look-caption"><span class="num">Look 03</span><span class="loc">Crosswalk</span></div></div>
-    <div class="look wide"><img src="assets/fashion/look-04.jpg" alt="Look 04"><div class="look-caption"><span class="num">Look 04</span><span class="loc">Street Portrait</span></div></div>
+    <div class="look wide"><img src="assets/cartoons/plov-02.jpg" alt="Мясо-силач и Чеснок-профессор"><div class="look-caption"><span class="num">Персонаж 03</span><span class="loc">Мясо-силач и профессор Чеснок</span></div></div>
+    <div class="look wide"><img src="assets/cartoons/plov-05.jpg" alt="Профессор Чеснок за картой"><div class="look-caption"><span class="num">Персонаж 04</span><span class="loc">Профессор Чеснок, крупный план</span></div></div>
   </div>
 
   <div class="video-block reveal">
-    <div class="video-tag"><span class="dot"></span> Motion — Kling 3.0</div>
-    <video src="assets/fashion/reel-01.mp4" autoplay muted loop playsinline></video>
+    <div class="video-tag"><span class="dot"></span> Анимация — Kling 3.0</div>
+    <video src="assets/cartoons/plov-reel.mp4" autoplay muted loop playsinline></video>
   </div>
 
   <div class="look-row reveal">
-    <div class="look square"><img src="assets/fashion/look-03.jpg" alt="Look 05"><div class="look-caption"><span class="num">Look 05</span><span class="loc">Vintage Sedan</span></div></div>
-    <div class="look square"><img src="assets/fashion/look-07.jpg" alt="Look 06"><div class="look-caption"><span class="num">Look 06</span><span class="loc">Golden Hour</span></div></div>
+    <div class="look square"><img src="assets/cartoons/plov-03.jpg" alt="Морковка"><div class="look-caption"><span class="num">Персонаж 05</span><span class="loc">Морковка</span></div></div>
+    <div class="look square"><img src="assets/cartoons/plov-04.jpg" alt="Перец Чили"><div class="look-caption"><span class="num">Персонаж 06</span><span class="loc">Перец Чили</span></div></div>
   </div>
 
   <div class="look-row rev reveal">
-    <div class="look tall"><img src="assets/fashion/look-05.jpg" alt="Look 07"><div class="look-caption"><span class="num">Look 07</span><span class="loc">Brownstone Steps</span></div></div>
-    <div class="look tall"><img src="assets/fashion/look-08.jpg" alt="Look 08"><div class="look-caption"><span class="num">Look 08</span><span class="loc">In Motion</span></div></div>
-  </div>
-
-  <div class="look-row reveal">
-    <div class="look full" style="grid-column: 1 / -1;"><img src="assets/fashion/look-09.jpg" alt="Look 09" style="object-position: 50% 20%;"><div class="look-caption"><span class="num">Look 09</span><span class="loc">Closing Frame</span></div></div>
+    <div class="look tall"><img src="assets/cartoons/plov-07.jpg" alt="Плачущий лук"><div class="look-caption"><span class="num">Персонаж 07</span><span class="loc">Плачущий лук</span></div></div>
+    <div class="look tall"><img src="assets/cartoons/plov-08.jpg" alt="Дед-лук"><div class="look-caption"><span class="num">Персонаж 08</span><span class="loc">Дед-лук, мудрец</span></div></div>
   </div>
 </section>
 
 <section class="credits reveal">
   <div>
     <h4>Направление</h4>
-    <p>Fashion editorial, уличный стиль, естественный свет. Подходит для лукбуков, соцсетей и рекламных кампаний брендов одежды.</p>
+    <p>Дизайн персонажей и мультипликация для анимационных короткометражек, рекламных роликов и сериалов — от концепта до готовой сцены.</p>
   </div>
   <div>
     <h4>Стек</h4>
-    <p>Генерация модели и сцены — Nano Banana Pro. Анимация и видео-контент — Kling 3.0. Цветокоррекция и сведение — вручную.</p>
+    <p>Разработка внешности и характеров персонажей — Nano Banana Pro. Анимация сцен — Kling 3.0. Сведение и монтаж — вручную.</p>
   </div>
   <div>
     <h4>Формат работы</h4>
-    <p>От брифа до готовой серии — без кастинга моделей, аренды студии и логистики выезда на локацию.</p>
+    <p>От истории и референсов до полного набора персонажей и анимированного ролика — под мультсериал, рекламу или короткий метр.</p>
   </div>
 </section>
 
 <section class="cta-band" style="background:var(--ink); color:var(--paper); padding:90px var(--gutter); text-align:center;">
-  <h2 style="font-size:clamp(30px,5vw,54px); margin:0 0 26px;">Нужна похожая серия <em style="color:var(--brass-light); font-style:italic;">под ваш бренд?</em></h2>
+  <h2 style="font-size:clamp(30px,5vw,54px); margin:0 0 26px;">Есть идея для <em style="color:var(--brass-light); font-style:italic;">своего мультфильма?</em></h2>
   <a href="https://t.me/T_Sh_93" target="_blank" rel="noopener" class="btn on-dark" style="border-color: var(--brass-light);">Написать в Telegram</a>
 </section>
 

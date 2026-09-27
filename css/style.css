@@ -3,7 +3,7 @@
    Design tokens
    ============================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Playfair+Display:ital,wght@0,400..700;1,400..600&family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
 
 :root{
   --ink:        #14110D;
@@ -17,7 +17,7 @@
   --line:       rgba(20,17,13,0.14);
   --line-dark:  rgba(237,231,219,0.18);
 
-  --display: 'Fraunces', 'Playfair Display', serif; /* Fraunces has no Cyrillic — Playfair covers Russian */
+  --display: 'Fraunces', serif;
   --body: 'Inter', sans-serif;
   --mono: 'IBM Plex Mono', monospace;
 

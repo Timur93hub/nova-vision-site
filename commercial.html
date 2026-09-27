@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Коммерческая съёмка — Nova Vision</title>
+<meta name="description" content="Коммерческие AI-видео и реклама Nova Vision — раздел наполняется.">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .ps-hero{
+    position:relative;
+    min-height: 56vh;
+    display:flex;
+    align-items:flex-end;
+    background: var(--ink);
+    overflow:hidden;
+  }
+  .ps-hero img{
+    position:absolute; inset:0;
+    width:100%; height:100%;
+    object-fit:cover;
+    opacity: 0.22;
+    filter: grayscale(0.5);
+  }
+  .ps-hero-content{
+    position:relative; z-index:2;
+    max-width: var(--wrap);
+    margin:0 auto;
+    width:100%;
+    padding: 0 var(--gutter) 64px;
+    color: var(--paper);
+  }
+  .ps-hero h1{ font-size: clamp(44px, 8vw, 108px); }
+  .ps-badge{
+    display:inline-flex;
+    align-items:center;
+    gap: 10px;
+    font-family: var(--mono);
+    font-size: 11.5px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color: var(--brass-light);
+    border: 1px solid rgba(237,231,219,0.35);
+    padding: 8px 16px;
+    margin-bottom: 26px;
+  }
+  .ps-badge .dot{ width:6px; height:6px; border-radius:50%; background: var(--brass-light); }
+
+  .ps-body{
+    max-width: var(--wrap);
+    margin: 0 auto;
+    padding: 80px var(--gutter) 120px;
+    display:grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 60px;
+  }
+  .ps-body p{ font-size: 17px; line-height:1.8; color: var(--ink-soft); max-width: 520px; }
+  .ps-list{ list-style:none; margin: 32px 0 0; padding:0; }
+  .ps-list li{
+    display:flex; gap:16px;
+    padding: 16px 0;
+    border-top: 1px solid var(--line);
+    font-size: 14.5px;
+    color: var(--ink-soft);
+  }
+  .ps-list li:last-child{ border-bottom: 1px solid var(--line); }
+  .ps-list .n{ font-family: var(--mono); color: var(--brass-dim); flex-shrink:0; }
+  .ps-side{
+    border-left: 1px solid var(--line);
+    padding-left: 40px;
+  }
+  .ps-side h4{
+    font-family: var(--mono);
+    font-size:11px; letter-spacing:0.14em; text-transform:uppercase;
+    color: var(--brass-dim); margin: 0 0 16px;
+  }
+  @media (max-width: 860px){
+    .ps-body{ grid-template-columns: 1fr; }
+    .ps-side{ border-left:none; border-top:1px solid var(--line); padding-left:0; padding-top:32px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <a href="index.html" class="mast-logo">Nova <span class="dot">·</span> Vision</a>
+    <nav class="mast-nav">
+      <a href="index.html">Главная</a>
+      <a href="fashion.html">Fashion</a>
+      <a href="product.html">Предметная съёмка</a>
+      <a href="cartoons.html">Мультфильмы</a>
+      <a href="commercial.html" class="active">Коммерческая съёмка</a>
+      <a href="process.html">Процесс</a>
+      <a href="about.html">Обо мне</a>
+      <a href="contact.html">Контакты</a>
+    </nav>
+    <button class="mast-toggle" aria-label="Меню" aria-expanded="false">
+      <svg width="22" height="16" viewBox="0 0 22 16"><rect width="22" height="1.4" fill="currentColor"/><rect y="7.3" width="22" height="1.4" fill="currentColor"/><rect y="14.6" width="22" height="1.4" fill="currentColor"/></svg>
+    </button>
+  </div>
+</header>
+
+<section class="ps-hero">
+  <img src="assets/process/gen-evos.jpg" alt="">
+  <div class="ps-hero-content">
+    <span class="ps-badge"><span class="dot"></span> Раздел наполняется</span>
+    <h1>Коммерческая<br>съёмка</h1>
+  </div>
+</section>
+
+<section class="ps-body">
+  <div class="reveal">
+    <p>Здесь будут рекламные ролики и постановочные кадры со сценарием — для брендов, доставки, ритейла и локальных сервисов. Полный цикл: от идеи и сценария до готового видео с актёром на экране.</p>
+    <ul class="ps-list">
+      <li><span class="n">01</span><span>Рекламные ролики со сценарием и актёром</span></li>
+      <li><span class="n">02</span><span>Баннеры и статичные рекламные кадры для соцсетей</span></li>
+      <li><span class="n">03</span><span>Промо для запуска продукта или акции</span></li>
+      <li><span class="n">04</span><span>Адаптация под разные форматы — сторис, реels, наружная реклама</span></li>
+    </ul>
+  </div>
+  <div class="ps-side reveal">
+    <h4>Пока раздел в работе</h4>
+    <p style="font-size:14.5px; line-height:1.8; color: var(--ink-soft);">Первые кейсы этого направления скоро появятся здесь. Пример подхода уже можно увидеть в разборе кадра EVOS на странице «Процесс».</p>
+    <a href="process.html" class="btn" style="margin-top:24px;">Смотреть разбор EVOS</a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand">Nova <span>Vision</span></div>
+      <p style="opacity:0.7; margin-top:14px; max-width:320px; font-size:14.5px; line-height:1.7;">AI-студия фото и видео генерации. Fashion, предметная съёмка, мультипликация и коммерческое видео.</p>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Навигация</div>
+      <a href="fashion.html">Fashion</a>
+      <a href="product.html">Предметная съёмка</a>
+      <a href="cartoons.html">Мультфильмы</a>
+      <a href="commercial.html">Коммерческая съёмка</a>
+      <a href="process.html">Процесс</a>
+      <a href="about.html">Обо мне</a>
+      <a href="contact.html">Контакты</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Контакты</div>
+      <p>Ташкент, Узбекистан</p>
+      <a href="https://t.me/T_Sh_93" target="_blank" rel="noopener">Написать в Telegram →</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Nova Vision</span>
+    <span>AI Photo &amp; Video Studio</span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

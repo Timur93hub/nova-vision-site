@@ -111,6 +111,16 @@
     gap: 2px;
     margin-top: 40px;
   }
+  @media (min-width: 761px){
+    .dir-grid-4{ grid-template-columns: repeat(4, 1fr); }
+  }
+  @media (min-width: 761px) and (max-width: 1080px){
+    .dir-grid-4{ grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (min-width: 1081px){
+    .dir-grid-4 .dir-card h3{ font-size: 26px; }
+    .dir-grid-4 .dir-card p{ font-size: 12.5px; }
+  }
   .dir-card{
     position:relative;
     aspect-ratio: 4/5;
@@ -210,8 +220,9 @@
       <a href="index.html" class="active">Главная</a>
       <a href="fashion.html">Fashion</a>
       <a href="product.html">Предметная съёмка</a>
+      <a href="cartoons.html">Мультфильмы</a>
+      <a href="commercial.html">Коммерческая съёмка</a>
       <a href="process.html">Процесс</a>
-      <a href="pricing.html">Цены</a>
       <a href="about.html">Обо мне</a>
       <a href="contact.html">Контакты</a>
     </nav>
@@ -236,10 +247,10 @@
 
 <section class="directions">
   <div class="directions-head reveal">
-    <h2>Два направления,<br>одна студия</h2>
-    <p class="eyebrow">01 / 02</p>
+    <h2>Четыре направления,<br>одна студия</h2>
+    <p class="eyebrow">01 / 04</p>
   </div>
-  <div class="dir-grid">
+  <div class="dir-grid dir-grid-4">
     <a href="fashion.html" class="dir-card reveal">
       <span class="dir-tag">Готово · 9 работ</span>
       <img src="assets/fashion/look-08.jpg" alt="Fashion — AI-съёмка">
@@ -250,12 +261,30 @@
       </div>
     </a>
     <a href="product.html" class="dir-card reveal">
-      <span class="dir-tag">Готово · Babylon Store</span>
+      <span class="dir-tag">Готово · 2 кейса</span>
       <img src="assets/product/prod-05.jpg" alt="Предметная съёмка — AI-генерация" style="object-position:50% 25%;">
       <div class="dir-card-content">
         <span class="dir-num">Направление 02</span>
         <h3>Предметная съёмка</h3>
         <p>Продуктовый визуал для e-commerce и рекламы: чистый свет, фактура, композиция — без студии.</p>
+      </div>
+    </a>
+    <a href="cartoons.html" class="dir-card reveal">
+      <span class="dir-tag">Готово · 8 персонажей</span>
+      <img src="assets/cartoons/plov-01.jpg" alt="Мультфильмы — AI-анимация" style="object-position:50% 20%;">
+      <div class="dir-card-content">
+        <span class="dir-num">Направление 03</span>
+        <h3>Мультфильмы</h3>
+        <p>Дизайн персонажей и анимация для мультсериалов и коротких метров — от концепта до сцены с движением.</p>
+      </div>
+    </a>
+    <a href="commercial.html" class="dir-card placeholder reveal">
+      <span class="dir-tag">Скоро</span>
+      <img src="assets/process/gen-evos.jpg" alt="Коммерческая съёмка — AI-реклама">
+      <div class="dir-card-content">
+        <span class="dir-num">Направление 04</span>
+        <h3>Коммерческая съёмка</h3>
+        <p>Рекламные ролики со сценарием и актёром на экране — от идеи до готового видео под бренд.</p>
       </div>
     </a>
   </div>
@@ -285,14 +314,15 @@
   <div class="footer-top">
     <div>
       <div class="footer-brand">Nova <span>Vision</span></div>
-      <p style="opacity:0.7; margin-top:14px; max-width:320px; font-size:14.5px; line-height:1.7;">AI-студия фото и видео генерации. Fashion и предметная съёмка без камеры и павильона.</p>
+      <p style="opacity:0.7; margin-top:14px; max-width:320px; font-size:14.5px; line-height:1.7;">AI-студия фото и видео генерации. Fashion, предметная съёмка, мультипликация и коммерческое видео.</p>
     </div>
     <div class="footer-col">
       <div class="footer-col-title">Навигация</div>
       <a href="fashion.html">Fashion</a>
       <a href="product.html">Предметная съёмка</a>
+      <a href="cartoons.html">Мультфильмы</a>
+      <a href="commercial.html">Коммерческая съёмка</a>
       <a href="process.html">Процесс</a>
-      <a href="pricing.html">Цены</a>
       <a href="about.html">Обо мне</a>
       <a href="contact.html">Контакты</a>
     </div>
