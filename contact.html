@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Контакты — Nova Vision</title>
+<meta name="description" content="Написать в Telegram Nova Vision — быстрый способ обсудить съёмку.">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .ct-hero{
+    position:relative;
+    min-height: 82vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background: var(--ink);
+    color: var(--paper);
+    overflow:hidden;
+    text-align:center;
+    padding: 60px var(--gutter);
+  }
+  .ct-hero::before{
+    content:"";
+    position:absolute; inset:0;
+    background:
+      radial-gradient(circle at 20% 20%, rgba(169,131,75,0.16), transparent 45%),
+      radial-gradient(circle at 80% 75%, rgba(169,131,75,0.12), transparent 45%);
+  }
+  .ct-inner{
+    position:relative; z-index:2;
+    max-width: 720px;
+  }
+  .ct-inner .eyebrow{ color: var(--brass-light); }
+  .ct-inner h1{
+    font-size: clamp(40px, 7vw, 84px);
+    margin: 22px 0 26px;
+  }
+  .ct-inner h1 em{ font-style: italic; color: var(--brass-light); }
+  .ct-inner p.lede{
+    font-size: 17px;
+    line-height: 1.8;
+    color: rgba(237,231,219,0.78);
+    max-width: 520px;
+    margin: 0 auto 44px;
+  }
+  .tg-btn{
+    display:inline-flex;
+    align-items:center;
+    gap: 14px;
+    background: var(--brass);
+    color: var(--ink);
+    font-family: var(--mono);
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 20px 40px;
+    border: 1px solid var(--brass);
+    transition: all 0.3s var(--ease);
+  }
+  .tg-btn:hover{ background: transparent; color: var(--brass-light); }
+  .tg-btn svg{ flex-shrink:0; }
+
+  .ct-handle{
+    margin-top: 26px;
+    font-family: var(--mono);
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    color: rgba(237,231,219,0.55);
+  }
+
+  .ct-meta{
+    max-width: var(--wrap);
+    margin: 0 auto;
+    padding: 60px var(--gutter) 90px;
+    display:flex;
+    justify-content:center;
+    gap: 64px;
+    flex-wrap:wrap;
+    text-align:center;
+  }
+  .ct-meta-item .k{
+    display:block;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color: var(--brass-dim);
+    margin-bottom: 8px;
+  }
+  .ct-meta-item .v{ font-size: 15.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <a href="index.html" class="mast-logo">Nova <span class="dot">·</span> Vision</a>
+    <nav class="mast-nav">
+      <a href="index.html">Главная</a>
+      <a href="fashion.html">Fashion</a>
+      <a href="product.html">Предметная съёмка</a>
+      <a href="process.html">Процесс</a>
+      <a href="about.html">Обо мне</a>
+      <a href="contact.html" class="active">Контакты</a>
+    </nav>
+    <button class="mast-toggle" aria-label="Меню" aria-expanded="false">
+      <svg width="22" height="16" viewBox="0 0 22 16"><rect width="22" height="1.4" fill="currentColor"/><rect y="7.3" width="22" height="1.4" fill="currentColor"/><rect y="14.6" width="22" height="1.4" fill="currentColor"/></svg>
+    </button>
+  </div>
+</header>
+
+<section class="ct-hero">
+  <div class="ct-inner reveal">
+    <span class="eyebrow">Связаться со студией</span>
+    <h1>Напишите <em>в Telegram</em></h1>
+    <p class="lede">Самый быстрый способ обсудить съёмку — написать мне напрямую в Telegram. Опишите задачу, направление и сроки, отвечу лично в течение дня.</p>
+    <a class="tg-btn" href="https://t.me/T_Sh_93" target="_blank" rel="noopener">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.36a1.5 1.5 0 0 0-1.6-.2L2.9 11.2a1.4 1.4 0 0 0 .1 2.6l4.5 1.5 1.7 5.4a1.3 1.3 0 0 0 2.2.5l2.4-2.6 4.5 3.3a1.4 1.4 0 0 0 2.2-.8l3.1-14.6a1.5 1.5 0 0 0-.66-1.29ZM9.9 14.9l-1.1 3.5-1-3.3 10.8-6.7-8.7 6.5Zm1.6 1.4 1.2-1 1.9 1.4-.7 3.3-2.4-3.7Z"/></svg>
+      Открыть @T_Sh_93
+    </a>
+    <div class="ct-handle">или найдите в Telegram: @T_Sh_93</div>
+  </div>
+</section>
+
+<section class="ct-meta reveal">
+  <div class="ct-meta-item">
+    <span class="k">Локация</span>
+    <span class="v">Ташкент, Узбекистан</span>
+  </div>
+  <div class="ct-meta-item">
+    <span class="k">Формат работы</span>
+    <span class="v">Удалённо, с любой точкой мира</span>
+  </div>
+  <div class="ct-meta-item">
+    <span class="k">Ответ</span>
+    <span class="v">В течение дня</span>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand">Nova <span>Vision</span></div>
+      <p style="opacity:0.7; margin-top:14px; max-width:320px; font-size:14.5px; line-height:1.7;">AI-студия фото и видео генерации. Fashion и предметная съёмка без камеры и павильона.</p>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Навигация</div>
+      <a href="fashion.html">Fashion</a>
+      <a href="product.html">Предметная съёмка</a>
+      <a href="process.html">Процесс</a>
+      <a href="about.html">Обо мне</a>
+      <a href="contact.html">Контакты</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Контакты</div>
+      <p>Ташкент, Узбекистан</p>
+      <a href="https://t.me/T_Sh_93" target="_blank" rel="noopener">Написать в Telegram →</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Nova Vision</span>
+    <span>AI Photo &amp; Video Studio</span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

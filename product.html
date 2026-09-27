@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Предметная съёмка — Nova Vision</title>
+<meta name="description" content="AI-предметная съёмка Nova Vision — детская одежда, e-commerce визуал.">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .page-hero{
+    padding: 100px var(--gutter) 60px;
+    max-width: var(--wrap);
+    margin:0 auto;
+    border-bottom: 1px solid var(--line);
+  }
+  .page-hero-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    gap: 24px;
+    flex-wrap:wrap;
+  }
+  .page-hero h1{ font-size: clamp(44px, 8vw, 108px); }
+  .page-meta{
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-align:right;
+    line-height: 1.8;
+    color: var(--ink-soft);
+  }
+  .page-hero p.lede{
+    max-width: 620px;
+    font-size: 17px;
+    line-height: 1.75;
+    color: var(--ink-soft);
+    margin-top: 24px;
+  }
+
+  .case-band{
+    max-width: var(--wrap);
+    margin: 60px auto 0;
+    padding: 0 var(--gutter) 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    gap:24px;
+    flex-wrap:wrap;
+  }
+  .case-band h2{ font-size: clamp(26px, 4vw, 38px); }
+  .case-tag{
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color: var(--brass-dim);
+    border: 1px solid var(--line);
+    padding: 7px 14px;
+  }
+
+  .spread{
+    max-width: var(--wrap);
+    margin: 0 auto;
+    padding: 0 var(--gutter);
+  }
+  .look-row{
+    display:grid;
+    grid-template-columns: 5fr 7fr;
+    gap: 2px;
+    padding: 2px 0;
+  }
+  .look-row.rev{ grid-template-columns: 7fr 5fr; }
+  .look-row.rev .look:first-child{ order:2; }
+  .look{
+    position:relative;
+    overflow:hidden;
+    background: var(--bone);
+  }
+  .look img{
+    width:100%; height:100%;
+    object-fit:cover;
+    display:block;
+    transition: transform 1s var(--ease);
+  }
+  .look:hover img{ transform: scale(1.035); }
+  .look-caption{
+    position:absolute;
+    left:0; right:0; bottom:0;
+    padding: 20px 24px;
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    background: linear-gradient(0deg, rgba(20,17,13,0.78) 0%, rgba(20,17,13,0) 100%);
+    color: var(--paper);
+    opacity: 0;
+    transform: translateY(6px);
+    transition: all 0.35s var(--ease);
+  }
+  .look:hover .look-caption{ opacity:1; transform:translateY(0); }
+  .look-caption .num{ font-family: var(--mono); font-size: 12px; letter-spacing:0.1em; color: var(--brass-light); }
+  .look-caption .loc{ font-family: var(--mono); font-size: 11px; letter-spacing:0.06em; opacity:0.75; }
+  .look.tall{ aspect-ratio: 3/4; }
+  .look.wide{ aspect-ratio: 4/3.1; }
+  .look.square{ aspect-ratio: 1/1; }
+
+  @media (max-width: 760px){
+    .look-row, .look-row.rev{ grid-template-columns: 1fr; }
+    .look-row.rev .look:first-child{ order:0; }
+    .look-caption{ opacity:1; transform:none; }
+  }
+
+  .credits{
+    max-width: var(--wrap);
+    margin: 0 auto;
+    padding: 90px var(--gutter) 110px;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+    border-top: 1px solid var(--line);
+    margin-top: 60px;
+  }
+  .credits h4{
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color: var(--brass-dim);
+    margin: 0 0 12px;
+  }
+  .credits p{ font-size: 14.5px; line-height:1.7; color: var(--ink-soft); margin:0; }
+  @media (max-width: 760px){ .credits{ grid-template-columns: 1fr; gap:28px; } }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <a href="index.html" class="mast-logo">Nova <span class="dot">·</span> Vision</a>
+    <nav class="mast-nav">
+      <a href="index.html">Главная</a>
+      <a href="fashion.html">Fashion</a>
+      <a href="product.html" class="active">Предметная съёмка</a>
+      <a href="process.html">Процесс</a>
+      <a href="about.html">Обо мне</a>
+      <a href="contact.html">Контакты</a>
+    </nav>
+    <button class="mast-toggle" aria-label="Меню" aria-expanded="false">
+      <svg width="22" height="16" viewBox="0 0 22 16"><rect width="22" height="1.4" fill="currentColor"/><rect y="7.3" width="22" height="1.4" fill="currentColor"/><rect y="14.6" width="22" height="1.4" fill="currentColor"/></svg>
+    </button>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="page-hero-top">
+    <h1>Предметная<br>съёмка</h1>
+    <div class="page-meta">
+      2 кейса · 11 сцен<br>
+      Детская одежда · Здоровое питание<br>
+      Nano Banana Pro × GPT Image 2.0
+    </div>
+  </div>
+  <p class="lede">Карточки товара, флэтлеи, лайфстайл-сцены и креативные композиции для одного SKU — без съёмочного дня, модели и предметного стола.</p>
+</section>
+
+<section class="case-band reveal">
+  <h2>Кейс: Babylon Store — сафари-костюм</h2>
+  <span class="case-tag">6 сцен · 1 товар</span>
+</section>
+
+<section class="spread">
+  <div class="look-row reveal">
+    <div class="look wide"><img src="assets/product/prod-03.jpg" alt="Babylon Store — на модели"><div class="look-caption"><span class="num">Сцена 01</span><span class="loc">На ребёнке, площадка</span></div></div>
+    <div class="look wide"><img src="assets/product/prod-01.jpg" alt="Babylon Store — флэтлей"><div class="look-caption"><span class="num">Сцена 02</span><span class="loc">Флэтлей с игрушками</span></div></div>
+  </div>
+
+  <div class="look-row rev reveal">
+    <div class="look tall" style="aspect-ratio:16/10;"><img src="assets/product/prod-05.jpg" alt="Babylon Store — творческая композиция" style="object-position:50% 30%;"><div class="look-caption"><span class="num">Сцена 03</span><span class="loc">Арт-концепция «Джунгли»</span></div></div>
+    <div class="look tall"><img src="assets/product/prod-04.jpg" alt="Babylon Store — лайфстайл"><div class="look-caption"><span class="num">Сцена 04</span><span class="loc">Лайфстайл, в руках</span></div></div>
+  </div>
+
+  <div class="look-row reveal">
+    <div class="look square"><img src="assets/product/prod-02.jpg" alt="Babylon Store — на вешалке"><div class="look-caption"><span class="num">Сцена 05</span><span class="loc">На плечиках</span></div></div>
+    <div class="look square"><img src="assets/product/prod-06.jpg" alt="Babylon Store — сложенный товар"><div class="look-caption"><span class="num">Сцена 06</span><span class="loc">На столе, декор</span></div></div>
+  </div>
+</section>
+
+<section class="case-band reveal" style="margin-top:90px; padding-top:50px; border-top:1px solid var(--line);">
+  <h2>Кейс: Bob's Red Mill — миндальная мука</h2>
+  <span class="case-tag">5 сцен · Бутик здорового питания</span>
+</section>
+
+<section class="spread">
+  <div class="look-row reveal">
+    <div class="look wide"><img src="assets/product/health-01.jpg" alt="Bob's Red Mill — лайфстайл на кухне"><div class="look-caption"><span class="num">Сцена 01</span><span class="loc">На кухонном столе</span></div></div>
+    <div class="look wide"><img src="assets/product/health-02.jpg" alt="Bob's Red Mill — в руках"><div class="look-caption"><span class="num">Сцена 02</span><span class="loc">В руках, крупный план</span></div></div>
+  </div>
+
+  <div class="look-row rev reveal">
+    <div class="look tall"><img src="assets/product/health-04.jpg" alt="Bob's Red Mill — динамичный взрыв продукта"><div class="look-caption"><span class="num">Сцена 03</span><span class="loc">Динамика, рекламный кадр</span></div></div>
+    <div class="look tall"><img src="assets/product/health-03.jpg" alt="Bob's Red Mill — процесс готовки"><div class="look-caption"><span class="num">Сцена 04</span><span class="loc">В процессе готовки</span></div></div>
+  </div>
+
+  <div class="look-row reveal">
+    <div class="look" style="aspect-ratio:16/9; grid-column: 1 / -1;"><img src="assets/product/health-05.jpg" alt="Bob's Red Mill — флэтлей с миндалём и цветами" style="object-position:50% 30%;"><div class="look-caption"><span class="num">Сцена 05</span><span class="loc">Флэтлей, ингредиенты</span></div></div>
+  </div>
+</section>
+
+<section class="credits reveal">
+  <div>
+    <h4>Направление</h4>
+    <p>Продуктовый визуал для детской одежды: карточки маркетплейса, флэтлеи, лайфстайл и креативные постановочные сцены под один товар.</p>
+  </div>
+  <div>
+    <h4>Стек</h4>
+    <p>Генерация сцены, фона и реквизита — Nano Banana Pro и GPT Image 2.0. Постобработка и адаптация под форматы карточек — вручную.</p>
+  </div>
+  <div>
+    <h4>Формат работы</h4>
+    <p>Полный комплект карточек для одного SKU — от съёмки «на модели» до креативной композиции — за один заход, без предметного стола.</p>
+  </div>
+</section>
+
+<section class="cta-band" style="background:var(--ink); color:var(--paper); padding:90px var(--gutter); text-align:center;">
+  <h2 style="font-size:clamp(30px,5vw,54px); margin:0 0 26px;">Нужен такой же комплект <em style="color:var(--brass-light); font-style:italic;">для вашего товара?</em></h2>
+  <a href="https://t.me/T_Sh_93" target="_blank" rel="noopener" class="btn on-dark" style="border-color: var(--brass-light);">Написать в Telegram</a>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand">Nova <span>Vision</span></div>
+      <p style="opacity:0.7; margin-top:14px; max-width:320px; font-size:14.5px; line-height:1.7;">AI-студия фото и видео генерации. Fashion и предметная съёмка без камеры и павильона.</p>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Навигация</div>
+      <a href="fashion.html">Fashion</a>
+      <a href="product.html">Предметная съёмка</a>
+      <a href="process.html">Процесс</a>
+      <a href="about.html">Обо мне</a>
+      <a href="contact.html">Контакты</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Контакты</div>
+      <p>Ташкент, Узбекистан</p>
+      <a href="https://t.me/T_Sh_93" target="_blank" rel="noopener">Написать в Telegram →</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Nova Vision</span>
+    <span>AI Photo &amp; Video Studio</span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

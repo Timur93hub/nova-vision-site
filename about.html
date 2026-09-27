@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Обо мне — Nova Vision</title>
+<meta name="description" content="Nova Vision — AI-студия фото и видео генерации для fashion и предметной съёмки.">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .ab-hero{
+    padding: 100px var(--gutter) 60px;
+    max-width: var(--wrap);
+    margin: 0 auto;
+    border-bottom: 1px solid var(--line);
+  }
+  .ab-hero h1{ font-size: clamp(44px, 8vw, 100px); max-width: 900px; }
+  .ab-hero h1 em{ font-style:italic; color: var(--brass); }
+
+  .ab-grid{
+    max-width: var(--wrap);
+    margin: 0 auto;
+    padding: 70px var(--gutter);
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+  }
+  .ab-grid img{ width:100%; aspect-ratio: 4/5; object-fit:cover; }
+  .ab-text p{ font-size: 17px; line-height: 1.85; color: var(--ink-soft); margin-bottom: 20px; }
+  @media (max-width: 860px){ .ab-grid{ grid-template-columns:1fr; gap:36px; } }
+
+  .stack{
+    background: var(--ink);
+    color: var(--paper);
+    padding: 90px var(--gutter);
+  }
+  .stack-inner{ max-width: var(--wrap); margin:0 auto; }
+  .stack h2{ font-size: clamp(32px, 5vw, 56px); margin-bottom: 48px; }
+  .stack-grid{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--line-dark);
+  }
+  .stack-item{
+    background: var(--ink);
+    padding: 36px;
+  }
+  .stack-item .role{
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color: var(--brass-light);
+    margin-bottom: 12px;
+    display:block;
+  }
+  .stack-item h3{ font-size: 30px; margin-bottom: 12px; }
+  .stack-item p{ font-size: 14.5px; opacity: 0.75; line-height:1.7; }
+  @media (max-width: 700px){ .stack-grid{ grid-template-columns: 1fr; } }
+
+  .process{
+    max-width: var(--wrap);
+    margin: 0 auto;
+    padding: 100px var(--gutter);
+  }
+  .process h2{ font-size: clamp(32px,5vw,56px); margin-bottom: 50px; }
+  .process-list{ border-top: 1px solid var(--line); }
+  .process-item{
+    display:grid;
+    grid-template-columns: 100px 1fr 1fr;
+    gap: 24px;
+    padding: 30px 0;
+    border-bottom: 1px solid var(--line);
+    align-items:baseline;
+  }
+  .process-item .n{ font-family: var(--display); font-style:italic; font-size: 24px; color: var(--brass); }
+  .process-item h4{ font-family: var(--body); font-weight:600; font-size: 17px; }
+  .process-item p{ font-size: 14.5px; color: var(--ink-soft); line-height:1.7; margin:0; }
+  @media (max-width: 700px){
+    .process-item{ grid-template-columns: 1fr; gap:8px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <a href="index.html" class="mast-logo">Nova <span class="dot">·</span> Vision</a>
+    <nav class="mast-nav">
+      <a href="index.html">Главная</a>
+      <a href="fashion.html">Fashion</a>
+      <a href="product.html">Предметная съёмка</a>
+      <a href="process.html">Процесс</a>
+      <a href="about.html" class="active">Обо мне</a>
+      <a href="contact.html">Контакты</a>
+    </nav>
+    <button class="mast-toggle" aria-label="Меню" aria-expanded="false">
+      <svg width="22" height="16" viewBox="0 0 22 16"><rect width="22" height="1.4" fill="currentColor"/><rect y="7.3" width="22" height="1.4" fill="currentColor"/><rect y="14.6" width="22" height="1.4" fill="currentColor"/></svg>
+    </button>
+  </div>
+</header>
+
+<section class="ab-hero">
+  <span class="eyebrow">О студии</span>
+  <h1 style="margin-top:20px;">Съёмка, которая <em>начинается с промпта,</em> а не с камеры.</h1>
+</section>
+
+<section class="ab-grid">
+  <img class="reveal" src="assets/fashion/look-04.jpg" alt="Nova Vision — AI-съёмка">
+  <div class="ab-text reveal">
+    <p>Nova Vision — студия генеративного визуала для брендов, которым нужна фотография и видео на уровне рекламной кампании, но без бюджета на кастинг, аренду студии и логистику выезда.</p>
+    <p>Я работаю на стыке инженерного подхода к промптингу и художественного вкуса fashion-фотографии: каждая серия строится как настоящая съёмка — с концепцией, светом, локацией и раскадровкой, только весь процесс происходит в нейросетях.</p>
+    <p>Сейчас в фокусе два направления: fashion-съёмка для брендов одежды и предметная съёмка для e-commerce и рекламы.</p>
+  </div>
+</section>
+
+<section class="stack">
+  <div class="stack-inner">
+    <span class="eyebrow" style="color:var(--brass-light);">Инструменты</span>
+    <h2 style="margin-top:16px;">Стек студии</h2>
+    <div class="stack-grid">
+      <div class="stack-item reveal">
+        <span class="role">Фото / модель</span>
+        <h3>Nano Banana Pro</h3>
+        <p>Генерация модели, локации и композиции кадра — от кастинга до финального света.</p>
+      </div>
+      <div class="stack-item reveal">
+        <span class="role">Фото / продукт</span>
+        <h3>GPT Image 2.0</h3>
+        <p>Работа с предметной генерацией, упаковкой и сложной композицией продуктовых сцен.</p>
+      </div>
+      <div class="stack-item reveal">
+        <span class="role">Видео / анимация</span>
+        <h3>Kling 3.0</h3>
+        <p>Оживление статичных кадров: движение модели, ветер, естественная динамика сцены.</p>
+      </div>
+      <div class="stack-item reveal">
+        <span class="role">Видео / динамика</span>
+        <h3>Seedance 2.5</h3>
+        <p>Динамичные и рекламные видео-сцены — резкие движения, эффекты, продуктовая анимация.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="process">
+  <span class="eyebrow">Как строится работа</span>
+  <h2 style="margin-top:16px;">Процесс</h2>
+  <div class="process-list">
+    <div class="process-item reveal">
+      <span class="n">01</span>
+      <h4>Бриф и референсы</h4>
+      <p>Обсуждаем задачу, настроение, референсы бренда и итоговый формат — фото, видео или серия для соцсетей.</p>
+    </div>
+    <div class="process-item reveal">
+      <span class="n">02</span>
+      <h4>Генерация и отбор</h4>
+      <p>Собираю кадры по концепции, показываю варианты, отбираем лучшие ракурсы и композиции вместе.</p>
+    </div>
+    <div class="process-item reveal">
+      <span class="n">03</span>
+      <h4>Финализация</h4>
+      <p>Цветокоррекция, ретушь и, при необходимости, анимация — до состояния готового рекламного материала.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band" style="background:var(--ink); color:var(--paper); padding:90px var(--gutter); text-align:center;">
+  <h2 style="font-size:clamp(30px,5vw,54px); margin:0 0 26px;">Обсудим вашу <em style="color:var(--brass-light); font-style:italic;">следующую съёмку?</em></h2>
+  <a href="https://t.me/T_Sh_93" target="_blank" rel="noopener" class="btn on-dark" style="border-color: var(--brass-light);">Написать в Telegram</a>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand">Nova <span>Vision</span></div>
+      <p style="opacity:0.7; margin-top:14px; max-width:320px; font-size:14.5px; line-height:1.7;">AI-студия фото и видео генерации. Fashion и предметная съёмка без камеры и павильона.</p>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Навигация</div>
+      <a href="fashion.html">Fashion</a>
+      <a href="product.html">Предметная съёмка</a>
+      <a href="process.html">Процесс</a>
+      <a href="about.html">Обо мне</a>
+      <a href="contact.html">Контакты</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Контакты</div>
+      <p>Ташкент, Узбекистан</p>
+      <a href="https://t.me/T_Sh_93" target="_blank" rel="noopener">Написать в Telegram →</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Nova Vision</span>
+    <span>AI Photo &amp; Video Studio</span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

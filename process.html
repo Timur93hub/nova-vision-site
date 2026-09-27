@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Процесс — Nova Vision</title>
+<meta name="description" content="Как рождается кадр Nova Vision: от референса до готового видео.">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .page-hero{
+    padding: 100px var(--gutter) 60px;
+    max-width: var(--wrap);
+    margin:0 auto;
+    border-bottom: 1px solid var(--line);
+  }
+  .page-hero-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    gap: 24px;
+    flex-wrap:wrap;
+  }
+  .page-hero h1{ font-size: clamp(44px, 8vw, 108px); }
+  .page-meta{
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-align:right;
+    line-height: 1.8;
+    color: var(--ink-soft);
+  }
+  .page-hero p.lede{
+    max-width: 640px;
+    font-size: 17px;
+    line-height: 1.75;
+    color: var(--ink-soft);
+    margin-top: 24px;
+  }
+
+  /* Pipeline */
+  .pipeline{
+    max-width: var(--wrap);
+    margin: 70px auto 0;
+    padding: 0 var(--gutter) 40px;
+  }
+  .pipeline-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    gap:24px;
+    flex-wrap:wrap;
+    margin-bottom: 32px;
+  }
+  .pipeline-head h2{ font-size: clamp(26px,4vw,38px); }
+  .case-tag{
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color: var(--brass-dim);
+    border: 1px solid var(--line);
+    padding: 7px 14px;
+  }
+
+  .steps{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2px;
+    background: var(--line);
+  }
+  .step{
+    background: var(--paper);
+    position:relative;
+  }
+  .step-media{
+    position:relative;
+    aspect-ratio: 3/4;
+    overflow:hidden;
+    background: var(--bone);
+  }
+  .step-media img, .step-media video{
+    width:100%; height:100%;
+    object-fit:cover;
+  }
+  .step-ref{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:14px;
+    text-align:center;
+    padding: 30px;
+    color: var(--brass-dim);
+    background:
+      repeating-linear-gradient(45deg, var(--paper-dim), var(--paper-dim) 10px, var(--paper) 10px, var(--paper) 20px);
+  }
+  .step-ref svg{ opacity: 0.55; }
+  .step-ref span{
+    font-family: var(--mono);
+    font-size: 11.5px;
+    letter-spacing: 0.08em;
+    max-width: 200px;
+    line-height:1.6;
+  }
+  .step-label{
+    padding: 20px 22px;
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+  }
+  .step-label .n{ font-family: var(--mono); font-size:11px; letter-spacing:0.12em; color: var(--brass-dim); }
+  .step-label h3{ font-family: var(--display); font-size: 22px; margin-top:4px; }
+  .step-arrow{
+    position:absolute;
+    top: 50%;
+    right: -14px;
+    transform: translateY(-50%);
+    z-index: 3;
+    width: 28px; height:28px;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    display:flex; align-items:center; justify-content:center;
+    color: var(--brass);
+  }
+  @media (max-width: 860px){
+    .steps{ grid-template-columns: 1fr; }
+    .step-arrow{ top: auto; bottom:-14px; right:50%; transform: translate(50%,0) rotate(90deg); }
+  }
+
+  .why{
+    max-width: var(--wrap);
+    margin: 100px auto 0;
+    padding: 70px var(--gutter);
+    border-top: 1px solid var(--line);
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+  }
+  .why h4{
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color: var(--brass-dim);
+    margin: 0 0 12px;
+  }
+  .why p{ font-size: 14.5px; line-height:1.7; color: var(--ink-soft); margin:0; }
+  @media (max-width: 760px){ .why{ grid-template-columns:1fr; gap:28px; } }
+
+  .note-band{
+    background: var(--bone);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 22px var(--gutter);
+    text-align:center;
+  }
+  .note-band p{
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing:0.04em;
+    color: var(--ink-soft);
+    max-width: 640px;
+    margin: 0 auto;
+    line-height:1.7;
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <a href="index.html" class="mast-logo">Nova <span class="dot">·</span> Vision</a>
+    <nav class="mast-nav">
+      <a href="index.html">Главная</a>
+      <a href="fashion.html">Fashion</a>
+      <a href="product.html">Предметная съёмка</a>
+      <a href="process.html" class="active">Процесс</a>
+      <a href="about.html">Обо мне</a>
+      <a href="contact.html">Контакты</a>
+    </nav>
+    <button class="mast-toggle" aria-label="Меню" aria-expanded="false">
+      <svg width="22" height="16" viewBox="0 0 22 16"><rect width="22" height="1.4" fill="currentColor"/><rect y="7.3" width="22" height="1.4" fill="currentColor"/><rect y="14.6" width="22" height="1.4" fill="currentColor"/></svg>
+    </button>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="page-hero-top">
+    <h1>Процесс</h1>
+    <div class="page-meta">
+      3 разбора · разные форматы<br>
+      Fashion · Реклама · Narrative<br>
+      Nano Banana Pro × Kling 3.0
+    </div>
+  </div>
+  <p class="lede">За каждым кадром в портфолио стоит путь: референс фиксирует продукт, персонажа или настроение, генерация превращает его в готовую сцену, а анимация оживляет результат движением. Ниже — три разбора из разных проектов.</p>
+</section>
+
+<section class="pipeline">
+  <div class="pipeline-head reveal">
+    <h2>Разбор кадра · Look 01</h2>
+    <span class="case-tag">Fashion — Brooklyn Editorial</span>
+  </div>
+
+  <div class="steps reveal">
+    <div class="step">
+      <div class="step-media">
+        <img src="assets/fashion/ref-look-01.jpg" alt="Референс-лист — Look 01">
+      </div>
+      <div class="step-label">
+        <span class="n">Этап 01</span>
+        <h3>Референс</h3>
+      </div>
+      <div class="step-arrow">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-media">
+        <img src="assets/fashion/look-02.jpg" alt="Сгенерированное фото — Look 01">
+      </div>
+      <div class="step-label">
+        <span class="n">Этап 02</span>
+        <h3>Генерация</h3>
+      </div>
+      <div class="step-arrow">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-media">
+        <video src="assets/fashion/reel-01.mp4" autoplay muted loop playsinline></video>
+      </div>
+      <div class="step-label">
+        <span class="n">Этап 03</span>
+        <h3>Видео</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pipeline">
+  <div class="pipeline-head reveal">
+    <h2>Разбор кадра · Narrative Video</h2>
+    <span class="case-tag">Shirin Sweets — история в кадре</span>
+  </div>
+
+  <div class="steps reveal">
+    <div class="step">
+      <div class="step-media">
+        <img src="assets/process/ref-shirin.jpg" alt="Референс — фото коробки Shirin Sweets">
+      </div>
+      <div class="step-label">
+        <span class="n">Этап 01</span>
+        <h3>Референс</h3>
+      </div>
+      <div class="step-arrow">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-media">
+        <img src="assets/process/gen-shirin.jpg" alt="Сгенерированная сцена — бабушка у двери с коробкой">
+      </div>
+      <div class="step-label">
+        <span class="n">Этап 02</span>
+        <h3>Генерация</h3>
+      </div>
+      <div class="step-arrow">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-media">
+        <video src="assets/process/shirin-reel.mp4" autoplay muted loop playsinline></video>
+      </div>
+      <div class="step-label">
+        <span class="n">Этап 03</span>
+        <h3>Видео</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pipeline">
+  <div class="pipeline-head reveal">
+    <h2>Разбор кадра · Рекламный баннер</h2>
+    <span class="case-tag">EVOS — Fast Food Ad</span>
+  </div>
+
+  <div class="steps reveal">
+    <div class="step">
+      <div class="step-media">
+        <img src="assets/process/ref-evos.jpg" alt="Референс-лист — модель в национальном платье">
+      </div>
+      <div class="step-label">
+        <span class="n">Этап 01</span>
+        <h3>Референс</h3>
+      </div>
+      <div class="step-arrow">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-media">
+        <img src="assets/process/gen-evos.jpg" alt="Готовый рекламный креатив EVOS">
+      </div>
+      <div class="step-label">
+        <span class="n">Этап 02</span>
+        <h3>Генерация</h3>
+      </div>
+      <div class="step-arrow">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-media">
+        <video src="assets/process/evos-reel.mp4" autoplay muted loop playsinline></video>
+      </div>
+      <div class="step-label">
+        <span class="n">Этап 03</span>
+        <h3>Видео</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why">
+  <div class="reveal">
+    <h4>Референс</h4>
+    <p>Лист консистентности модели — несколько ракурсов и планов одного лица и позы. Задаёт внешность, которая остаётся неизменной в каждом кадре серии.</p>
+  </div>
+  <div class="reveal">
+    <h4>Генерация</h4>
+    <p>Nano Banana Pro и GPT Image 2.0 превращают референс в готовую фотографию: модель, локация, свет и текстуры собираются в единую сцену.</p>
+  </div>
+  <div class="reveal">
+    <h4>Видео</h4>
+    <p>Kling 3.0 и Seedance 2.5 добавляют движение — ветер, шаги, поворот головы — превращая статичный кадр в живую сцену для рилс и рекламы.</p>
+  </div>
+</section>
+
+<section class="cta-band" style="background:var(--ink); color:var(--paper); padding:90px var(--gutter); text-align:center;">
+  <h2 style="font-size:clamp(30px,5vw,54px); margin:0 0 26px;">Хотите увидеть <em style="color:var(--brass-light); font-style:italic;">процесс на вашей задаче?</em></h2>
+  <a href="https://t.me/T_Sh_93" target="_blank" rel="noopener" class="btn on-dark" style="border-color: var(--brass-light);">Написать в Telegram</a>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand">Nova <span>Vision</span></div>
+      <p style="opacity:0.7; margin-top:14px; max-width:320px; font-size:14.5px; line-height:1.7;">AI-студия фото и видео генерации. Fashion и предметная съёмка без камеры и павильона.</p>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Навигация</div>
+      <a href="fashion.html">Fashion</a>
+      <a href="product.html">Предметная съёмка</a>
+      <a href="process.html">Процесс</a>
+      <a href="about.html">Обо мне</a>
+      <a href="contact.html">Контакты</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Контакты</div>
+      <p>Ташкент, Узбекистан</p>
+      <a href="https://t.me/T_Sh_93" target="_blank" rel="noopener">Написать в Telegram →</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Nova Vision</span>
+    <span>AI Photo &amp; Video Studio</span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
