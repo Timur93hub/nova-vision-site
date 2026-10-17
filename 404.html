@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Сигнал потерян — Nova Vision</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#04050C">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="stylesheet" href="/css/style.css?v=7">
+<style>
+  .lost{
+    position: relative; min-height: calc(100svh - 61px);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; padding: 60px var(--gutter); overflow: hidden;
+  }
+  .lost-star{
+    position: absolute; left: 50%; top: 50%; width: 46vmax; height: 46vmax;
+    transform: translate(-50%, -50%); border-radius: 50%; pointer-events: none; opacity: .55;
+    background: radial-gradient(circle, rgba(255,214,154,.55) 0%, rgba(255,138,61,.28) 18%, rgba(255,98,40,.08) 42%, transparent 66%);
+    animation: drift 14s ease-in-out infinite;
+  }
+  .lost-orbit{
+    position: absolute; left: 50%; top: 50%; width: 70vmax; height: 70vmax; border-radius: 50%;
+    border: 1px solid rgba(226,232,248,.07); transform: translate(-50%, -50%) rotateX(72deg) rotateZ(-12deg);
+  }
+  @keyframes drift{ 50%{ transform: translate(-50%, -52%) scale(1.04); } }
+  .lost .eyebrow{ color: var(--brass-light); position: relative; }
+  .lost-code{
+    position: relative; font-family: var(--display); font-weight: 300;
+    font-size: clamp(110px, 24vw, 300px); line-height: .9; letter-spacing: -.07em; margin: 18px 0 10px;
+    background: linear-gradient(180deg, #F3F5FB 0%, #FFB874 120%); -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .lost h1{ position: relative; font-size: clamp(26px, 4vw, 46px); }
+  .lost h1 em{ color: var(--brass-light); }
+  .lost p{ position: relative; max-width: 440px; margin: 20px auto 34px; color: var(--star-dim); font-size: 16px; line-height: 1.7; }
+  .lost-actions{ position: relative; display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <a href="/" class="mast-logo">Nova <span class="dot">·</span> Vision</a>
+    <nav class="mast-nav">
+      <a href="/#works">Работы</a>
+      <a href="/about.html">Обо мне</a>
+      <a href="/contact.html">Контакты</a>
+    </nav>
+    <button class="mast-toggle" aria-label="Меню" aria-expanded="false">
+      <svg width="22" height="16" viewBox="0 0 22 16"><rect width="22" height="1.4" fill="currentColor"/><rect y="7.3" width="22" height="1.4" fill="currentColor"/><rect y="14.6" width="22" height="1.4" fill="currentColor"/></svg>
+    </button>
+  </div>
+</header>
+
+<main class="lost">
+  <div class="lost-orbit" aria-hidden="true"></div>
+  <div class="lost-star" aria-hidden="true"></div>
+  <span class="eyebrow">Ошибка 404 · сигнал потерян</span>
+  <div class="lost-code" aria-hidden="true">404</div>
+  <h1>Этой страницы нет <em>в нашей галактике</em></h1>
+  <p>Возможно, ссылка устарела или страница улетела на другую орбиту. Работы студии — на главной, а обсудить проект можно в Telegram.</p>
+  <div class="lost-actions">
+    <a href="/" class="btn btn-solid">На главную →</a>
+    <a href="/#works" class="btn on-dark">Смотреть работы</a>
+    <a href="https://t.me/T_Sh_93" target="_blank" rel="noopener" class="btn on-dark">Написать в Telegram</a>
+  </div>
+</main>
+
+<script src="/js/space.js?v=1"></script>
+<script src="/js/main.js?v=2"></script>
+</body>
+</html>
