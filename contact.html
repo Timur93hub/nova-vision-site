@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Контакты — Nova Vision</title>
 <meta name="description" content="Написать в Telegram Nova Vision — быстрый способ обсудить съёмку.">
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style.css?v=3">
 <style>
   .ct-hero{
     position:relative;
@@ -13,8 +13,8 @@
     display:flex;
     align-items:center;
     justify-content:center;
-    background: var(--ink);
-    color: var(--paper);
+    background: var(--space-2);
+    color: var(--star);
     overflow:hidden;
     text-align:center;
     padding: 60px var(--gutter);
@@ -23,8 +23,8 @@
     content:"";
     position:absolute; inset:0;
     background:
-      radial-gradient(circle at 20% 20%, rgba(169,131,75,0.16), transparent 45%),
-      radial-gradient(circle at 80% 75%, rgba(169,131,75,0.12), transparent 45%);
+      radial-gradient(circle at 20% 20%, rgba(255,138,61,0.16), transparent 45%),
+      radial-gradient(circle at 80% 75%, rgba(255,138,61,0.12), transparent 45%);
   }
   .ct-inner{
     position:relative; z-index:2;
@@ -39,7 +39,7 @@
   .ct-inner p.lede{
     font-size: 17px;
     line-height: 1.8;
-    color: rgba(237,231,219,0.78);
+    color: rgba(226,232,248,0.78);
     max-width: 520px;
     margin: 0 auto 44px;
   }
@@ -65,7 +65,7 @@
     font-family: var(--mono);
     font-size: 13px;
     letter-spacing: 0.06em;
-    color: rgba(237,231,219,0.55);
+    color: rgba(226,232,248,0.55);
   }
 
   .ct-meta{
@@ -167,6 +167,7 @@
   </div>
 </footer>
 
+<script src="js/space.js?v=1"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

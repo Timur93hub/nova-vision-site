@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nova Vision — AI-генерация фото и видео для fashion и предметной съёмки</title>
 <meta name="description" content="Nova Vision — студия AI-генерации визуала: моушн-дизайн для продуктов, мультфильмы, fashion, предметная съёмка и рекламные ролики.">
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style.css?v=3">
 <style>
   .hero{
     position:relative;
@@ -13,21 +13,51 @@
     display:flex;
     flex-direction:column;
     justify-content:flex-end;
-    background: var(--ink);
+    background: transparent;
     overflow:hidden;
   }
-  .hero-img{
-    position:absolute; inset:0;
-    width:100%; height:100%;
-    object-fit:cover;
-    object-position: 50% 18%;
-    opacity: 0.86;
+  .hero-star{
+    position:absolute;
+    right: -10vmax; bottom: -6vmax;
+    width: 50vmax; height: 50vmax;
+    border-radius: 50%;
+    pointer-events:none;
+    background:
+      radial-gradient(circle at 50% 50%, #FFF4E0 0%, #FFD39A 7%, #FF9A4D 16%, rgba(255,122,52,0.55) 26%, rgba(255,98,40,0.18) 42%, rgba(255,90,40,0.06) 58%, transparent 70%);
+    filter: saturate(1.05);
+    animation: starPulse 9s ease-in-out infinite;
+  }
+  .hero-star::before{ /* corona flare */
+    content:""; position:absolute; left:50%; top:50%;
+    width: 180%; height: 2px; transform: translate(-50%,-50%) rotate(-8deg);
+    background: linear-gradient(90deg, transparent, rgba(255,214,170,0.0) 20%, rgba(255,224,190,0.55) 50%, rgba(255,214,170,0) 80%, transparent);
+    filter: blur(0.6px);
+  }
+  .hero-star::after{ /* faint orbit */
+    content:""; position:absolute; inset: -18%;
+    border-radius: 50%;
+    border: 1px solid rgba(226,232,248,0.07);
+    transform: rotateX(72deg) rotateZ(-14deg);
+  }
+  @media (max-width: 760px){
+    .hero-star{ width: 120vw; height: 120vw; right: -55vw; bottom: auto; top: 2vh; opacity: .9; }
+    .hero-orbit-label{ display:none !important; }
+  }
+  @keyframes starPulse{
+    0%,100%{ transform: scale(1); opacity: .95; }
+    50%{ transform: scale(1.035); opacity: 1; }
   }
   .hero::after{
-    content:"";
-    position:absolute; inset:0;
-    background: linear-gradient(180deg, rgba(20,17,13,0.15) 0%, rgba(20,17,13,0.05) 32%, rgba(20,17,13,0.88) 92%);
+    content:""; position:absolute; inset:0; pointer-events:none;
+    background: linear-gradient(180deg, rgba(4,5,12,0) 82%, rgba(4,5,12,0.7) 100%);
   }
+  .hero-orbit-label{
+    position:absolute; z-index:2; right: calc(var(--gutter) + 4vw); top: 22%;
+    font-family: var(--mono); font-size: 10.5px; letter-spacing: .18em; text-transform: uppercase;
+    color: rgba(226,232,248,0.5);
+    display:flex; align-items:center; gap:12px;
+  }
+  .hero-orbit-label::before{ content:""; width:7px; height:7px; border-radius:50%; background: var(--brass); box-shadow: 0 0 12px 3px rgba(255,138,61,0.6); }
   .hero-content{
     position:relative;
     z-index:2;
@@ -35,7 +65,7 @@
     margin: 0 auto;
     width:100%;
     padding: 0 var(--gutter) 72px;
-    color: var(--paper);
+    color: var(--star);
   }
   .hero-eyebrow{
     font-family: var(--mono);
@@ -50,8 +80,10 @@
   }
   .hero-eyebrow::before{ content:""; width:36px; height:1px; background: var(--brass-light); }
   .hero-title{
-    font-size: clamp(56px, 11vw, 168px);
-    color: var(--paper);
+    font-size: clamp(52px, 10.5vw, 160px);
+    font-weight: 300;
+    letter-spacing: -0.05em;
+    color: var(--star);
   }
   .hero-title em{
     font-style: italic;
@@ -70,7 +102,7 @@
     max-width: 460px;
     font-size: 16px;
     line-height: 1.7;
-    color: rgba(237,231,219,0.82);
+    color: rgba(226,232,248,0.82);
   }
   .scroll-cue{
     position:absolute;
@@ -84,15 +116,15 @@
     font-size: 10.5px;
     letter-spacing:0.14em;
     text-transform:uppercase;
-    color: rgba(237,231,219,0.6);
+    color: rgba(226,232,248,0.6);
     writing-mode: vertical-rl;
   }
-  .scroll-cue .line{ width:1px; height:48px; background: rgba(237,231,219,0.4); }
+  .scroll-cue .line{ width:1px; height:48px; background: rgba(226,232,248,0.4); }
 
   /* Works — stacked 3D ring galleries */
   .works{
-    background: var(--ink);
-    color: var(--paper);
+    background: transparent;
+    color: var(--star);
     padding: 120px 0 60px;
     overflow: clip;
   }
@@ -100,7 +132,7 @@
   .works-intro .eyebrow{ color: var(--brass-light); margin-bottom: 18px; }
   .works-intro h2{ font-size: clamp(40px, 7vw, 96px); }
   .works-intro h2 em{ font-style: italic; font-weight: 400; color: var(--brass-light); }
-  .works-lead{ max-width: 460px; margin-top: 24px; color: rgba(237,231,219,0.62); font-size: 15px; line-height: 1.7; }
+  .works-lead{ max-width: 460px; margin-top: 24px; color: rgba(226,232,248,0.62); font-size: 15px; line-height: 1.7; }
 
   .work-block{ height: 260vh; position: relative; border-top: 1px solid var(--line-dark); }
   .work-block:first-of-type{ border-top: 0; }
@@ -122,21 +154,21 @@
   .work-num{ font-family: var(--mono); font-size: 12px; letter-spacing: .16em; color: var(--brass-light); align-self: start; padding-top: 10px; }
   .work-title h3{ font-size: clamp(34px, 5.4vw, 70px); }
   .work-title h3 em{ font-style: italic; font-weight: 400; color: var(--brass-light); }
-  .work-title p{ max-width: 520px; margin: 16px 0 0; color: rgba(237,231,219,0.66); font-size: 14.5px; line-height: 1.7; }
+  .work-title p{ max-width: 520px; margin: 16px 0 0; color: rgba(226,232,248,0.66); font-size: 14.5px; line-height: 1.7; }
   .work-meta{ display: flex; flex-direction: column; align-items: flex-end; gap: 14px; }
   .work-tag{
     font-family: var(--mono); font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase;
-    border: 1px solid var(--line-dark); padding: 6px 12px; color: rgba(237,231,219,0.8); white-space: nowrap;
+    border: 1px solid var(--line-dark); padding: 6px 12px; color: rgba(226,232,248,0.8); white-space: nowrap;
   }
   .work-link{
     font-family: var(--mono); font-size: 11.5px; letter-spacing: .12em; text-transform: uppercase;
-    color: var(--brass-light); border-bottom: 1px solid rgba(201,169,104,0.4); padding-bottom: 3px;
+    color: var(--brass-light); border-bottom: 1px solid rgba(255,178,102,0.4); padding-bottom: 3px;
     transition: border-color .3s var(--ease);
   }
   .work-link:hover{ border-color: var(--brass-light); }
 
   .ring{ position: relative; outline: none; }
-  .ring:focus-visible .ring-stage{ outline: 1px dashed rgba(201,169,104,0.5); outline-offset: -12px; }
+  .ring:focus-visible .ring-stage{ outline: 1px dashed rgba(255,178,102,0.5); outline-offset: -12px; }
   .ring-stage{
     --ch: min(calc(100svh - 330px), 560px);
     --cw: min(calc(var(--ch) * 0.6), 30vw);
@@ -157,13 +189,14 @@
   }
   .ring-card{
     position: absolute; left: 50%; top: 50%;
+    border: 0;
     width: var(--cw);
     height: var(--ch);
     margin: 0;
     border-radius: 14px;
     overflow: hidden;
-    background: #1f1b16;
-    box-shadow: 0 30px 60px -20px rgba(0,0,0,0.7), 0 0 0 1px rgba(237,231,219,0.08);
+    background: #0c1020;
+    box-shadow: 0 30px 60px -20px rgba(0,0,0,0.7), 0 0 0 1px rgba(226,232,248,0.08);
     cursor: pointer;
     will-change: transform, opacity;
   }
@@ -180,7 +213,7 @@
   }
   .ring-card::after{
     content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
-    background: linear-gradient(180deg, rgba(12,10,8,0) 55%, rgba(12,10,8,0.82) 100%);
+    background: linear-gradient(180deg, rgba(3,4,10,0) 55%, rgba(3,4,10,0.82) 100%);
   }
   .ring-card figcaption{
     position: absolute; left: 0; right: 0; bottom: 0; z-index: 3;
@@ -194,30 +227,30 @@
     width: 30px; height: 30px; border-radius: 50%;
     display: grid; place-items: center;
     font-size: 10px; padding-left: 2px;
-    background: rgba(12,10,8,0.55); color: var(--paper);
-    border: 1px solid rgba(237,231,219,0.3);
+    background: rgba(3,4,10,0.55); color: var(--star);
+    border: 1px solid rgba(226,232,248,0.3);
   }
-  .ring-card.is-active{ box-shadow: 0 40px 80px -24px rgba(0,0,0,0.85), 0 0 0 1px rgba(201,169,104,0.35); }
+  .ring-card.is-active{ box-shadow: 0 40px 80px -24px rgba(0,0,0,0.85), 0 0 0 1px rgba(255,178,102,0.45), 0 0 60px -10px rgba(255,138,61,0.35); }
 
   .ring-ui{
     display: flex; align-items: center; justify-content: center; gap: 28px;
     margin-top: 6px;
   }
-  .ring-count{ font-family: var(--mono); font-size: 12px; letter-spacing: .14em; color: rgba(237,231,219,0.6); min-width: 80px; }
+  .ring-count{ font-family: var(--mono); font-size: 12px; letter-spacing: .14em; color: rgba(226,232,248,0.6); min-width: 80px; }
   .ring-dots{ display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
   .ring-dots button{
     width: 22px; height: 2px; padding: 0; border: 0; cursor: pointer;
-    background: rgba(237,231,219,0.22); transition: background .3s var(--ease), width .3s var(--ease);
+    background: rgba(226,232,248,0.22); transition: background .3s var(--ease), width .3s var(--ease);
   }
   .ring-dots button.on{ background: var(--brass-light); width: 38px; }
   .ring-arrows{ display: flex; gap: 10px; min-width: 80px; justify-content: flex-end; }
   .ring-arrows button{
     width: 46px; height: 46px; border-radius: 50%;
-    background: transparent; color: var(--paper);
+    background: transparent; color: var(--star);
     border: 1px solid var(--line-dark); cursor: pointer; font-size: 16px;
     transition: border-color .3s var(--ease), background .3s var(--ease);
   }
-  .ring-arrows button:hover{ border-color: var(--brass-light); background: rgba(201,169,104,0.1); }
+  .ring-arrows button:hover{ border-color: var(--brass-light); background: rgba(255,178,102,0.1); }
 
   @media (max-width: 760px){
     .works{ padding-top: 90px; }
@@ -234,7 +267,7 @@
   /* Lightbox */
   .lightbox{
     position: fixed; inset: 0; z-index: 300;
-    background: rgba(12,10,8,0.94);
+    background: rgba(3,4,10,0.94);
     display: flex; flex-direction: column; align-items: center; justify-content: center;
     padding: 60px 16px 30px; gap: 16px;
   }
@@ -245,7 +278,7 @@
   .lightbox-close{
     position: absolute; top: 16px; right: 16px;
     width: 44px; height: 44px; border-radius: 50%;
-    background: transparent; color: var(--paper); border: 1px solid var(--line-dark);
+    background: transparent; color: var(--star); border: 1px solid var(--line-dark);
     font-size: 18px; cursor: pointer;
   }
 
@@ -276,8 +309,8 @@
 
   /* CTA */
   .cta-band{
-    background: var(--ink);
-    color: var(--paper);
+    background: radial-gradient(60% 120% at 50% 100%, rgba(255,138,61,0.16), transparent 70%);
+    color: var(--star);
     padding: 110px var(--gutter);
     text-align:center;
   }
@@ -312,13 +345,14 @@
 </header>
 
 <section class="hero">
-  <img class="hero-img" src="assets/fashion/look-02.jpg" alt="AI-сгенерированная fashion-съёмка Nova Vision">
+  <div class="hero-star" aria-hidden="true"></div>
+  <div class="hero-orbit-label" aria-hidden="true">AI Studio · Tashkent</div>
   <div class="hero-content">
-    <div class="hero-eyebrow">Vol. I — AI Editorial Studio</div>
+    <div class="hero-eyebrow">Vol. II — AI Visual Studio</div>
     <h1 class="hero-title">Nova<br><em>Vision</em></h1>
     <div class="hero-sub">
       <p>Фото и видео, рождённые без камеры. Моушн-дизайн для продуктов, мультфильмы, fashion, предметная съёмка и рекламные ролики — в кинематографичном качестве, без студии и съёмочной группы.</p>
-      <a href="#works" class="btn on-dark" style="border-color: var(--brass-light); color: var(--paper);">Смотреть работы ↓</a>
+      <a href="#works" class="btn on-dark" style="border-color: var(--brass-light); color: var(--star);">Смотреть работы ↓</a>
     </div>
   </div>
   <div class="scroll-cue"><span>Scroll</span><span class="line"></span></div>
@@ -551,7 +585,8 @@
   <p class="lightbox-cap"></p>
 </div>
 
+<script src="js/space.js?v=1"></script>
 <script src="js/main.js"></script>
-<script src="js/ring.js?v=2"></script>
+<script src="js/ring.js?v=3"></script>
 </body>
 </html>

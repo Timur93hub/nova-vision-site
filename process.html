@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Процесс — Nova Vision</title>
 <meta name="description" content="Как рождается кадр Nova Vision: от референса до готового видео.">
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style.css?v=3">
 <style>
   .page-hero{
     padding: 100px var(--gutter) 60px;
@@ -69,14 +69,14 @@
     background: var(--line);
   }
   .step{
-    background: var(--paper);
+    background: var(--glass);
     position:relative;
   }
   .step-media{
     position:relative;
     aspect-ratio: 3/4;
     overflow:hidden;
-    background: var(--bone);
+    background: var(--glass);
   }
   .step-media img, .step-media video{
     width:100%; height:100%;
@@ -92,7 +92,7 @@
     padding: 30px;
     color: var(--brass-dim);
     background:
-      repeating-linear-gradient(45deg, var(--paper-dim), var(--paper-dim) 10px, var(--paper) 10px, var(--paper) 20px);
+      repeating-linear-gradient(45deg, rgba(226,232,248,0.04), rgba(226,232,248,0.04) 10px, transparent 10px, transparent 20px);
   }
   .step-ref svg{ opacity: 0.55; }
   .step-ref span{
@@ -117,7 +117,7 @@
     transform: translateY(-50%);
     z-index: 3;
     width: 28px; height:28px;
-    background: var(--paper);
+    background: var(--glass);
     border: 1px solid var(--line);
     border-radius: 50%;
     display:flex; align-items:center; justify-content:center;
@@ -149,7 +149,7 @@
   @media (max-width: 760px){ .why{ grid-template-columns:1fr; gap:28px; } }
 
   .note-band{
-    background: var(--bone);
+    background: var(--glass);
     border-top: 1px solid var(--line);
     border-bottom: 1px solid var(--line);
     padding: 22px var(--gutter);
@@ -349,7 +349,7 @@
   </div>
 </section>
 
-<section class="cta-band" style="background:var(--ink); color:var(--paper); padding:90px var(--gutter); text-align:center;">
+<section class="cta-band" style="background: var(--space-2); color: var(--star); padding:90px var(--gutter); text-align:center;">
   <h2 style="font-size:clamp(30px,5vw,54px); margin:0 0 26px;">Хотите увидеть <em style="color:var(--brass-light); font-style:italic;">процесс на вашей задаче?</em></h2>
   <a href="https://t.me/T_Sh_93" target="_blank" rel="noopener" class="btn on-dark" style="border-color: var(--brass-light);">Написать в Telegram</a>
 </section>
@@ -382,6 +382,7 @@
   </div>
 </footer>
 
+<script src="js/space.js?v=1"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Fashion — Nova Vision</title>
 <meta name="description" content="AI-fashion съёмка Nova Vision — редакционная серия, сгенерированная нейросетями.">
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style.css?v=3">
 <style>
   .page-hero{
     padding: 100px var(--gutter) 60px;
@@ -54,7 +54,7 @@
   .look{
     position:relative;
     overflow:hidden;
-    background: var(--ink);
+    background: var(--space-2);
   }
   .look img, .look video{
     width:100%; height:100%;
@@ -70,8 +70,8 @@
     display:flex;
     justify-content:space-between;
     align-items:flex-end;
-    background: linear-gradient(0deg, rgba(20,17,13,0.78) 0%, rgba(20,17,13,0) 100%);
-    color: var(--paper);
+    background: linear-gradient(0deg, rgba(4,5,12,0.78) 0%, rgba(4,5,12,0) 100%);
+    color: var(--star);
     opacity: 0;
     transform: translateY(6px);
     transition: all 0.35s var(--ease);
@@ -88,14 +88,14 @@
     margin: 2px 0;
     position:relative;
   }
-  .video-block video{ width:100%; display:block; background:var(--ink); }
+  .video-block video{ width:100%; display:block; background: var(--space-2); }
   .video-tag{
     position:absolute; top:20px; left:24px;
     font-family: var(--mono); font-size:11px; letter-spacing:0.12em;
-    text-transform:uppercase; color:var(--paper);
+    text-transform:uppercase; color: var(--star);
     display:flex; align-items:center; gap:8px;
   }
-  .video-tag .dot{ width:7px; height:7px; border-radius:50%; background:#c65b4a; animation: pulse 1.8s infinite; }
+  .video-tag .dot{ width:7px; height:7px; border-radius:50%; background:#ff7a3d; animation: pulse 1.8s infinite; }
   @keyframes pulse{ 0%,100%{opacity:1;} 50%{opacity:0.35;} }
 
   @media (max-width: 760px){
@@ -205,7 +205,7 @@
   </div>
 </section>
 
-<section class="cta-band" style="background:var(--ink); color:var(--paper); padding:90px var(--gutter); text-align:center;">
+<section class="cta-band" style="background: var(--space-2); color: var(--star); padding:90px var(--gutter); text-align:center;">
   <h2 style="font-size:clamp(30px,5vw,54px); margin:0 0 26px;">Нужна похожая серия <em style="color:var(--brass-light); font-style:italic;">под ваш бренд?</em></h2>
   <a href="https://t.me/T_Sh_93" target="_blank" rel="noopener" class="btn on-dark" style="border-color: var(--brass-light);">Написать в Telegram</a>
 </section>
@@ -238,6 +238,7 @@
   </div>
 </footer>
 
+<script src="js/space.js?v=1"></script>
 <script src="js/main.js"></script>
 </body>
 </html>
