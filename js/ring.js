@@ -230,3 +230,20 @@
     requestAnimationFrame(t => { last = t; frame(t); });
   });
 })();
+
+// Hero showreel: open full-screen in the lightbox
+(function(){
+  const btn = document.querySelector('[data-reel]');
+  const lb = document.querySelector('.lightbox');
+  if(!btn || !lb) return;
+  btn.addEventListener('click', () => {
+    const media = lb.querySelector('.lightbox-media');
+    media.innerHTML = '';
+    const v = document.createElement('video');
+    v.src = 'assets/showreel.mp4'; v.controls = true; v.autoplay = true; v.loop = true; v.playsInline = true; v.muted = true;
+    media.appendChild(v);
+    lb.querySelector('.lightbox-cap').textContent = 'Nova Vision — Showreel 2026';
+    lb.hidden = false; document.body.style.overflow = 'hidden';
+    lb.querySelector('.lightbox-close').focus();
+  });
+})();

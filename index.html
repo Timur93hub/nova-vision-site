@@ -67,7 +67,7 @@
     background: linear-gradient(180deg, rgba(4,5,12,0) 82%, rgba(4,5,12,0.7) 100%);
   }
   .hero-orbit-label{
-    position:absolute; z-index:2; right: calc(var(--gutter) + 4vw); top: 22%;
+    position:absolute; z-index:2; right: calc(var(--gutter) + 4vw); top: 12%;
     font-family: var(--mono); font-size: 10.5px; letter-spacing: .18em; text-transform: uppercase;
     color: rgba(226,232,248,0.5);
     display:flex; align-items:center; gap:12px;
@@ -135,6 +135,64 @@
     writing-mode: vertical-rl;
   }
   .scroll-cue .line{ width:1px; height:48px; background: rgba(226,232,248,0.4); }
+
+  /* Showreel portal in the hero */
+  .reel-portal{
+    position:absolute; z-index:2;
+    right: calc(var(--gutter) + 9vw); top: 50%;
+    transform: translateY(-46%);
+    height: min(64vh, 620px); aspect-ratio: 9/16;
+    border-radius: 20px; overflow: hidden;
+    border: 1px solid rgba(255,184,116,0.35);
+    box-shadow: 0 0 0 1px rgba(4,5,12,0.6), 0 30px 80px -20px rgba(0,0,0,0.9), 0 0 120px -10px rgba(255,138,61,0.45);
+    background: #0c1020;
+    padding: 0; font: inherit; color: inherit;
+    cursor: pointer;
+    transition: transform .6s var(--ease), box-shadow .6s var(--ease);
+  }
+  .reel-portal:hover{ transform: translateY(-46%) scale(1.02); box-shadow: 0 0 0 1px rgba(4,5,12,0.6), 0 30px 80px -20px rgba(0,0,0,0.9), 0 0 160px -6px rgba(255,138,61,0.6); }
+  .reel-portal video{ width:100%; height:100%; object-fit:cover; display:block; }
+  .reel-portal::after{
+    content:""; position:absolute; inset:0; pointer-events:none;
+    background: linear-gradient(180deg, rgba(4,5,12,0) 62%, rgba(4,5,12,0.75) 100%);
+  }
+  .reel-label{
+    position:absolute; left:16px; right:16px; bottom:14px; z-index:2;
+    display:flex; align-items:center; justify-content:space-between; gap:10px;
+    font-family: var(--mono); font-size: 10.5px; letter-spacing:.16em; text-transform:uppercase; color: var(--star);
+  }
+  .reel-label .play{
+    width:34px; height:34px; border-radius:50%; display:grid; place-items:center;
+    background: var(--brass); color: var(--space); font-size: 11px; padding-left:2px;
+    box-shadow: 0 0 24px rgba(255,138,61,0.6);
+  }
+  .reel-rec{ display:flex; align-items:center; gap:8px; }
+  .reel-rec::before{ content:""; width:7px; height:7px; border-radius:50%; background:#ff5a3d; animation: recPulse 1.6s infinite; }
+  @keyframes recPulse{ 50%{ opacity:.3; } }
+  @media (max-width: 1100px){ .reel-portal{ right: var(--gutter); height: min(52vh, 520px); } }
+  @media (max-width: 760px){
+    .reel-portal{ position: relative; top: auto; right: auto; transform:none; align-self: flex-end; margin: 18px var(--gutter) 22px auto; height: auto; width: 38vw; border-radius: 14px; flex: none; }
+    .hero-content{ margin-top: auto; }
+    .reel-rec{ font-size: 0; gap: 0; }
+    .reel-portal:hover{ transform:none; }
+    .reel-label{ font-size: 9px; left:10px; right:10px; bottom:10px; }
+    .reel-label .play{ width:28px; height:28px; }
+  }
+
+  /* CTA under each direction */
+  .ring-cta{
+    font-family: var(--mono); font-size: 11px; letter-spacing:.12em; text-transform:uppercase;
+    padding: 13px 20px; border-radius: 999px;
+    background: var(--brass); color: var(--space); white-space: nowrap;
+    box-shadow: 0 0 30px -6px rgba(255,138,61,0.55);
+    transition: background .3s var(--ease), transform .3s var(--ease);
+  }
+  .ring-cta:hover{ background: var(--brass-light); transform: translateY(-1px); }
+  @media (max-width: 760px){
+    .ring-ui{ flex-wrap: wrap; gap: 14px; }
+    .ring-count{ display:none; }
+    .ring-cta{ padding: 12px 16px; font-size: 10px; }
+  }
 
   /* Works — stacked 3D ring galleries */
   .works{
@@ -357,6 +415,10 @@
 <section class="hero">
   <div class="hero-star" aria-hidden="true"></div>
   <div class="hero-orbit-label" aria-hidden="true">AI Studio · Tashkent</div>
+  <button type="button" class="reel-portal" data-reel aria-label="Смотреть шоурил на весь экран">
+    <video src="assets/showreel.mp4" poster="assets/showreel.webp" autoplay muted loop playsinline preload="auto"></video>
+    <span class="reel-label"><span class="reel-rec">Showreel 2026</span><span class="play" aria-hidden="true">▶</span></span>
+  </button>
   <div class="hero-content">
     <div class="hero-eyebrow">Vol. II — AI Visual Studio</div>
     <h1 class="hero-title">Nova<br><em>Vision</em></h1>
@@ -384,7 +446,7 @@
       </div>
       <div class="work-meta">
         <span class="work-tag">Новое · F&amp;B</span>
-        <a class="work-link" href="https://t.me/T_Sh_93" target="_blank" rel="noopener">Заказать ролик →</a>
+        <a class="work-link" href="process.html">Как это делается →</a>
       </div>
     </header>
     <div class="ring" data-ring tabindex="0" aria-roledescription="карусель" aria-label="Моушн-дизайн">
@@ -399,6 +461,7 @@
           <button type="button" class="ring-prev" aria-label="Предыдущая работа">←</button>
           <button type="button" class="ring-next" aria-label="Следующая работа">→</button>
         </div>
+        <a class="ring-cta" href="https://t.me/T_Sh_93" target="_blank" rel="noopener">Хочу ролик для своего продукта →</a>
       </div>
     </div>
     </div>
@@ -433,6 +496,7 @@
           <button type="button" class="ring-prev" aria-label="Предыдущая работа">←</button>
           <button type="button" class="ring-next" aria-label="Следующая работа">→</button>
         </div>
+        <a class="ring-cta" href="https://t.me/T_Sh_93" target="_blank" rel="noopener">Хочу своего персонажа →</a>
       </div>
     </div>
     </div>
@@ -469,6 +533,7 @@
           <button type="button" class="ring-prev" aria-label="Предыдущая работа">←</button>
           <button type="button" class="ring-next" aria-label="Следующая работа">→</button>
         </div>
+        <a class="ring-cta" href="https://t.me/T_Sh_93" target="_blank" rel="noopener">Хочу съёмку для бренда →</a>
       </div>
     </div>
     </div>
@@ -506,6 +571,7 @@
           <button type="button" class="ring-prev" aria-label="Предыдущая работа">←</button>
           <button type="button" class="ring-next" aria-label="Следующая работа">→</button>
         </div>
+        <a class="ring-cta" href="https://t.me/T_Sh_93" target="_blank" rel="noopener">Хочу кадры для своего товара →</a>
       </div>
     </div>
     </div>
@@ -536,6 +602,7 @@
           <button type="button" class="ring-prev" aria-label="Предыдущая работа">←</button>
           <button type="button" class="ring-next" aria-label="Следующая работа">→</button>
         </div>
+        <a class="ring-cta" href="https://t.me/T_Sh_93" target="_blank" rel="noopener">Обсудить рекламный ролик →</a>
       </div>
     </div>
     </div>
@@ -599,6 +666,6 @@
 
 <script src="js/space.js?v=1"></script>
 <script src="js/main.js?v=2"></script>
-<script src="js/ring.js?v=3"></script>
+<script src="js/ring.js?v=4"></script>
 </body>
 </html>
