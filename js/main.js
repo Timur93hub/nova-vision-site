@@ -56,3 +56,19 @@ if('IntersectionObserver' in window && revealEls.length){
     el.addEventListener('pointerleave', () => { el.style.transform = ''; });
   });
 })();
+
+// Videos that play only while visible (before/after block)
+(function(){
+  const vids = document.querySelectorAll('video[data-inview]');
+  if(!vids.length) return;
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!('IntersectionObserver' in window) || reduce) return;
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(en => {
+      const v = en.target;
+      if(en.isIntersecting){ v.preload = 'auto'; const p = v.play(); if(p) p.catch(() => {}); }
+      else v.pause();
+    });
+  }, { threshold: 0.35 });
+  vids.forEach(v => io.observe(v));
+})();
