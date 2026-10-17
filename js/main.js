@@ -24,3 +24,35 @@ if('IntersectionObserver' in window && revealEls.length){
 } else {
   revealEls.forEach(el => el.classList.add('in'));
 }
+
+// Living details: cursor star-glow and gentle tilt on photos (desktop pointers only)
+(function(){
+  const fine = window.matchMedia('(pointer: fine)').matches;
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!fine || reduce) return;
+  const glow = document.createElement('div');
+  glow.className = 'cursor-glow';
+  document.body.appendChild(glow);
+  let x = innerWidth / 2, y = innerHeight / 2, gx = x, gy = y, raf = null;
+  function tick(){
+    gx += (x - gx) * 0.14; gy += (y - gy) * 0.14;
+    glow.style.transform = `translate(${gx}px, ${gy}px)`;
+    raf = (Math.abs(x - gx) + Math.abs(y - gy) > 0.5) ? requestAnimationFrame(tick) : null;
+  }
+  window.addEventListener('pointermove', e => {
+    x = e.clientX; y = e.clientY;
+    glow.classList.add('on');
+    if(!raf) raf = requestAnimationFrame(tick);
+  }, { passive: true });
+  document.addEventListener('pointerleave', () => glow.classList.remove('on'));
+
+  document.querySelectorAll('.look').forEach(el => {
+    el.addEventListener('pointermove', e => {
+      const r = el.getBoundingClientRect();
+      const px = (e.clientX - r.left) / r.width - 0.5;
+      const py = (e.clientY - r.top) / r.height - 0.5;
+      el.style.transform = `perspective(1100px) rotateY(${px * 5}deg) rotateX(${-py * 5}deg)`;
+    });
+    el.addEventListener('pointerleave', () => { el.style.transform = ''; });
+  });
+})();
