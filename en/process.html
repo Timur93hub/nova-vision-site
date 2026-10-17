@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Process — Nova Vision</title>
+<meta name="description" content="How a Nova Vision shot is born: from reference to finished video.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Nova Vision">
+<meta property="og:title" content="Process — Nova Vision">
+<meta property="og:description" content="How a Nova Vision shot is born: from reference to finished video.">
+<meta property="og:url" content="https://novavision.uz/en/process.html">
+<meta property="og:image" content="https://novavision.uz/assets/og-en.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://novavision.uz/assets/og-en.jpg">
+<meta name="theme-color" content="#04050C">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="canonical" href="https://novavision.uz/en/process.html">
+<link rel="alternate" hreflang="ru" href="https://novavision.uz/process.html">
+<link rel="alternate" hreflang="en" href="https://novavision.uz/en/process.html">
+<link rel="alternate" hreflang="x-default" href="https://novavision.uz/process.html">
+<link rel="stylesheet" href="../css/style.css?v=7">
+<style>
+  .page-hero{
+    padding: 100px var(--gutter) 60px;
+    max-width: var(--wrap);
+    margin:0 auto;
+    border-bottom: 1px solid var(--line);
+  }
+  .page-hero-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    gap: 24px;
+    flex-wrap:wrap;
+  }
+  .page-hero h1{ font-size: clamp(44px, 8vw, 108px); }
+  .page-meta{
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-align:right;
+    line-height: 1.8;
+    color: var(--ink-soft);
+  }
+  .page-hero p.lede{
+    max-width: 640px;
+    font-size: 17px;
+    line-height: 1.75;
+    color: var(--ink-soft);
+    margin-top: 24px;
+  }
+
+  /* Pipeline */
+  .pipeline{
+    max-width: var(--wrap);
+    margin: 70px auto 0;
+    padding: 0 var(--gutter) 40px;
+  }
+  .pipeline-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    gap:24px;
+    flex-wrap:wrap;
+    margin-bottom: 32px;
+  }
+  .pipeline-head h2{ font-size: clamp(26px,4vw,38px); }
+  .case-tag{
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color: var(--brass-dim);
+    border: 1px solid var(--line);
+    padding: 7px 14px;
+  }
+
+  .steps{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2px;
+    background: var(--line);
+  }
+  .step{
+    background: var(--glass);
+    position:relative;
+  }
+  .step-media{
+    position:relative;
+    aspect-ratio: 3/4;
+    overflow:hidden;
+    background: var(--glass);
+  }
+  .step-media img, .step-media video{
+    width:100%; height:100%;
+    object-fit:cover;
+  }
+  .step-ref{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:14px;
+    text-align:center;
+    padding: 30px;
+    color: var(--brass-dim);
+    background:
+      repeating-linear-gradient(45deg, rgba(226,232,248,0.04), rgba(226,232,248,0.04) 10px, transparent 10px, transparent 20px);
+  }
+  .step-ref svg{ opacity: 0.55; }
+  .step-ref span{
+    font-family: var(--mono);
+    font-size: 11.5px;
+    letter-spacing: 0.08em;
+    max-width: 200px;
+    line-height:1.6;
+  }
+  .step-label{
+    padding: 20px 22px;
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+  }
+  .step-label .n{ font-family: var(--mono); font-size:11px; letter-spacing:0.12em; color: var(--brass-dim); }
+  .step-label h3{ font-family: var(--display); font-size: 22px; margin-top:4px; }
+  .step-arrow{
+    position:absolute;
+    top: 50%;
+    right: -14px;
+    transform: translateY(-50%);
+    z-index: 3;
+    width: 28px; height:28px;
+    background: var(--glass);
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    display:flex; align-items:center; justify-content:center;
+    color: var(--brass);
+  }
+  @media (max-width: 860px){
+    .steps{ grid-template-columns: 1fr; }
+    .step-arrow{ top: auto; bottom:-14px; right:50%; transform: translate(50%,0) rotate(90deg); }
+  }
+
+  .why{
+    max-width: var(--wrap);
+    margin: 100px auto 0;
+    padding: 70px var(--gutter);
+    border-top: 1px solid var(--line);
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+  }
+  .why h4{
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color: var(--brass-dim);
+    margin: 0 0 12px;
+  }
+  .why p{ font-size: 14.5px; line-height:1.7; color: var(--ink-soft); margin:0; }
+  @media (max-width: 760px){ .why{ grid-template-columns:1fr; gap:28px; } }
+
+  .note-band{
+    background: var(--glass);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 22px var(--gutter);
+    text-align:center;
+  }
+  .note-band p{
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing:0.04em;
+    color: var(--ink-soft);
+    max-width: 640px;
+    margin: 0 auto;
+    line-height:1.7;
+  }
+</style>
+
+<style>
+  .lang-switch{ font-family: var(--mono); font-size: 10.5px; letter-spacing: .14em; padding: 5px 10px; border: 1px solid var(--line-dark); border-radius: 999px; opacity: .85; margin-left: clamp(4px,1vw,10px); }
+  .lang-switch:hover{ border-color: var(--brass-light); color: var(--brass-light); opacity: 1; }
+  .mast-nav a.lang-switch::after{ display:none; }
+  @media (max-width: 760px){ .lang-switch{ align-self: flex-start; margin-left: 0; } }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <a href="./" class="mast-logo">Nova <span class="dot">·</span> Vision</a>
+    <nav class="mast-nav">
+      <a href="index.html#works" class="active">Work</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a class="lang-switch" href="../process.html" hreflang="ru" lang="ru">RU</a>
+    </nav>
+    <button class="mast-toggle" aria-label="Menu" aria-expanded="false">
+      <svg width="22" height="16" viewBox="0 0 22 16"><rect width="22" height="1.4" fill="currentColor"/><rect y="7.3" width="22" height="1.4" fill="currentColor"/><rect y="14.6" width="22" height="1.4" fill="currentColor"/></svg>
+    </button>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="page-hero-top">
+    <h1>Process</h1>
+    <div class="page-meta">
+      3 breakdowns · different formats<br>
+      Fashion · Advertising · Narrative<br>
+      Nano Banana Pro × Kling 3.0
+    </div>
+  </div>
+  <p class="lede">Every shot in the portfolio has a path behind it: the reference locks the product, character or mood, generation turns it into a finished scene, and animation brings it to life. Below are three breakdowns from different projects.</p>
+</section>
+
+<section class="pipeline">
+  <div class="pipeline-head reveal">
+    <h2>Shot breakdown · Look 01</h2>
+    <span class="case-tag">Fashion — Brooklyn Editorial</span>
+  </div>
+
+  <div class="steps reveal">
+    <div class="step">
+      <div class="step-media">
+        <img src="../assets/fashion/ref-look-01.webp" alt="Reference sheet — Look 01">
+      </div>
+      <div class="step-label">
+        <span class="n">Step 01</span>
+        <h3>Reference</h3>
+      </div>
+      <div class="step-arrow">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-media">
+        <img src="../assets/fashion/look-02.webp" alt="Generated photo — Look 01">
+      </div>
+      <div class="step-label">
+        <span class="n">Step 02</span>
+        <h3>Generation</h3>
+      </div>
+      <div class="step-arrow">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-media">
+        <video src="../assets/fashion/reel-01.mp4?v=2" poster="../assets/fashion/reel-01.webp" autoplay muted loop playsinline preload="metadata"></video>
+      </div>
+      <div class="step-label">
+        <span class="n">Step 03</span>
+        <h3>Video</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pipeline">
+  <div class="pipeline-head reveal">
+    <h2>Shot breakdown · Narrative video</h2>
+    <span class="case-tag">Shirin Sweets — a story in frame</span>
+  </div>
+
+  <div class="steps reveal">
+    <div class="step">
+      <div class="step-media">
+        <img src="../assets/process/ref-shirin.webp" alt="Reference — Shirin Sweets box photo">
+      </div>
+      <div class="step-label">
+        <span class="n">Step 01</span>
+        <h3>Reference</h3>
+      </div>
+      <div class="step-arrow">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-media">
+        <img src="../assets/process/gen-shirin.webp" alt="Generated scene — grandmother at the door with the box">
+      </div>
+      <div class="step-label">
+        <span class="n">Step 02</span>
+        <h3>Generation</h3>
+      </div>
+      <div class="step-arrow">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-media">
+        <video src="../assets/process/shirin-reel.mp4" poster="../assets/process/shirin-reel.webp" autoplay muted loop playsinline preload="metadata"></video>
+      </div>
+      <div class="step-label">
+        <span class="n">Step 03</span>
+        <h3>Video</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pipeline">
+  <div class="pipeline-head reveal">
+    <h2>Shot breakdown · Ad banner</h2>
+    <span class="case-tag">EVOS — Fast Food Ad</span>
+  </div>
+
+  <div class="steps reveal">
+    <div class="step">
+      <div class="step-media">
+        <img src="../assets/process/ref-evos.webp" alt="Reference sheet — model in a national dress">
+      </div>
+      <div class="step-label">
+        <span class="n">Step 01</span>
+        <h3>Reference</h3>
+      </div>
+      <div class="step-arrow">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-media">
+        <img src="../assets/process/gen-evos.webp" alt="Finished EVOS ad creative">
+      </div>
+      <div class="step-label">
+        <span class="n">Step 02</span>
+        <h3>Generation</h3>
+      </div>
+      <div class="step-arrow">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-media">
+        <video src="../assets/process/evos-reel.mp4" poster="../assets/process/evos-reel.webp" autoplay muted loop playsinline preload="metadata"></video>
+      </div>
+      <div class="step-label">
+        <span class="n">Step 03</span>
+        <h3>Video</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why">
+  <div class="reveal">
+    <h4>Reference</h4>
+    <p>A model consistency sheet — several angles and framings of one face and pose. It locks the look so it stays identical in every shot of the series.</p>
+  </div>
+  <div class="reveal">
+    <h4>Generation</h4>
+    <p>Nano Banana Pro and GPT Image 2.5 turn the reference into a finished photo: model, location, light and textures come together in one scene.</p>
+  </div>
+  <div class="reveal">
+    <h4>Video</h4>
+    <p>Kling 3.0 and Seedance 2.5 add motion — wind, steps, a turn of the head — turning a still into a living scene for Reels and ads.</p>
+  </div>
+</section>
+
+<section class="cta-band" style="background: var(--space-2); color: var(--star); padding:90px var(--gutter); text-align:center;">
+  <h2 style="font-size:clamp(30px,5vw,54px); margin:0 0 26px;">Want to see <em style="color:var(--brass-light); font-style:italic;">the process on your project?</em></h2>
+  <a href="https://t.me/T_Sh_93" target="_blank" rel="noopener" class="btn on-dark" style="border-color: var(--brass-light);">Message on Telegram</a>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand">Nova <span>Vision</span></div>
+      <p style="opacity:0.7; margin-top:14px; max-width:320px; font-size:14.5px; line-height:1.7;">AI photo and video studio: product motion design, animation, fashion, product photography and advertising.</p>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Navigation</div>
+      <a href="fashion.html">Fashion</a>
+      <a href="product.html">Product photography</a>
+      <a href="cartoons.html">Animation</a>
+      <a href="process.html">Process</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Contact</div>
+      <p>Tashkent, Uzbekistan</p>
+      <a href="https://t.me/T_Sh_93" target="_blank" rel="noopener">Message me on Telegram →</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Nova Vision</span>
+    <span>AI Photo &amp; Video Studio</span>
+  </div>
+</footer>
+
+<script src="../js/space.js?v=1"></script>
+<script src="../js/main.js?v=2"></script>
+</body>
+</html>

@@ -1,0 +1,682 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nova Vision — AI studio: motion design, ads, animation and product visuals</title>
+<meta name="description" content="Nova Vision is an AI visual studio: product motion design, animated films, fashion, product photography and commercials.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Nova Vision">
+<meta property="og:title" content="Nova Vision — AI studio: motion design, ads, animation and product visuals">
+<meta property="og:description" content="Nova Vision is an AI visual studio: product motion design, animated films, fashion, product photography and commercials.">
+<meta property="og:url" content="https://novavision.uz/en/">
+<meta property="og:image" content="https://novavision.uz/assets/og-en.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://novavision.uz/assets/og-en.jpg">
+<meta name="theme-color" content="#04050C">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="canonical" href="https://novavision.uz/en/">
+<link rel="alternate" hreflang="ru" href="https://novavision.uz/">
+<link rel="alternate" hreflang="en" href="https://novavision.uz/en/">
+<link rel="alternate" hreflang="x-default" href="https://novavision.uz/">
+<link rel="stylesheet" href="../css/style.css?v=7">
+<style>
+  .hero{
+    position:relative;
+    min-height: 100svh;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    background: transparent;
+    overflow:hidden;
+  }
+  .hero-star{
+    position:absolute;
+    right: -10vmax; bottom: -6vmax;
+    width: 50vmax; height: 50vmax;
+    border-radius: 50%;
+    pointer-events:none;
+    background:
+      radial-gradient(circle at 50% 50%, #FFF4E0 0%, #FFD39A 7%, #FF9A4D 16%, rgba(255,122,52,0.55) 26%, rgba(255,98,40,0.18) 42%, rgba(255,90,40,0.06) 58%, transparent 70%);
+    filter: saturate(1.05);
+    animation: starPulse 9s ease-in-out infinite;
+  }
+  .hero-star::before{ /* corona flare */
+    content:""; position:absolute; left:50%; top:50%;
+    width: 180%; height: 2px; transform: translate(-50%,-50%) rotate(-8deg);
+    background: linear-gradient(90deg, transparent, rgba(255,214,170,0.0) 20%, rgba(255,224,190,0.55) 50%, rgba(255,214,170,0) 80%, transparent);
+    filter: blur(0.6px);
+  }
+  .hero-star::after{ /* faint orbit */
+    content:""; position:absolute; inset: -18%;
+    border-radius: 50%;
+    border: 1px solid rgba(226,232,248,0.07);
+    transform: rotateX(72deg) rotateZ(-14deg);
+  }
+  @media (max-width: 760px){
+    .hero-star{ width: 120vw; height: 120vw; right: -55vw; bottom: auto; top: 2vh; opacity: .9; }
+    .hero-orbit-label{ display:none !important; }
+  }
+  @keyframes starPulse{
+    0%,100%{ transform: scale(1); opacity: .95; }
+    50%{ transform: scale(1.035); opacity: 1; }
+  }
+  .hero::after{
+    content:""; position:absolute; inset:0; pointer-events:none;
+    background: linear-gradient(180deg, rgba(4,5,12,0) 82%, rgba(4,5,12,0.7) 100%);
+  }
+  .hero-orbit-label{
+    position:absolute; z-index:2; right: calc(var(--gutter) + 4vw); top: 12%;
+    font-family: var(--mono); font-size: 10.5px; letter-spacing: .18em; text-transform: uppercase;
+    color: rgba(226,232,248,0.5);
+    display:flex; align-items:center; gap:12px;
+  }
+  .hero-orbit-label::before{ content:""; width:7px; height:7px; border-radius:50%; background: var(--brass); box-shadow: 0 0 12px 3px rgba(255,138,61,0.6); }
+  .hero-content{
+    position:relative;
+    z-index:2;
+    max-width: var(--wrap);
+    margin: 0 auto;
+    width:100%;
+    padding: 0 var(--gutter) 72px;
+    color: var(--star);
+  }
+  .hero-eyebrow{
+    font-family: var(--mono);
+    font-size:12px;
+    letter-spacing:0.2em;
+    text-transform:uppercase;
+    color: var(--brass-light);
+    margin-bottom: 20px;
+    display:flex;
+    gap: 18px;
+    align-items:center;
+  }
+  .hero-eyebrow::before{ content:""; width:36px; height:1px; background: var(--brass-light); }
+  .hero-title{
+    font-size: clamp(52px, 10.5vw, 160px);
+    font-weight: 300;
+    letter-spacing: -0.05em;
+    color: var(--star);
+  }
+  .hero-title em{
+    font-style: italic;
+    font-weight: 400;
+    color: var(--brass-light);
+  }
+  .hero-sub{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    gap: 32px;
+    margin-top: 36px;
+    flex-wrap:wrap;
+  }
+  .hero-sub p{
+    max-width: 460px;
+    font-size: 16px;
+    line-height: 1.7;
+    color: rgba(226,232,248,0.82);
+  }
+  .scroll-cue{
+    position:absolute;
+    right: var(--gutter);
+    bottom: 28px;
+    z-index:2;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color: rgba(226,232,248,0.6);
+    writing-mode: vertical-rl;
+  }
+  .scroll-cue .line{ width:1px; height:48px; background: rgba(226,232,248,0.4); }
+
+  /* Showreel portal in the hero */
+  .reel-portal{
+    position:absolute; z-index:2;
+    right: calc(var(--gutter) + 9vw); top: 50%;
+    transform: translateY(-46%);
+    height: min(64vh, 620px); aspect-ratio: 9/16;
+    border-radius: 20px; overflow: hidden;
+    border: 1px solid rgba(255,184,116,0.35);
+    box-shadow: 0 0 0 1px rgba(4,5,12,0.6), 0 30px 80px -20px rgba(0,0,0,0.9), 0 0 120px -10px rgba(255,138,61,0.45);
+    background: #0c1020;
+    padding: 0; font: inherit; color: inherit;
+    cursor: pointer;
+    transition: transform .6s var(--ease), box-shadow .6s var(--ease);
+  }
+  .reel-portal:hover{ transform: translateY(-46%) scale(1.02); box-shadow: 0 0 0 1px rgba(4,5,12,0.6), 0 30px 80px -20px rgba(0,0,0,0.9), 0 0 160px -6px rgba(255,138,61,0.6); }
+  .reel-portal video{ width:100%; height:100%; object-fit:cover; display:block; }
+  .reel-portal::after{
+    content:""; position:absolute; inset:0; pointer-events:none;
+    background: linear-gradient(180deg, rgba(4,5,12,0) 62%, rgba(4,5,12,0.75) 100%);
+  }
+  .reel-label{
+    position:absolute; left:16px; right:16px; bottom:14px; z-index:2;
+    display:flex; align-items:center; justify-content:space-between; gap:10px;
+    font-family: var(--mono); font-size: 10.5px; letter-spacing:.16em; text-transform:uppercase; color: var(--star);
+  }
+  .reel-label .play{
+    width:34px; height:34px; border-radius:50%; display:grid; place-items:center;
+    background: var(--brass); color: var(--space); font-size: 11px; padding-left:2px;
+    box-shadow: 0 0 24px rgba(255,138,61,0.6);
+  }
+  .reel-rec{ display:flex; align-items:center; gap:8px; }
+  .reel-rec::before{ content:""; width:7px; height:7px; border-radius:50%; background:#ff5a3d; animation: recPulse 1.6s infinite; }
+  @keyframes recPulse{ 50%{ opacity:.3; } }
+  @media (max-width: 1100px){ .reel-portal{ right: var(--gutter); height: min(52vh, 520px); } }
+  @media (max-width: 760px){
+    .reel-portal{ position: relative; top: auto; right: auto; transform:none; align-self: flex-end; margin: 18px var(--gutter) 22px auto; height: auto; width: 38vw; border-radius: 14px; flex: none; }
+    .hero-content{ margin-top: auto; }
+    .reel-rec{ font-size: 0; gap: 0; }
+    .reel-portal:hover{ transform:none; }
+    .reel-label{ font-size: 9px; left:10px; right:10px; bottom:10px; }
+    .reel-label .play{ width:28px; height:28px; }
+  }
+
+  /* CTA under each direction */
+  .ring-cta{
+    font-family: var(--mono); font-size: 11px; letter-spacing:.12em; text-transform:uppercase;
+    padding: 13px 20px; border-radius: 999px;
+    background: var(--brass); color: var(--space); white-space: nowrap;
+    box-shadow: 0 0 30px -6px rgba(255,138,61,0.55);
+    transition: background .3s var(--ease), transform .3s var(--ease);
+  }
+  .ring-cta:hover{ background: var(--brass-light); transform: translateY(-1px); }
+  @media (max-width: 760px){
+    .ring-ui{ flex-wrap: wrap; gap: 14px; }
+    .ring-count{ display:none; }
+    .ring-cta{ padding: 12px 16px; font-size: 10px; }
+  }
+
+  /* Works — stacked 3D ring galleries */
+  .works{
+    background: transparent;
+    color: var(--star);
+    padding: 120px 0 60px;
+    overflow: clip;
+  }
+  .works-intro{ margin-bottom: 40px; }
+  .works-intro .eyebrow{ color: var(--brass-light); margin-bottom: 18px; }
+  .works-intro h2{ font-size: clamp(40px, 7vw, 96px); }
+  .works-intro h2 em{ font-style: italic; font-weight: 400; color: var(--brass-light); }
+  .works-lead{ max-width: 460px; margin-top: 24px; color: rgba(226,232,248,0.62); font-size: 15px; line-height: 1.7; }
+
+  .work-block{ height: 260vh; position: relative; border-top: 1px solid var(--line-dark); }
+  .work-block:first-of-type{ border-top: 0; }
+  .work-sticky{
+    position: sticky; top: 58px;
+    height: calc(100svh - 58px);
+    display: flex; flex-direction: column;
+    padding: 34px 0 22px;
+    overflow: hidden;
+  }
+  .work-sticky > .wrap, .work-sticky .ring-ui{ width: 100%; }
+  .work-sticky .ring{ flex: 1; display: flex; flex-direction: column; min-height: 0; }
+  .work-head{
+    display: grid;
+    grid-template-columns: 70px 1fr auto;
+    gap: 24px;
+    align-items: end;
+  }
+  .work-num{ font-family: var(--mono); font-size: 12px; letter-spacing: .16em; color: var(--brass-light); align-self: start; padding-top: 10px; }
+  .work-title h3{ font-size: clamp(34px, 5.4vw, 70px); }
+  .work-title h3 em{ font-style: italic; font-weight: 400; color: var(--brass-light); }
+  .work-title p{ max-width: 520px; margin: 16px 0 0; color: rgba(226,232,248,0.66); font-size: 14.5px; line-height: 1.7; }
+  .work-meta{ display: flex; flex-direction: column; align-items: flex-end; gap: 14px; }
+  .work-tag{
+    font-family: var(--mono); font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase;
+    border: 1px solid var(--line-dark); padding: 6px 12px; color: rgba(226,232,248,0.8); white-space: nowrap;
+  }
+  .work-link{
+    font-family: var(--mono); font-size: 11.5px; letter-spacing: .12em; text-transform: uppercase;
+    color: var(--brass-light); border-bottom: 1px solid rgba(255,178,102,0.4); padding-bottom: 3px;
+    transition: border-color .3s var(--ease);
+  }
+  .work-link:hover{ border-color: var(--brass-light); }
+
+  .ring{ position: relative; outline: none; }
+  .ring:focus-visible .ring-stage{ outline: 1px dashed rgba(255,178,102,0.5); outline-offset: -12px; }
+  .ring-stage{
+    --ch: min(calc(100svh - 330px), 560px);
+    --cw: min(calc(var(--ch) * 0.6), 30vw);
+    position: relative;
+    flex: 1;
+    min-height: 0;
+    perspective: 1800px;
+    perspective-origin: 50% 45%;
+    cursor: grab;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  .ring-stage.grabbing{ cursor: grabbing; }
+  .ring-track{
+    position: absolute; inset: 0;
+    transform-style: preserve-3d;
+    transform: translateZ(calc(var(--r, 600px) * -1));
+  }
+  .ring-card{
+    position: absolute; left: 50%; top: 50%;
+    border: 0;
+    width: var(--cw);
+    height: var(--ch);
+    margin: 0;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #0c1020;
+    box-shadow: 0 30px 60px -20px rgba(0,0,0,0.7), 0 0 0 1px rgba(226,232,248,0.08);
+    cursor: pointer;
+    will-change: transform, opacity;
+  }
+  .ring:not(.ready) .ring-card{ opacity: 0; }
+  .ring-card img, .ring-card video{
+    position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+    pointer-events: none;
+    -webkit-user-drag: none;
+  }
+  .ring-card::before{
+    content: ""; position: absolute; inset: 0; z-index: 2; pointer-events: none;
+    background: #0c0a08; opacity: var(--dim, 0);
+    transition: opacity .2s linear;
+  }
+  .ring-card::after{
+    content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+    background: linear-gradient(180deg, rgba(3,4,10,0) 55%, rgba(3,4,10,0.82) 100%);
+  }
+  .ring-card figcaption{
+    position: absolute; left: 0; right: 0; bottom: 0; z-index: 3;
+    padding: 20px 20px 22px;
+    display: flex; flex-direction: column; gap: 6px;
+  }
+  .ring-cap-title{ font-family: var(--display); font-size: clamp(19px, 1.7vw, 25px); line-height: 1.1; }
+  .ring-cap-sub{ font-family: var(--mono); font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--brass-light); }
+  .ring-play{
+    position: absolute; top: 16px; right: 16px; z-index: 3;
+    width: 30px; height: 30px; border-radius: 50%;
+    display: grid; place-items: center;
+    font-size: 10px; padding-left: 2px;
+    background: rgba(3,4,10,0.55); color: var(--star);
+    border: 1px solid rgba(226,232,248,0.3);
+  }
+  .ring-card.is-active{ box-shadow: 0 40px 80px -24px rgba(0,0,0,0.85), 0 0 0 1px rgba(255,178,102,0.45), 0 0 60px -10px rgba(255,138,61,0.35); }
+
+  .ring-ui{
+    display: flex; align-items: center; justify-content: center; gap: 28px;
+    margin-top: 6px;
+  }
+  .ring-count{ font-family: var(--mono); font-size: 12px; letter-spacing: .14em; color: rgba(226,232,248,0.6); min-width: 80px; }
+  .ring-dots{ display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+  .ring-dots button{
+    width: 22px; height: 2px; padding: 0; border: 0; cursor: pointer;
+    background: rgba(226,232,248,0.22); transition: background .3s var(--ease), width .3s var(--ease);
+  }
+  .ring-dots button.on{ background: var(--brass-light); width: 38px; }
+  .ring-arrows{ display: flex; gap: 10px; min-width: 80px; justify-content: flex-end; }
+  .ring-arrows button{
+    width: 46px; height: 46px; border-radius: 50%;
+    background: transparent; color: var(--star);
+    border: 1px solid var(--line-dark); cursor: pointer; font-size: 16px;
+    transition: border-color .3s var(--ease), background .3s var(--ease);
+  }
+  .ring-arrows button:hover{ border-color: var(--brass-light); background: rgba(255,178,102,0.1); }
+
+  @media (max-width: 760px){
+    .works{ padding-top: 90px; }
+    .work-head{ grid-template-columns: 1fr; gap: 14px; }
+    .work-num{ padding-top: 0; }
+    .work-meta{ flex-direction: row; align-items: center; justify-content: space-between; }
+    .work-block{ height: 165vh; }
+    .work-sticky{ padding-top: 22px; }
+    .work-title p{ display: none; }
+    .ring-stage{ --ch: min(calc(100svh - 300px), 470px); --cw: min(calc(var(--ch) * 0.6), 56vw); perspective: 1100px; }
+    .ring-dots{ display: none; }
+  }
+
+  /* Lightbox */
+  .lightbox{
+    position: fixed; inset: 0; z-index: 300;
+    background: rgba(3,4,10,0.94);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    padding: 60px 16px 30px; gap: 16px;
+  }
+  .lightbox[hidden]{ display: none; }
+  .lightbox-media{ display: flex; justify-content: center; max-width: 100%; }
+  .lightbox-media img, .lightbox-media video{ max-height: 80vh; max-width: min(92vw, 900px); width: auto; border-radius: 10px; }
+  .lightbox-cap{ font-family: var(--mono); font-size: 11.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--brass-light); text-align: center; }
+  .lightbox-close{
+    position: absolute; top: 16px; right: 16px;
+    width: 44px; height: 44px; border-radius: 50%;
+    background: transparent; color: var(--star); border: 1px solid var(--line-dark);
+    font-size: 18px; cursor: pointer;
+  }
+
+  /* Tools strip */
+  .tools-strip{
+    margin: 100px 0;
+    padding: 40px var(--gutter);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .tools-strip .wrap{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap: 20px;
+  }
+  .tools-strip .eyebrow{ margin:0; }
+  .tools-list{
+    display:flex;
+    gap: 32px;
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 20px;
+    color: var(--ink-soft);
+    flex-wrap:wrap;
+  }
+
+  /* CTA */
+  .cta-band{
+    background: radial-gradient(60% 120% at 50% 100%, rgba(255,138,61,0.16), transparent 70%);
+    color: var(--star);
+    padding: 110px var(--gutter);
+    text-align:center;
+  }
+  .cta-band h2{
+    font-size: clamp(36px, 6vw, 72px);
+    margin: 0 auto 28px;
+    max-width: 820px;
+  }
+  .cta-band h2 em{ font-style:italic; color: var(--brass-light); }
+  .cta-actions{ display:flex; gap:16px; justify-content:center; flex-wrap:wrap; }
+</style>
+
+<style>
+  .lang-switch{ font-family: var(--mono); font-size: 10.5px; letter-spacing: .14em; padding: 5px 10px; border: 1px solid var(--line-dark); border-radius: 999px; opacity: .85; margin-left: clamp(4px,1vw,10px); }
+  .lang-switch:hover{ border-color: var(--brass-light); color: var(--brass-light); opacity: 1; }
+  .mast-nav a.lang-switch::after{ display:none; }
+  @media (max-width: 760px){ .lang-switch{ align-self: flex-start; margin-left: 0; } }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <a href="./" class="mast-logo">Nova <span class="dot">·</span> Vision</a>
+    <nav class="mast-nav">
+      <a href="#works" class="active">Work</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a class="lang-switch" href="../" hreflang="ru" lang="ru">RU</a>
+    </nav>
+    <button class="mast-toggle" aria-label="Menu" aria-expanded="false">
+      <svg width="22" height="16" viewBox="0 0 22 16"><rect width="22" height="1.4" fill="currentColor"/><rect y="7.3" width="22" height="1.4" fill="currentColor"/><rect y="14.6" width="22" height="1.4" fill="currentColor"/></svg>
+    </button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-star" aria-hidden="true"></div>
+  <div class="hero-orbit-label" aria-hidden="true">AI Studio · Tashkent</div>
+  <button type="button" class="reel-portal" data-reel aria-label="Watch the showreel full screen">
+    <video src="../assets/showreel.mp4" poster="../assets/showreel.webp" autoplay muted loop playsinline preload="auto"></video>
+    <span class="reel-label"><span class="reel-rec">Showreel 2026</span><span class="play" aria-hidden="true">▶</span></span>
+  </button>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Vol. II — AI Visual Studio</div>
+    <h1 class="hero-title">Nova<br><em>Vision</em></h1>
+    <div class="hero-sub">
+      <p>Photo and video born without a camera. Product motion design, animated films, fashion, product photography and commercials — cinematic quality, no studio, no film crew.</p>
+      <a href="#works" class="btn on-dark" style="border-color: var(--brass-light); color: var(--star);">See the work ↓</a>
+    </div>
+  </div>
+  <div class="scroll-cue"><span>Scroll</span><span class="line"></span></div>
+</section>
+
+<section class="works" id="works">
+  <div class="works-intro wrap reveal">
+    <p class="eyebrow">Portfolio · 05 disciplines</p>
+    <h2>Five disciplines,<br><em>one studio</em></h2>
+    <p class="works-lead">Scroll the page and the galleries spin with you. You can also turn them by hand with the arrows or a swipe. Tap the piece in the centre to open it full size.</p>
+  </div>
+  <article class="work-block" id="motion">
+    <div class="work-sticky">
+    <header class="work-head wrap reveal">
+      <span class="work-num">01</span>
+      <div class="work-title">
+        <h3>Motion design <em>for products</em></h3>
+        <p>Hyper-motion clips for Reels and ads: your product from a single photo, juicy liquid and fruit physics, 10 seconds in 9:16.</p>
+      </div>
+      <div class="work-meta">
+        <span class="work-tag">New · F&amp;B</span>
+        <a class="work-link" href="process.html">How it's made →</a>
+      </div>
+    </header>
+    <div class="ring" data-ring tabindex="0" aria-roledescription="carousel" aria-label="Motion design">
+      <div class="ring-stage"><div class="ring-track">
+        <figure class="ring-card"><video data-src="../assets/motion/detox.mp4" poster="../assets/motion/detox.webp" muted playsinline preload="none"></video><span class="ring-play" aria-hidden="true">▶</span><figcaption><span class="ring-cap-title">“Detox” smoothie</span><span class="ring-cap-sub">Hyper motion · MiniMax H3</span></figcaption></figure>
+        <figure class="ring-card"><video data-src="../assets/motion/sauce.mp4" poster="../assets/motion/sauce.webp" muted playsinline preload="none"></video><span class="ring-play" aria-hidden="true">▶</span><figcaption><span class="ring-cap-title">“Sugo al Basilico” sauce</span><span class="ring-cap-sub">Hyper motion · packshot</span></figcaption></figure>
+        <figure class="ring-card"><video data-src="../assets/motion/tea.mp4" poster="../assets/motion/tea.webp" muted playsinline preload="none"></video><span class="ring-play" aria-hidden="true">▶</span><figcaption><span class="ring-cap-title">Berry tea</span><span class="ring-cap-sub">Drinks line · MiniMax H3</span></figcaption></figure>
+      </div></div>
+      <div class="ring-ui wrap">
+        <span class="ring-count">01</span>
+        <div class="ring-arrows">
+          <button type="button" class="ring-prev" aria-label="Previous piece">←</button>
+          <button type="button" class="ring-next" aria-label="Next piece">→</button>
+        </div>
+        <a class="ring-cta" href="https://t.me/T_Sh_93" target="_blank" rel="noopener">I want a clip for my product →</a>
+      </div>
+    </div>
+    </div>
+  </article>
+  <article class="work-block" id="cartoons">
+    <div class="work-sticky">
+    <header class="work-head wrap reveal">
+      <span class="work-num">02</span>
+      <div class="work-title">
+        <h3>Animation <em>&amp; characters</em></h3>
+        <p>Character design and animation: from the first concept of a hero to a moving, voiced scene.</p>
+      </div>
+      <div class="work-meta">
+        <span class="work-tag">Case · “Runaways from the Plov”</span>
+        <a class="work-link" href="cartoons.html">Full case →</a>
+      </div>
+    </header>
+    <div class="ring" data-ring tabindex="0" aria-roledescription="carousel" aria-label="Animation">
+      <div class="ring-stage"><div class="ring-track">
+        <figure class="ring-card"><video data-src="../assets/cartoons/plov-reel.mp4" poster="../assets/cartoons/plov-reel.webp" muted playsinline preload="none"></video><span class="ring-play" aria-hidden="true">▶</span><figcaption><span class="ring-cap-title">“Runaways from the Plov”</span><span class="ring-cap-sub">Animated short · Kling 3.0</span></figcaption></figure>
+        <figure class="ring-card"><img src="../assets/cartoons/plov-01.webp" alt="Queen Flatbread — Character" loading="lazy" decoding="async"><figcaption><span class="ring-cap-title">Queen Flatbread</span><span class="ring-cap-sub">Character</span></figcaption></figure>
+        <figure class="ring-card"><img src="../assets/cartoons/plov-06.webp" alt="The Cauldron, villain — Character" loading="lazy" decoding="async"><figcaption><span class="ring-cap-title">The Cauldron, villain</span><span class="ring-cap-sub">Character</span></figcaption></figure>
+        <figure class="ring-card"><img src="../assets/cartoons/plov-02.webp" alt="Strongman Meat &amp; Professor Rice Grain — Character" loading="lazy" decoding="async"><figcaption><span class="ring-cap-title">Strongman Meat &amp; Professor Rice Grain</span><span class="ring-cap-sub">Character</span></figcaption></figure>
+        <figure class="ring-card"><img src="../assets/cartoons/plov-03.webp" alt="Little Carrot — Character" loading="lazy" decoding="async"><figcaption><span class="ring-cap-title">Little Carrot</span><span class="ring-cap-sub">Character</span></figcaption></figure>
+        <figure class="ring-card"><img src="../assets/cartoons/plov-04.webp" alt="Pepper — Character" loading="lazy" decoding="async"><figcaption><span class="ring-cap-title">Pepper</span><span class="ring-cap-sub">Character</span></figcaption></figure>
+        <figure class="ring-card"><img src="../assets/cartoons/plov-07.webp" alt="Crying Onion — Character" loading="lazy" decoding="async"><figcaption><span class="ring-cap-title">Crying Onion</span><span class="ring-cap-sub">Character</span></figcaption></figure>
+        <figure class="ring-card"><img src="../assets/cartoons/plov-08.webp" alt="Grandpa Garlic, the sage — Character" loading="lazy" decoding="async"><figcaption><span class="ring-cap-title">Grandpa Garlic, the sage</span><span class="ring-cap-sub">Character</span></figcaption></figure>
+      </div></div>
+      <div class="ring-ui wrap">
+        <span class="ring-count">01</span>
+        <div class="ring-arrows">
+          <button type="button" class="ring-prev" aria-label="Previous piece">←</button>
+          <button type="button" class="ring-next" aria-label="Next piece">→</button>
+        </div>
+        <a class="ring-cta" href="https://t.me/T_Sh_93" target="_blank" rel="noopener">I want my own character →</a>
+      </div>
+    </div>
+    </div>
+  </article>
+  <article class="work-block" id="fashion">
+    <div class="work-sticky">
+    <header class="work-head wrap reveal">
+      <span class="work-num">03</span>
+      <div class="work-title">
+        <h3>Fashion <em>editorial</em></h3>
+        <p>Editorial looks and street style — model, location and light generated around the brand's brief.</p>
+      </div>
+      <div class="work-meta">
+        <span class="work-tag">9 looks + video</span>
+        <a class="work-link" href="fashion.html">All looks →</a>
+      </div>
+    </header>
+    <div class="ring" data-ring tabindex="0" aria-roledescription="carousel" aria-label="Fashion">
+      <div class="ring-stage"><div class="ring-track">
+        <figure class="ring-card"><video data-src="../assets/fashion/reel-01.mp4?v=2" poster="../assets/fashion/reel-01.webp" muted playsinline preload="none"></video><span class="ring-play" aria-hidden="true">▶</span><figcaption><span class="ring-cap-title">White Dress, NYC</span><span class="ring-cap-sub">Fashion film</span></figcaption></figure>
+        <figure class="ring-card"><img src="../assets/fashion/look-01.webp" alt="Look 01 — White Dress, NYC" loading="lazy" decoding="async"><figcaption><span class="ring-cap-title">Look 01</span><span class="ring-cap-sub">White Dress, NYC</span></figcaption></figure>
+        <figure class="ring-card"><img src="../assets/fashion/look-02.webp" alt="Look 02 — White Dress, NYC" loading="lazy" decoding="async"><figcaption><span class="ring-cap-title">Look 02</span><span class="ring-cap-sub">White Dress, NYC</span></figcaption></figure>
+        <figure class="ring-card"><img src="../assets/fashion/look-03.webp" alt="Look 03 — White Dress, NYC" loading="lazy" decoding="async"><figcaption><span class="ring-cap-title">Look 03</span><span class="ring-cap-sub">White Dress, NYC</span></figcaption></figure>
+        <figure class="ring-card"><img src="../assets/fashion/look-04.webp" alt="Look 04 — White Dress, NYC" loading="lazy" decoding="async"><figcaption><span class="ring-cap-title">Look 04</span><span class="ring-cap-sub">White Dress, NYC</span></figcaption></figure>
+        <figure class="ring-card"><img src="../assets/fashion/look-05.webp" alt="Look 05 — White Dress, NYC" loading="lazy" decoding="async"><figcaption><span class="ring-cap-title">Look 05</span><span class="ring-cap-sub">White Dress, NYC</span></figcaption></figure>
+        <figure class="ring-card"><img src="../assets/fashion/look-06.webp" alt="Look 06 — White Dress, NYC" loading="lazy" decoding="async"><figcaption><span class="ring-cap-title">Look 06</span><span class="ring-cap-sub">White Dress, NYC</span></figcaption></figure>
+        <figure class="ring-card"><img src="../assets/fashion/look-07.webp" alt="Look 07 — White Dress, NYC" loading="lazy" decoding="async"><figcaption><span class="ring-cap-title">Look 07</span><span class="ring-cap-sub">White Dress, NYC</span></figcaption></figure>
+        <figure class="ring-card"><img src="../assets/fashion/look-08.webp" alt="Look 08 — White Dress, NYC" loading="lazy" decoding="async"><figcaption><span class="ring-cap-title">Look 08</span><span class="ring-cap-sub">White Dress, NYC</span></figcaption></figure>
+        <figure class="ring-card"><img src="../assets/fashion/look-09.webp" alt="Look 09 — White Dress, NYC" loading="lazy" decoding="async"><figcaption><span class="ring-cap-title">Look 09</span><span class="ring-cap-sub">White Dress, NYC</span></figcaption></figure>
+      </div></div>
+      <div class="ring-ui wrap">
+        <span class="ring-count">01</span>
+        <div class="ring-arrows">
+          <button type="button" class="ring-prev" aria-label="Previous piece">←</button>
+          <button type="button" class="ring-next" aria-label="Next piece">→</button>
+        </div>
+        <a class="ring-cta" href="https://t.me/T_Sh_93" target="_blank" rel="noopener">I want a shoot for my brand →</a>
+      </div>
+    </div>
+    </div>
+  </article>
+  <article class="work-block" id="product">
+    <div class="work-sticky">
+    <header class="work-head wrap reveal">
+      <span class="work-num">04</span>
+      <div class="work-title">
+        <h3>Product <em>photography</em></h3>
+        <p>Product visuals for e-commerce and ads: a full set of scenes from a single product photo.</p>
+      </div>
+      <div class="work-meta">
+        <span class="work-tag">2 cases · 11 scenes</span>
+        <a class="work-link" href="product.html">All cases →</a>
+      </div>
+    </header>
+    <div class="ring" data-ring tabindex="0" aria-roledescription="carousel" aria-label="Product">
+      <div class="ring-stage"><div class="ring-track">
+        <figure class="ring-card"><img src="../assets/product/prod-03.webp" alt="Babylon Store — Worn by a child, playground" loading="lazy" decoding="async"><figcaption><span class="ring-cap-title">Babylon Store</span><span class="ring-cap-sub">Worn by a child, playground</span></figcaption></figure>
+        <figure class="ring-card"><img src="../assets/product/prod-05.webp" alt="Babylon Store — “Jungle” art concept" loading="lazy" decoding="async"><figcaption><span class="ring-cap-title">Babylon Store</span><span class="ring-cap-sub">“Jungle” art concept</span></figcaption></figure>
+        <figure class="ring-card"><img src="../assets/product/prod-01.webp" alt="Babylon Store — Flat lay with toys" loading="lazy" decoding="async"><figcaption><span class="ring-cap-title">Babylon Store</span><span class="ring-cap-sub">Flat lay with toys</span></figcaption></figure>
+        <figure class="ring-card"><img src="../assets/product/prod-04.webp" alt="Babylon Store — Lifestyle, in hand" loading="lazy" decoding="async"><figcaption><span class="ring-cap-title">Babylon Store</span><span class="ring-cap-sub">Lifestyle, in hand</span></figcaption></figure>
+        <figure class="ring-card"><img src="../assets/product/prod-02.webp" alt="Babylon Store — On a hanger" loading="lazy" decoding="async"><figcaption><span class="ring-cap-title">Babylon Store</span><span class="ring-cap-sub">On a hanger</span></figcaption></figure>
+        <figure class="ring-card"><img src="../assets/product/prod-06.webp" alt="Babylon Store — Tabletop with props" loading="lazy" decoding="async"><figcaption><span class="ring-cap-title">Babylon Store</span><span class="ring-cap-sub">Tabletop with props</span></figcaption></figure>
+        <figure class="ring-card"><img src="../assets/product/health-04.webp" alt="Bob&#x27;s Red Mill — Dynamic ad shot" loading="lazy" decoding="async"><figcaption><span class="ring-cap-title">Bob&#x27;s Red Mill</span><span class="ring-cap-sub">Dynamic ad shot</span></figcaption></figure>
+        <figure class="ring-card"><img src="../assets/product/health-01.webp" alt="Bob&#x27;s Red Mill — On the kitchen counter" loading="lazy" decoding="async"><figcaption><span class="ring-cap-title">Bob&#x27;s Red Mill</span><span class="ring-cap-sub">On the kitchen counter</span></figcaption></figure>
+        <figure class="ring-card"><img src="../assets/product/health-02.webp" alt="Bob&#x27;s Red Mill — In hand, close-up" loading="lazy" decoding="async"><figcaption><span class="ring-cap-title">Bob&#x27;s Red Mill</span><span class="ring-cap-sub">In hand, close-up</span></figcaption></figure>
+        <figure class="ring-card"><img src="../assets/product/health-03.webp" alt="Bob&#x27;s Red Mill — Mid-baking" loading="lazy" decoding="async"><figcaption><span class="ring-cap-title">Bob&#x27;s Red Mill</span><span class="ring-cap-sub">Mid-baking</span></figcaption></figure>
+        <figure class="ring-card"><img src="../assets/product/health-05.webp" alt="Bob&#x27;s Red Mill — Ingredient flat lay" loading="lazy" decoding="async"><figcaption><span class="ring-cap-title">Bob&#x27;s Red Mill</span><span class="ring-cap-sub">Ingredient flat lay</span></figcaption></figure>
+      </div></div>
+      <div class="ring-ui wrap">
+        <span class="ring-count">01</span>
+        <div class="ring-arrows">
+          <button type="button" class="ring-prev" aria-label="Previous piece">←</button>
+          <button type="button" class="ring-next" aria-label="Next piece">→</button>
+        </div>
+        <a class="ring-cta" href="https://t.me/T_Sh_93" target="_blank" rel="noopener">I want shots of my product →</a>
+      </div>
+    </div>
+    </div>
+  </article>
+  <article class="work-block" id="commercial">
+    <div class="work-sticky">
+    <header class="work-head wrap reveal">
+      <span class="work-num">05</span>
+      <div class="work-title">
+        <h3>Commercial <em>films</em></h3>
+        <p>Scripted ads with a hero on screen: from reference and storyboard to a finished brand film.</p>
+      </div>
+      <div class="work-meta">
+        <span class="work-tag">Advertising · storytelling</span>
+        <a class="work-link" href="process.html">How it's made →</a>
+      </div>
+    </header>
+    <div class="ring" data-ring tabindex="0" aria-roledescription="carousel" aria-label="Commercial">
+      <div class="ring-stage"><div class="ring-track">
+        <figure class="ring-card"><video data-src="../assets/process/evos-reel.mp4" poster="../assets/process/evos-reel.webp" muted playsinline preload="none"></video><span class="ring-play" aria-hidden="true">▶</span><figcaption><span class="ring-cap-title">EVOS</span><span class="ring-cap-sub">Ad film</span></figcaption></figure>
+        <figure class="ring-card"><img src="../assets/process/gen-evos.webp" alt="EVOS — Ad creative" loading="lazy" decoding="async"><figcaption><span class="ring-cap-title">EVOS</span><span class="ring-cap-sub">Ad creative</span></figcaption></figure>
+        <figure class="ring-card"><video data-src="../assets/process/shirin-reel.mp4" poster="../assets/process/shirin-reel.webp" muted playsinline preload="none"></video><span class="ring-play" aria-hidden="true">▶</span><figcaption><span class="ring-cap-title">Shirin Sweets</span><span class="ring-cap-sub">Story film</span></figcaption></figure>
+        <figure class="ring-card"><img src="../assets/process/gen-shirin.webp" alt="Shirin Sweets — Key scene" loading="lazy" decoding="async"><figcaption><span class="ring-cap-title">Shirin Sweets</span><span class="ring-cap-sub">Key scene</span></figcaption></figure>
+      </div></div>
+      <div class="ring-ui wrap">
+        <span class="ring-count">01</span>
+        <div class="ring-arrows">
+          <button type="button" class="ring-prev" aria-label="Previous piece">←</button>
+          <button type="button" class="ring-next" aria-label="Next piece">→</button>
+        </div>
+        <a class="ring-cta" href="https://t.me/T_Sh_93" target="_blank" rel="noopener">Discuss a commercial →</a>
+      </div>
+    </div>
+    </div>
+  </article>
+</section>
+
+<section class="tools-strip reveal">
+  <div class="wrap">
+    <span class="eyebrow">Studio toolkit</span>
+    <div class="tools-list">
+      <span>Nano Banana Pro</span>
+      <span>GPT Image 2.5</span>
+      <span>Kling 3.0</span>
+      <span>Seedance 2.5</span>
+      <span>MiniMax H3</span>
+      <span>Higgsfield</span>
+      <span>Muse</span>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band reveal">
+  <h2>Ready to talk about a <em>shoot</em>,<br>that never happens in real life?</h2>
+  <div class="cta-actions">
+    <a href="https://t.me/T_Sh_93" target="_blank" rel="noopener" class="btn btn-solid">Message me on Telegram →</a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand">Nova <span>Vision</span></div>
+      <p style="opacity:0.7; margin-top:14px; max-width:320px; font-size:14.5px; line-height:1.7;">AI photo and video studio: product motion design, animation, fashion, product photography and advertising.</p>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Navigation</div>
+      <a href="fashion.html">Fashion</a>
+      <a href="product.html">Product photography</a>
+      <a href="cartoons.html">Animation</a>
+      <a href="process.html">Process</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Contact</div>
+      <p>Tashkent, Uzbekistan</p>
+      <a href="https://t.me/T_Sh_93" target="_blank" rel="noopener">Message me on Telegram →</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Nova Vision</span>
+    <span>AI Photo &amp; Video Studio</span>
+  </div>
+</footer>
+
+<div class="lightbox" hidden role="dialog" aria-modal="true" aria-label="Viewing a piece">
+  <button type="button" class="lightbox-close" aria-label="Close">✕</button>
+  <div class="lightbox-media"></div>
+  <p class="lightbox-cap"></p>
+</div>
+
+<script src="../js/space.js?v=1"></script>
+<script src="../js/main.js?v=2"></script>
+<script src="../js/ring.js?v=4"></script>
+</body>
+</html>

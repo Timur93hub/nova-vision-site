@@ -20,6 +20,9 @@
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="canonical" href="https://novavision.uz/">
+<link rel="alternate" hreflang="ru" href="https://novavision.uz/">
+<link rel="alternate" hreflang="en" href="https://novavision.uz/en/">
+<link rel="alternate" hreflang="x-default" href="https://novavision.uz/">
 <link rel="stylesheet" href="css/style.css?v=7">
 <style>
   .hero{
@@ -395,6 +398,13 @@
   .cta-band h2 em{ font-style:italic; color: var(--brass-light); }
   .cta-actions{ display:flex; gap:16px; justify-content:center; flex-wrap:wrap; }
 </style>
+
+<style>
+  .lang-switch{ font-family: var(--mono); font-size: 10.5px; letter-spacing: .14em; padding: 5px 10px; border: 1px solid var(--line-dark); border-radius: 999px; opacity: .85; margin-left: clamp(4px,1vw,10px); }
+  .lang-switch:hover{ border-color: var(--brass-light); color: var(--brass-light); opacity: 1; }
+  .mast-nav a.lang-switch::after{ display:none; }
+  @media (max-width: 760px){ .lang-switch{ align-self: flex-start; margin-left: 0; } }
+</style>
 </head>
 <body>
 
@@ -405,6 +415,7 @@
       <a href="#works" class="active">Работы</a>
       <a href="about.html">Обо мне</a>
       <a href="contact.html">Контакты</a>
+      <a class="lang-switch" href="en/" hreflang="en" lang="en">EN</a>
     </nav>
     <button class="mast-toggle" aria-label="Меню" aria-expanded="false">
       <svg width="22" height="16" viewBox="0 0 22 16"><rect width="22" height="1.4" fill="currentColor"/><rect y="7.3" width="22" height="1.4" fill="currentColor"/><rect y="14.6" width="22" height="1.4" fill="currentColor"/></svg>

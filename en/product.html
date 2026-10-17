@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product photography — Nova Vision</title>
+<meta name="description" content="Nova Vision AI product photography — kidswear and e-commerce visuals.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Nova Vision">
+<meta property="og:title" content="Product photography — Nova Vision">
+<meta property="og:description" content="Nova Vision AI product photography — kidswear and e-commerce visuals.">
+<meta property="og:url" content="https://novavision.uz/en/product.html">
+<meta property="og:image" content="https://novavision.uz/assets/og-en.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://novavision.uz/assets/og-en.jpg">
+<meta name="theme-color" content="#04050C">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="canonical" href="https://novavision.uz/en/product.html">
+<link rel="alternate" hreflang="ru" href="https://novavision.uz/product.html">
+<link rel="alternate" hreflang="en" href="https://novavision.uz/en/product.html">
+<link rel="alternate" hreflang="x-default" href="https://novavision.uz/product.html">
+<link rel="stylesheet" href="../css/style.css?v=7">
+<style>
+  .page-hero{
+    padding: 100px var(--gutter) 60px;
+    max-width: var(--wrap);
+    margin:0 auto;
+    border-bottom: 1px solid var(--line);
+  }
+  .page-hero-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    gap: 24px;
+    flex-wrap:wrap;
+  }
+  .page-hero h1{ font-size: clamp(44px, 8vw, 108px); }
+  .page-meta{
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-align:right;
+    line-height: 1.8;
+    color: var(--ink-soft);
+  }
+  .page-hero p.lede{
+    max-width: 620px;
+    font-size: 17px;
+    line-height: 1.75;
+    color: var(--ink-soft);
+    margin-top: 24px;
+  }
+
+  .case-band{
+    max-width: var(--wrap);
+    margin: 60px auto 0;
+    padding: 0 var(--gutter) 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    gap:24px;
+    flex-wrap:wrap;
+  }
+  .case-band h2{ font-size: clamp(26px, 4vw, 38px); }
+  .case-tag{
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color: var(--brass-dim);
+    border: 1px solid var(--line);
+    padding: 7px 14px;
+  }
+
+  .spread{
+    max-width: var(--wrap);
+    margin: 0 auto;
+    padding: 0 var(--gutter);
+  }
+  .look-row{
+    display:grid;
+    grid-template-columns: 5fr 7fr;
+    gap: 2px;
+    padding: 2px 0;
+  }
+  .look-row.rev{ grid-template-columns: 7fr 5fr; }
+  .look-row.rev .look:first-child{ order:2; }
+  .look{
+    position:relative;
+    overflow:hidden;
+    background: var(--glass);
+  }
+  .look img{
+    width:100%; height:100%;
+    object-fit:cover;
+    display:block;
+    transition: transform 1s var(--ease);
+  }
+  .look:hover img{ transform: scale(1.035); }
+  .look-caption{
+    position:absolute;
+    left:0; right:0; bottom:0;
+    padding: 20px 24px;
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    background: linear-gradient(0deg, rgba(4,5,12,0.78) 0%, rgba(4,5,12,0) 100%);
+    color: var(--star);
+    opacity: 0;
+    transform: translateY(6px);
+    transition: all 0.35s var(--ease);
+  }
+  .look:hover .look-caption{ opacity:1; transform:translateY(0); }
+  .look-caption .num{ font-family: var(--mono); font-size: 12px; letter-spacing:0.1em; color: var(--brass-light); }
+  .look-caption .loc{ font-family: var(--mono); font-size: 11px; letter-spacing:0.06em; opacity:0.75; }
+  .look.tall{ aspect-ratio: 3/4; }
+  .look.wide{ aspect-ratio: 4/3.1; }
+  .look.square{ aspect-ratio: 1/1; }
+
+  @media (max-width: 760px){
+    .look-row, .look-row.rev{ grid-template-columns: 1fr; }
+    .look-row.rev .look:first-child{ order:0; }
+    .look-caption{ opacity:1; transform:none; }
+  }
+
+  .credits{
+    max-width: var(--wrap);
+    margin: 0 auto;
+    padding: 90px var(--gutter) 110px;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+    border-top: 1px solid var(--line);
+    margin-top: 60px;
+  }
+  .credits h4{
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color: var(--brass-dim);
+    margin: 0 0 12px;
+  }
+  .credits p{ font-size: 14.5px; line-height:1.7; color: var(--ink-soft); margin:0; }
+  @media (max-width: 760px){ .credits{ grid-template-columns: 1fr; gap:28px; } }
+</style>
+
+<style>
+  .lang-switch{ font-family: var(--mono); font-size: 10.5px; letter-spacing: .14em; padding: 5px 10px; border: 1px solid var(--line-dark); border-radius: 999px; opacity: .85; margin-left: clamp(4px,1vw,10px); }
+  .lang-switch:hover{ border-color: var(--brass-light); color: var(--brass-light); opacity: 1; }
+  .mast-nav a.lang-switch::after{ display:none; }
+  @media (max-width: 760px){ .lang-switch{ align-self: flex-start; margin-left: 0; } }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <a href="./" class="mast-logo">Nova <span class="dot">·</span> Vision</a>
+    <nav class="mast-nav">
+      <a href="index.html#works" class="active">Work</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a class="lang-switch" href="../product.html" hreflang="ru" lang="ru">RU</a>
+    </nav>
+    <button class="mast-toggle" aria-label="Menu" aria-expanded="false">
+      <svg width="22" height="16" viewBox="0 0 22 16"><rect width="22" height="1.4" fill="currentColor"/><rect y="7.3" width="22" height="1.4" fill="currentColor"/><rect y="14.6" width="22" height="1.4" fill="currentColor"/></svg>
+    </button>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="page-hero-top">
+    <h1>Product<br>photography</h1>
+    <div class="page-meta">
+      2 cases · 11 scenes<br>
+      Kidswear · Healthy food<br>
+      Nano Banana Pro × GPT Image 2.5
+    </div>
+  </div>
+  <p class="lede">Product cards, flat lays, lifestyle scenes and creative compositions for a single SKU — no shoot day, no model, no product table.</p>
+</section>
+
+<section class="case-band reveal">
+  <h2>Case: Babylon Store — safari outfit</h2>
+  <span class="case-tag">6 scenes · 1 product</span>
+</section>
+
+<section class="spread">
+  <div class="look-row reveal">
+    <div class="look wide"><img src="../assets/product/prod-03.webp" alt="Babylon Store — on a model"><div class="look-caption"><span class="num">Scene 01</span><span class="loc">Worn by a child, playground</span></div></div>
+    <div class="look wide"><img src="../assets/product/prod-01.webp" alt="Babylon Store — flat lay"><div class="look-caption"><span class="num">Scene 02</span><span class="loc">Flat lay with toys</span></div></div>
+  </div>
+
+  <div class="look-row rev reveal">
+    <div class="look tall" style="aspect-ratio:16/10;"><img src="../assets/product/prod-05.webp" alt="Babylon Store — creative composition" style="object-position:50% 30%;"><div class="look-caption"><span class="num">Scene 03</span><span class="loc">“Jungle” art concept</span></div></div>
+    <div class="look tall"><img src="../assets/product/prod-04.webp" alt="Babylon Store — lifestyle"><div class="look-caption"><span class="num">Scene 04</span><span class="loc">Lifestyle, in hand</span></div></div>
+  </div>
+
+  <div class="look-row reveal">
+    <div class="look square"><img src="../assets/product/prod-02.webp" alt="Babylon Store — on a hanger"><div class="look-caption"><span class="num">Scene 05</span><span class="loc">On a hanger</span></div></div>
+    <div class="look square"><img src="../assets/product/prod-06.webp" alt="Babylon Store — folded product"><div class="look-caption"><span class="num">Scene 06</span><span class="loc">Tabletop with props</span></div></div>
+  </div>
+</section>
+
+<section class="case-band reveal" style="margin-top:90px; padding-top:50px; border-top:1px solid var(--line);">
+  <h2>Case: Bob's Red Mill — almond flour</h2>
+  <span class="case-tag">5 scenes · Healthy food boutique</span>
+</section>
+
+<section class="spread">
+  <div class="look-row reveal">
+    <div class="look wide"><img src="../assets/product/health-01.webp" alt="Bob's Red Mill — kitchen lifestyle"><div class="look-caption"><span class="num">Scene 01</span><span class="loc">On the kitchen counter</span></div></div>
+    <div class="look wide"><img src="../assets/product/health-02.webp" alt="Bob's Red Mill — in hand"><div class="look-caption"><span class="num">Scene 02</span><span class="loc">In hand, close-up</span></div></div>
+  </div>
+
+  <div class="look-row rev reveal">
+    <div class="look tall"><img src="../assets/product/health-04.webp" alt="Bob's Red Mill — dynamic product burst"><div class="look-caption"><span class="num">Scene 03</span><span class="loc">Dynamic ad shot</span></div></div>
+    <div class="look tall"><img src="../assets/product/health-03.webp" alt="Bob's Red Mill — baking in progress"><div class="look-caption"><span class="num">Scene 04</span><span class="loc">Mid-baking</span></div></div>
+  </div>
+
+  <div class="look-row reveal">
+    <div class="look" style="aspect-ratio:16/9; grid-column: 1 / -1;"><img src="../assets/product/health-05.webp" alt="Bob's Red Mill — flat lay with almonds and blossoms" style="object-position:50% 30%;"><div class="look-caption"><span class="num">Scene 05</span><span class="loc">Ingredient flat lay</span></div></div>
+  </div>
+</section>
+
+<section class="credits reveal">
+  <div>
+    <h4>Discipline</h4>
+    <p>Product visuals for kidswear: marketplace cards, flat lays, lifestyle and creative staged scenes for one product.</p>
+  </div>
+  <div>
+    <h4>Stack</h4>
+    <p>Scene, background and props generation — Nano Banana Pro and GPT Image 2.5. Post-processing and card formats — by hand.</p>
+  </div>
+  <div>
+    <h4>Working format</h4>
+    <p>A complete card set for one SKU — from on-model shots to creative compositions — in one go, without a product table.</p>
+  </div>
+</section>
+
+<section class="cta-band" style="background: var(--space-2); color: var(--star); padding:90px var(--gutter); text-align:center;">
+  <h2 style="font-size:clamp(30px,5vw,54px); margin:0 0 26px;">Want the same set <em style="color:var(--brass-light); font-style:italic;">for your product?</em></h2>
+  <a href="https://t.me/T_Sh_93" target="_blank" rel="noopener" class="btn on-dark" style="border-color: var(--brass-light);">Message on Telegram</a>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand">Nova <span>Vision</span></div>
+      <p style="opacity:0.7; margin-top:14px; max-width:320px; font-size:14.5px; line-height:1.7;">AI photo and video studio: product motion design, animation, fashion, product photography and advertising.</p>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Navigation</div>
+      <a href="fashion.html">Fashion</a>
+      <a href="product.html">Product photography</a>
+      <a href="cartoons.html">Animation</a>
+      <a href="process.html">Process</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Contact</div>
+      <p>Tashkent, Uzbekistan</p>
+      <a href="https://t.me/T_Sh_93" target="_blank" rel="noopener">Message me on Telegram →</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Nova Vision</span>
+    <span>AI Photo &amp; Video Studio</span>
+  </div>
+</footer>
+
+<script src="../js/space.js?v=1"></script>
+<script src="../js/main.js?v=2"></script>
+</body>
+</html>

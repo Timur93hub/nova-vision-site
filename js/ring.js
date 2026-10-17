@@ -240,7 +240,7 @@
     const media = lb.querySelector('.lightbox-media');
     media.innerHTML = '';
     const v = document.createElement('video');
-    v.src = 'assets/showreel.mp4'; v.controls = true; v.autoplay = true; v.loop = true; v.playsInline = true; v.muted = true;
+    v.src = btn.querySelector('video').currentSrc || btn.querySelector('video').src; v.controls = true; v.autoplay = true; v.loop = true; v.playsInline = true; v.muted = true;
     media.appendChild(v);
     lb.querySelector('.lightbox-cap').textContent = 'Nova Vision — Showreel 2026';
     lb.hidden = false; document.body.style.overflow = 'hidden';
