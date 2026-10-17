@@ -130,7 +130,7 @@ h1 em, h2 em, h3 em{
 .mast-logo .dot{ color: var(--brass); font-size: 14px; }
 .mast-nav{
   display:flex;
-  gap: clamp(16px, 3vw, 36px);
+  gap: clamp(14px, 2.1vw, 30px);
   font-family: var(--mono);
   font-size: 11.5px;
   letter-spacing: 0.1em;
@@ -152,7 +152,7 @@ h1 em, h2 em, h3 em{
 }
 .mast-toggle{ display:none; background:none; border:none; cursor:pointer; }
 
-@media (max-width: 760px){
+@media (max-width: 1180px){
   .mast-nav{
     position: fixed;
     inset: 60px 0 0 0;
