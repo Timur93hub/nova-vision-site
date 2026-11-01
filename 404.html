@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Сигнал потерян — Nova Vision</title>
 <meta name="robots" content="noindex">
-<meta name="theme-color" content="#04050C">
+<meta name="theme-color" content="#020A08">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="stylesheet" href="/css/style.css?v=7">
@@ -18,19 +18,19 @@
   .lost-star{
     position: absolute; left: 50%; top: 50%; width: 46vmax; height: 46vmax;
     transform: translate(-50%, -50%); border-radius: 50%; pointer-events: none; opacity: .55;
-    background: radial-gradient(circle, rgba(255,214,154,.55) 0%, rgba(255,138,61,.28) 18%, rgba(255,98,40,.08) 42%, transparent 66%);
+    background: radial-gradient(circle, rgba(150,240,212,.55) 0%, rgba(6,214,160,.28) 18%, rgba(4,170,128,.08) 42%, transparent 66%);
     animation: drift 14s ease-in-out infinite;
   }
   .lost-orbit{
     position: absolute; left: 50%; top: 50%; width: 70vmax; height: 70vmax; border-radius: 50%;
-    border: 1px solid rgba(226,232,248,.07); transform: translate(-50%, -50%) rotateX(72deg) rotateZ(-12deg);
+    border: 1px solid rgba(230,251,246,.07); transform: translate(-50%, -50%) rotateX(72deg) rotateZ(-12deg);
   }
   @keyframes drift{ 50%{ transform: translate(-50%, -52%) scale(1.04); } }
   .lost .eyebrow{ color: var(--brass-light); position: relative; }
   .lost-code{
     position: relative; font-family: var(--display); font-weight: 300;
     font-size: clamp(110px, 24vw, 300px); line-height: .9; letter-spacing: -.07em; margin: 18px 0 10px;
-    background: linear-gradient(180deg, #F3F5FB 0%, #FFB874 120%); -webkit-background-clip: text; background-clip: text; color: transparent;
+    background: linear-gradient(180deg, #F0FBF8 0%, #5CE8C0 120%); -webkit-background-clip: text; background-clip: text; color: transparent;
   }
   .lost h1{ position: relative; font-size: clamp(26px, 4vw, 46px); }
   .lost h1 em{ color: var(--brass-light); }

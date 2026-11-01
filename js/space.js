@@ -76,8 +76,8 @@
         const len = 18;
         const g = ctx.createLinearGradient(meteor.x, meteor.y, meteor.x - meteor.vx * len, meteor.y - meteor.vy * len);
         const fade = Math.max(0, 1 - meteor.life / 70);
-        g.addColorStop(0, `rgba(255,214,170,${0.9 * fade})`);
-        g.addColorStop(1, 'rgba(255,214,170,0)');
+        g.addColorStop(0, `rgba(160,242,216,${0.9 * fade})`);
+        g.addColorStop(1, 'rgba(160,242,216,0)');
         ctx.strokeStyle = g; ctx.lineWidth = 1.4;
         ctx.beginPath();
         ctx.moveTo(meteor.x, meteor.y);

@@ -3,23 +3,23 @@
    Design tokens
    ============================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Onest:wght@200;300;400;500;600&family=Cormorant+Garamond:ital,wght@1,400;1,500;1,600&family=IBM+Plex+Mono:wght@400;500&display=swap');
 
 :root{
   /* space surfaces */
-  --space:      #04050C;   /* the void */
-  --space-1:    #090C1A;   /* panels */
-  --space-2:    rgba(11,15,34,0.72);   /* raised sections, lets stars through */
-  --glass:      rgba(14,19,40,0.55);
+  --space:      #020A08;   /* the void */
+  --space-1:    #071A16;   /* panels */
+  --space-2:    rgba(7,30,25,0.72);   /* raised sections, lets stars through */
+  --glass:      rgba(10,38,32,0.55);
   /* light */
-  --star:       #E6EBF7;   /* starlight text */
-  --star-dim:   rgba(226,232,248,0.64);
+  --star:       #E6FBF6;   /* starlight text */
+  --star-dim:   rgba(230,251,246,0.64);
   /* accents: warm star glow + cold nebula */
-  --brass:      #FF8A3D;   /* stellar amber */
-  --brass-light:#FFB874;
-  --brass-dim:  #E07A3A;
-  --nebula:     #6F8CFF;
-  --nebula-dim: rgba(111,140,255,0.18);
+  --brass:      #06D6A0;   /* emerald */
+  --brass-light:#5CE8C0;
+  --brass-dim:  #05B387;
+  --nebula:     #7FB3A6;
+  --nebula-dim: rgba(127,179,166,0.18);
 
   /* legacy names, remapped for the dark theme */
   --ink:        var(--star);
@@ -27,12 +27,12 @@
   --paper:      var(--space);
   --paper-dim:  var(--space-1);
   --bone:       var(--space-1);
-  --line:       rgba(226,232,248,0.12);
-  --line-dark:  rgba(226,232,248,0.14);
+  --line:       rgba(230,251,246,0.12);
+  --line-dark:  rgba(230,251,246,0.14);
 
-  --display: 'Unbounded', 'Inter', sans-serif;
-  --serif: 'Instrument Serif', Georgia, serif;
-  --body: 'Inter', sans-serif;
+  --display: 'Onest', sans-serif;
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --body: 'Onest', sans-serif;
   --mono: 'IBM Plex Mono', monospace;
 
   --wrap: 1400px;
@@ -89,7 +89,7 @@ a{ color: inherit; text-decoration: none; }
 
 h1, h2, h3{
   font-family: var(--display);
-  font-weight: 400;
+  font-weight: 300;
   line-height: 1.02;
   margin: 0;
   letter-spacing: -0.03em;
@@ -97,8 +97,9 @@ h1, h2, h3{
 h1 em, h2 em, h3 em{
   font-family: var(--serif);
   font-style: italic;
-  font-weight: 400;
-  letter-spacing: -0.01em;
+  font-weight: 500;
+  font-size: 1.1em;
+  letter-spacing: 0;
 }
 
 /* ---------- Masthead nav ---------- */
@@ -106,7 +107,7 @@ h1 em, h2 em, h3 em{
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(4,5,12,0.62);
+  background: rgba(2,10,8,0.62);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--line);
 }
@@ -156,7 +157,7 @@ h1 em, h2 em, h3 em{
   .mast-nav{
     position: fixed;
     inset: 60px 0 0 0;
-    background: rgba(4,5,12,0.97);
+    background: rgba(2,10,8,0.97);
     flex-direction: column;
     padding: 32px var(--gutter);
     font-size: 15px;
@@ -195,7 +196,7 @@ h1 em, h2 em, h3 em{
 
 /* ---------- Footer ---------- */
 .site-footer{
-  background: linear-gradient(180deg, transparent, rgba(4,5,12,0.9) 30%);
+  background: linear-gradient(180deg, transparent, rgba(2,10,8,0.9) 30%);
   color: var(--star);
   padding: 64px var(--gutter) 32px;
 }
@@ -282,8 +283,8 @@ h1 em, h2 em, h3 em{
 .space-glow{
   position: fixed; inset: 0; z-index: -2; pointer-events: none;
   background:
-    radial-gradient(60vmax 40vmax at 85% 110%, rgba(255,138,61,0.10), transparent 60%),
-    radial-gradient(50vmax 35vmax at 0% 0%, rgba(111,140,255,0.08), transparent 60%);
+    radial-gradient(60vmax 40vmax at 85% 110%, rgba(6,214,160,0.10), transparent 60%),
+    radial-gradient(50vmax 35vmax at 0% 0%, rgba(127,179,166,0.08), transparent 60%);
 }
 
 /* ---------- Even photo rows (no gaps between images of different ratio) ---------- */
@@ -301,7 +302,7 @@ h1, h2{ text-wrap: balance; overflow-wrap: anywhere; }
 .cursor-glow{
   position: fixed; left: 0; top: 0; z-index: 1; pointer-events: none;
   width: 520px; height: 520px; margin: -260px 0 0 -260px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(255,150,80,0.10) 0%, rgba(255,138,61,0.04) 35%, transparent 70%);
+  background: radial-gradient(circle, rgba(40,222,172,0.10) 0%, rgba(6,214,160,0.04) 35%, transparent 70%);
   mix-blend-mode: screen;
   opacity: 0; transition: opacity .6s var(--ease);
   will-change: transform;
@@ -314,5 +315,5 @@ h1, h2{ text-wrap: balance; overflow-wrap: anywhere; }
 }
 
 /* ---------- Vertical reels: never taller than the screen ---------- */
-.video-block{ display: flex; justify-content: center; background: radial-gradient(60% 80% at 50% 50%, rgba(255,138,61,0.08), transparent 70%); }
+.video-block{ display: flex; justify-content: center; background: radial-gradient(60% 80% at 50% 50%, rgba(6,214,160,0.08), transparent 70%); }
 .video-block video{ width: auto !important; max-width: 100%; max-height: 86vh; }
