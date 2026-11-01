@@ -72,3 +72,33 @@ if('IntersectionObserver' in window && revealEls.length){
   }, { threshold: 0.35 });
   vids.forEach(v => io.observe(v));
 })();
+
+// Intro «Затмение»: start once the page can paint (fonts ready, capped), skip on click or key
+(function(){
+  const H = document.documentElement;
+  const el = document.querySelector('.nv-intro');
+  if(!el || !H.classList.contains('nv-intro-on')) return;
+  let done = false, started = false;
+  const end = () => { done = true; H.classList.remove('nv-intro-on', 'nv-run'); };
+  const start = () => {
+    if(started || done) return; started = true;
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      H.classList.add('nv-run');
+      setTimeout(end, 3300);
+    }));
+  };
+  el.addEventListener('click', end);
+  window.addEventListener('keydown', end, { once: true });
+  // begin only once something has actually been painted, so the intro is never played to a blank screen
+  let po = null, watching = false;
+  try{
+    if(performance.getEntriesByName('first-contentful-paint').length) start();
+    else {
+      po = new PerformanceObserver(list => { if(list.getEntriesByName('first-contentful-paint').length){ po.disconnect(); start(); } });
+      po.observe({ type: 'paint', buffered: true });
+      watching = true;
+    }
+  }catch(e){}
+  if(!watching && document.fonts && document.fonts.ready) document.fonts.ready.then(() => setTimeout(start, 300));
+  setTimeout(start, watching ? 6000 : 2000);
+})();
