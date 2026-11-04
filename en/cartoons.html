@@ -162,6 +162,13 @@
   }
   .credits p{ font-size: 14.5px; line-height:1.7; color: var(--ink-soft); margin:0; }
   @media (max-width: 760px){ .credits{ grid-template-columns: 1fr; gap:28px; } }
+
+  .look-trio{ display:grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 2px; padding: 2px 0; }
+  .look-trio .look, .look-trio .video-block{ aspect-ratio: 9/16; margin: 0; }
+  .look-trio .video-block video{ height:100%; object-fit: cover; }
+  .look.portrait{ aspect-ratio: 4/5; }
+  .look.portrait img{ object-position: 50% 58%; }
+  @media (max-width: 760px){ .look-trio{ grid-template-columns: 1fr; } .look-trio .video-block{ order:-1; } }
 </style>
 
 <style>
@@ -193,12 +200,31 @@
   <div class="page-hero-top">
     <h1>Animation</h1>
     <div class="page-meta">
-      Project · Runaways from the Plov<br>
-      8 characters + video<br>
-      Nano Banana Pro
+      2 projects · Broccoli, Runaways from the Plov<br>
+      Characters and animated shorts
     </div>
   </div>
-  <p class="lede">A full-cycle animation project: from developing the characters' personalities and looks to an animated short. Below are the heroes and the villain of “Runaways from the Plov”.</p>
+  <p class="lede">A full-cycle animation project: from developing the characters’ personalities and looks to an animated short. Below are two cases: “Broccoli” and “Runaways from the Plov”.</p>
+</section>
+
+<section class="case-band reveal">
+  <h2>Case: “Broccoli”</h2>
+  <span class="case-tag">Character · 3D animation · 30-sec short</span>
+</section>
+
+<section class="spread">
+  <div class="look-trio reveal">
+    <div class="look"><img src="../assets/cartoons/broccoli-04.webp" alt="Broccoli on a stool pulls back from the hot cheese" loading="lazy"><div class="look-caption"><span class="num">Scene 01</span><span class="loc">Too hot!</span></div></div>
+    <div class="video-block">
+      <div class="video-tag"><span class="dot"></span> Animated short · 30 sec</div>
+      <video src="../assets/cartoons/broccoli-reel.mp4" poster="../assets/cartoons/broccoli-reel.webp" autoplay muted loop playsinline preload="metadata"></video>
+    </div>
+    <div class="look"><img src="../assets/cartoons/broccoli-02.webp" alt="Sailor Broccoli rides a khachapuri across the sea" loading="lazy"><div class="look-caption"><span class="num">Scene 02</span><span class="loc">Khachapuri boat</span></div></div>
+  </div>
+  <div class="look-row reveal" style="grid-template-columns: 1fr 1fr;">
+    <div class="look portrait"><img src="../assets/cartoons/broccoli-03.webp" alt="Broccoli tears the khachapuri, cheese stretching" loading="lazy"><div class="look-caption"><span class="num">Scene 03</span><span class="loc">First bite</span></div></div>
+    <div class="look portrait"><img src="../assets/cartoons/broccoli-01.webp" alt="Broccoli spots a khachapuri" loading="lazy"><div class="look-caption"><span class="num">Scene 04</span><span class="loc">Under the grapevine</span></div></div>
+  </div>
 </section>
 
 <section class="case-band reveal">
