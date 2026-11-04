@@ -162,6 +162,13 @@
   }
   .credits p{ font-size: 14.5px; line-height:1.7; color: var(--ink-soft); margin:0; }
   @media (max-width: 760px){ .credits{ grid-template-columns: 1fr; gap:28px; } }
+
+  .look-trio{ display:grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 2px; padding: 2px 0; }
+  .look-trio .look, .look-trio .video-block{ aspect-ratio: 9/16; margin: 0; }
+  .look-trio .video-block video{ height:100%; object-fit: cover; }
+  .look.portrait{ aspect-ratio: 4/5; }
+  .look.portrait img{ object-position: 50% 58%; }
+  @media (max-width: 760px){ .look-trio{ grid-template-columns: 1fr; } .look-trio .video-block{ order:-1; } }
 </style>
 
 <style>
@@ -193,12 +200,31 @@
   <div class="page-hero-top">
     <h1>Мультфильмы</h1>
     <div class="page-meta">
-      Проект · Сбежавшие из плова<br>
-      8 персонажей + видео<br>
-      Nano Banana Pro
+      2 проекта · Брокколи, Сбежавшие из плова<br>
+      Персонажи и анимационные ролики
     </div>
   </div>
-  <p class="lede">Полный цикл мультипликационного проекта: от разработки характеров и внешности персонажей до анимированного ролика. Ниже — герои и антагонист истории «Сбежавшие из плова».</p>
+  <p class="lede">Полный цикл мультипликационного проекта: от разработки характеров и внешности персонажей до анимированного ролика. Ниже — два кейса: «Брокколи» и «Сбежавшие из плова».</p>
+</section>
+
+<section class="case-band reveal">
+  <h2>Кейс: «Брокколи»</h2>
+  <span class="case-tag">Персонаж · 3D-мультипликация · ролик 30 сек</span>
+</section>
+
+<section class="spread">
+  <div class="look-trio reveal">
+    <div class="look"><img src="assets/cartoons/broccoli-04.webp" alt="Брокколи на табурете отдёргивает руку от горячего сыра" loading="lazy"><div class="look-caption"><span class="num">Сцена 01</span><span class="loc">Горячо!</span></div></div>
+    <div class="video-block">
+      <div class="video-tag"><span class="dot"></span> Анимационный ролик · 30 сек</div>
+      <video src="assets/cartoons/broccoli-reel.mp4" poster="assets/cartoons/broccoli-reel.webp" autoplay muted loop playsinline preload="metadata"></video>
+    </div>
+    <div class="look"><img src="assets/cartoons/broccoli-02.webp" alt="Брокколи-моряк плывёт на хачапури" loading="lazy"><div class="look-caption"><span class="num">Сцена 02</span><span class="loc">Хачапури-лодка</span></div></div>
+  </div>
+  <div class="look-row reveal" style="grid-template-columns: 1fr 1fr;">
+    <div class="look portrait"><img src="assets/cartoons/broccoli-03.webp" alt="Брокколи разламывает хачапури, тянется сыр" loading="lazy"><div class="look-caption"><span class="num">Сцена 03</span><span class="loc">Первый кусочек</span></div></div>
+    <div class="look portrait"><img src="assets/cartoons/broccoli-01.webp" alt="Брокколи видит хачапури" loading="lazy"><div class="look-caption"><span class="num">Сцена 04</span><span class="loc">Во дворике под виноградом</span></div></div>
+  </div>
 </section>
 
 <section class="case-band reveal">
