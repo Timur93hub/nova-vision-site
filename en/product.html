@@ -65,6 +65,30 @@
     gap:24px;
     flex-wrap:wrap;
   }
+  /* ---- Было → Стало: товар с телефона → кампания ---- */
+  .ba3-intro{ max-width: var(--wrap); margin: 70px auto 0; padding: 0 var(--gutter); display:flex; justify-content:space-between; align-items:flex-end; gap: 28px; flex-wrap: wrap; }
+  .ba3-intro .eyebrow{ font-family: var(--mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--brass); display:block; margin-bottom: 16px; }
+  .ba3-intro h2{ font-size: clamp(32px, 4.6vw, 60px); font-weight: 300; letter-spacing: -0.03em; max-width: 760px; margin: 0; }
+  .ba3-intro h2 em{ font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 1.1em; letter-spacing: 0; color: var(--brass); }
+  .ba3-intro p{ max-width: 420px; margin: 0; color: var(--star-dim); font-size: 15px; line-height: 1.7; }
+  .ba3-case{ max-width: var(--wrap); margin: 56px auto 0; padding: 0 var(--gutter); }
+  .ba3-head{ display:flex; align-items: baseline; gap: 22px; padding: 22px 0 20px; border-top: 1px solid var(--line); flex-wrap: wrap; }
+  .ba3-num{ font-family: var(--mono); font-size: 12px; letter-spacing: .1em; color: var(--brass); }
+  .ba3-head h3{ margin: 0; font-size: clamp(22px, 2.4vw, 30px); font-weight: 400; letter-spacing: -0.01em; }
+  .ba3-head p{ margin: 0 0 0 auto; color: var(--star-dim); font-size: 14px; line-height: 1.6; max-width: 460px; }
+  .ba3-grid{ display:grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: clamp(12px, 1.6vw, 24px); }
+  .ba3{ margin: 0; display:flex; flex-direction: column; gap: 14px; }
+  .ba3 img{ width:100%; aspect-ratio: 3/4; object-fit: cover; display:block; border-radius: 12px; transition: transform .6s var(--ease); }
+  .ba3:hover img{ transform: translateY(-4px); }
+  .ba3-before img{ filter: saturate(.75) brightness(.85); }
+  .ba3 figcaption{ display:flex; gap: 12px; align-items: baseline; font-size: 14px; color: var(--star-dim); }
+  .ba3 .lbl{ font-family: var(--mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--nebula); }
+  .ba3-after .lbl{ color: var(--brass); }
+  @media (max-width: 760px){
+    .ba3-head p{ margin-left: 0; }
+    .ba3-grid{ grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 72vw; overflow-x: auto; scroll-snap-type: x mandatory; margin-right: calc(var(--gutter) * -1); padding-right: var(--gutter); padding-bottom: 8px; }
+    .ba3{ scroll-snap-align: start; }
+  }
   .case-band h2{ font-size: clamp(26px, 4vw, 38px); }
   .case-tag{
     font-family: var(--mono);
@@ -178,15 +202,59 @@
   <div class="page-hero-top">
     <h1>Product<br>photography</h1>
     <div class="page-meta">
-      2 cases · 11 scenes<br>
-      Kidswear · Healthy food<br>
+      6 cases · 19 scenes<br>
+      Apparel · Interior · Kidswear · Food<br>
       Nano Banana Pro × GPT Image 2.5
     </div>
   </div>
   <p class="lede">Product cards, flat lays, lifestyle scenes and creative compositions for a single SKU — no shoot day, no model, no product table.</p>
 </section>
 
-<section class="case-band reveal">
+<section class="ba3-intro reveal">
+  <div>
+    <span class="eyebrow">Before → After</span>
+    <h2>From a phone photo — <em>to a campaign</em></h2>
+  </div>
+  <p>Send an ordinary product photo — on a bed, on a door, on a kitchen counter. Get a marketplace card and an ad shot: on a model, on a ghost mannequin or in an interior.</p>
+</section>
+
+<section class="ba3-case reveal">
+  <header class="ba3-head"><span class="ba3-num">01</span><h3>Brass table lamp</h3><p>Kitchen counter snapshot → white background and interior staging.</p></header>
+  <div class="ba3-grid">
+    <figure class="ba3 ba3-before"><img src="../assets/product/ba-lamp-0.webp" alt="Brass table lamp — Kitchen snapshot" loading="lazy" decoding="async"><figcaption><span class="lbl">Before</span>Kitchen snapshot</figcaption></figure>
+    <figure class="ba3 ba3-after"><img src="../assets/product/ba-lamp-1.webp" alt="Brass table lamp — White background" loading="lazy" decoding="async"><figcaption><span class="lbl">After</span>White background</figcaption></figure>
+    <figure class="ba3 ba3-after"><img src="../assets/product/ba-lamp-2.webp" alt="Brass table lamp — Interior staging" loading="lazy" decoding="async"><figcaption><span class="lbl">After</span>Interior staging</figcaption></figure>
+  </div>
+</section>
+
+<section class="ba3-case reveal">
+  <header class="ba3-head"><span class="ba3-num">02</span><h3>Cable-knit cardigan</h3><p>Bed flat-lay → beach campaign and a clean flat-lay.</p></header>
+  <div class="ba3-grid">
+    <figure class="ba3 ba3-before"><img src="../assets/product/ba-cardigan-0.webp" alt="Cable-knit cardigan — Bed flat-lay" loading="lazy" decoding="async"><figcaption><span class="lbl">Before</span>Bed flat-lay</figcaption></figure>
+    <figure class="ba3 ba3-after"><img src="../assets/product/ba-cardigan-1.webp" alt="Cable-knit cardigan — Golden-hour campaign" loading="lazy" decoding="async"><figcaption><span class="lbl">After</span>Golden-hour campaign</figcaption></figure>
+    <figure class="ba3 ba3-after"><img src="../assets/product/ba-cardigan-2.webp" alt="Cable-knit cardigan — Clean flat-lay" loading="lazy" decoding="async"><figcaption><span class="lbl">After</span>Clean flat-lay</figcaption></figure>
+  </div>
+</section>
+
+<section class="ba3-case reveal">
+  <header class="ba3-head"><span class="ba3-num">03</span><h3>Silk bow blouse</h3><p>Hanger shot → editorial and ghost mannequin.</p></header>
+  <div class="ba3-grid">
+    <figure class="ba3 ba3-before"><img src="../assets/product/ba-blouse-0.webp" alt="Silk bow blouse — Hanger shot" loading="lazy" decoding="async"><figcaption><span class="lbl">Before</span>Hanger shot</figcaption></figure>
+    <figure class="ba3 ba3-after"><img src="../assets/product/ba-blouse-1.webp" alt="Silk bow blouse — Editorial" loading="lazy" decoding="async"><figcaption><span class="lbl">After</span>Editorial</figcaption></figure>
+    <figure class="ba3 ba3-after"><img src="../assets/product/ba-blouse-2.webp" alt="Silk bow blouse — Ghost mannequin" loading="lazy" decoding="async"><figcaption><span class="lbl">After</span>Ghost mannequin</figcaption></figure>
+  </div>
+</section>
+
+<section class="ba3-case reveal">
+  <header class="ba3-head"><span class="ba3-num">04</span><h3>Vintage denim jacket</h3><p>Floor flat-lay → editorial and a marketplace on-model shot.</p></header>
+  <div class="ba3-grid">
+    <figure class="ba3 ba3-before"><img src="../assets/product/ba-denim-0.webp" alt="Vintage denim jacket — Floor flat-lay" loading="lazy" decoding="async"><figcaption><span class="lbl">Before</span>Floor flat-lay</figcaption></figure>
+    <figure class="ba3 ba3-after"><img src="../assets/product/ba-denim-1.webp" alt="Vintage denim jacket — Editorial" loading="lazy" decoding="async"><figcaption><span class="lbl">After</span>Editorial</figcaption></figure>
+    <figure class="ba3 ba3-after"><img src="../assets/product/ba-denim-2.webp" alt="Vintage denim jacket — On-model, marketplace" loading="lazy" decoding="async"><figcaption><span class="lbl">After</span>On-model, marketplace</figcaption></figure>
+  </div>
+</section>
+
+<section class="case-band reveal" style="margin-top:110px; padding-top:50px; border-top:1px solid var(--line);">
   <h2>Case: Babylon Store — safari outfit</h2>
   <span class="case-tag">6 scenes · 1 product</span>
 </section>

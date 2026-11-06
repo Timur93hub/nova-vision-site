@@ -65,6 +65,30 @@
     gap:24px;
     flex-wrap:wrap;
   }
+  /* ---- Было → Стало: товар с телефона → кампания ---- */
+  .ba3-intro{ max-width: var(--wrap); margin: 70px auto 0; padding: 0 var(--gutter); display:flex; justify-content:space-between; align-items:flex-end; gap: 28px; flex-wrap: wrap; }
+  .ba3-intro .eyebrow{ font-family: var(--mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--brass); display:block; margin-bottom: 16px; }
+  .ba3-intro h2{ font-size: clamp(32px, 4.6vw, 60px); font-weight: 300; letter-spacing: -0.03em; max-width: 760px; margin: 0; }
+  .ba3-intro h2 em{ font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 1.1em; letter-spacing: 0; color: var(--brass); }
+  .ba3-intro p{ max-width: 420px; margin: 0; color: var(--star-dim); font-size: 15px; line-height: 1.7; }
+  .ba3-case{ max-width: var(--wrap); margin: 56px auto 0; padding: 0 var(--gutter); }
+  .ba3-head{ display:flex; align-items: baseline; gap: 22px; padding: 22px 0 20px; border-top: 1px solid var(--line); flex-wrap: wrap; }
+  .ba3-num{ font-family: var(--mono); font-size: 12px; letter-spacing: .1em; color: var(--brass); }
+  .ba3-head h3{ margin: 0; font-size: clamp(22px, 2.4vw, 30px); font-weight: 400; letter-spacing: -0.01em; }
+  .ba3-head p{ margin: 0 0 0 auto; color: var(--star-dim); font-size: 14px; line-height: 1.6; max-width: 460px; }
+  .ba3-grid{ display:grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: clamp(12px, 1.6vw, 24px); }
+  .ba3{ margin: 0; display:flex; flex-direction: column; gap: 14px; }
+  .ba3 img{ width:100%; aspect-ratio: 3/4; object-fit: cover; display:block; border-radius: 12px; transition: transform .6s var(--ease); }
+  .ba3:hover img{ transform: translateY(-4px); }
+  .ba3-before img{ filter: saturate(.75) brightness(.85); }
+  .ba3 figcaption{ display:flex; gap: 12px; align-items: baseline; font-size: 14px; color: var(--star-dim); }
+  .ba3 .lbl{ font-family: var(--mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--nebula); }
+  .ba3-after .lbl{ color: var(--brass); }
+  @media (max-width: 760px){
+    .ba3-head p{ margin-left: 0; }
+    .ba3-grid{ grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 72vw; overflow-x: auto; scroll-snap-type: x mandatory; margin-right: calc(var(--gutter) * -1); padding-right: var(--gutter); padding-bottom: 8px; }
+    .ba3{ scroll-snap-align: start; }
+  }
   .case-band h2{ font-size: clamp(26px, 4vw, 38px); }
   .case-tag{
     font-family: var(--mono);
@@ -178,15 +202,59 @@
   <div class="page-hero-top">
     <h1>Предметная<br>съёмка</h1>
     <div class="page-meta">
-      2 кейса · 11 сцен<br>
-      Детская одежда · Здоровое питание<br>
+      6 кейсов · 19 сцен<br>
+      Одежда · Интерьер · Детская одежда · Питание<br>
       Nano Banana Pro × GPT Image 2.5
     </div>
   </div>
   <p class="lede">Карточки товара, флэтлеи, лайфстайл-сцены и креативные композиции для одного SKU — без съёмочного дня, модели и предметного стола.</p>
 </section>
 
-<section class="case-band reveal">
+<section class="ba3-intro reveal">
+  <div>
+    <span class="eyebrow">Было → Стало</span>
+    <h2>Из фото с телефона — <em>в кампанию</em></h2>
+  </div>
+  <p>Присылаете обычное фото товара — на кровати, на двери, на кухонном столе. Получаете карточку для маркетплейса и рекламный кадр: на модели, на призрачном манекене или в интерьере.</p>
+</section>
+
+<section class="ba3-case reveal">
+  <header class="ba3-head"><span class="ba3-num">01</span><h3>Латунная настольная лампа</h3><p>Фото на кухонной столешнице → белый фон и интерьерная сцена.</p></header>
+  <div class="ba3-grid">
+    <figure class="ba3 ba3-before"><img src="assets/product/ba-lamp-0.webp" alt="Латунная настольная лампа — Фото на кухне" loading="lazy" decoding="async"><figcaption><span class="lbl">Было</span>Фото на кухне</figcaption></figure>
+    <figure class="ba3 ba3-after"><img src="assets/product/ba-lamp-1.webp" alt="Латунная настольная лампа — Белый фон" loading="lazy" decoding="async"><figcaption><span class="lbl">Стало</span>Белый фон</figcaption></figure>
+    <figure class="ba3 ba3-after"><img src="assets/product/ba-lamp-2.webp" alt="Латунная настольная лампа — Интерьер" loading="lazy" decoding="async"><figcaption><span class="lbl">Стало</span>Интерьер</figcaption></figure>
+  </div>
+</section>
+
+<section class="ba3-case reveal">
+  <header class="ba3-head"><span class="ba3-num">02</span><h3>Кардиган крупной вязки</h3><p>Фото на кровати → кампания на берегу и чистый флэтлей.</p></header>
+  <div class="ba3-grid">
+    <figure class="ba3 ba3-before"><img src="assets/product/ba-cardigan-0.webp" alt="Кардиган крупной вязки — Фото на кровати" loading="lazy" decoding="async"><figcaption><span class="lbl">Было</span>Фото на кровати</figcaption></figure>
+    <figure class="ba3 ba3-after"><img src="assets/product/ba-cardigan-1.webp" alt="Кардиган крупной вязки — Кампания, золотой час" loading="lazy" decoding="async"><figcaption><span class="lbl">Стало</span>Кампания, золотой час</figcaption></figure>
+    <figure class="ba3 ba3-after"><img src="assets/product/ba-cardigan-2.webp" alt="Кардиган крупной вязки — Флэтлей, без катышков" loading="lazy" decoding="async"><figcaption><span class="lbl">Стало</span>Флэтлей, без катышков</figcaption></figure>
+  </div>
+</section>
+
+<section class="ba3-case reveal">
+  <header class="ba3-head"><span class="ba3-num">03</span><h3>Шёлковая блуза с бантом</h3><p>Фото на вешалке → editorial и призрачный манекен.</p></header>
+  <div class="ba3-grid">
+    <figure class="ba3 ba3-before"><img src="assets/product/ba-blouse-0.webp" alt="Шёлковая блуза с бантом — Фото на вешалке" loading="lazy" decoding="async"><figcaption><span class="lbl">Было</span>Фото на вешалке</figcaption></figure>
+    <figure class="ba3 ba3-after"><img src="assets/product/ba-blouse-1.webp" alt="Шёлковая блуза с бантом — Editorial" loading="lazy" decoding="async"><figcaption><span class="lbl">Стало</span>Editorial</figcaption></figure>
+    <figure class="ba3 ba3-after"><img src="assets/product/ba-blouse-2.webp" alt="Шёлковая блуза с бантом — Призрачный манекен" loading="lazy" decoding="async"><figcaption><span class="lbl">Стало</span>Призрачный манекен</figcaption></figure>
+  </div>
+</section>
+
+<section class="ba3-case reveal">
+  <header class="ba3-head"><span class="ba3-num">04</span><h3>Винтажная джинсовая куртка</h3><p>Фото на полу → editorial и кадр на модели для маркетплейса.</p></header>
+  <div class="ba3-grid">
+    <figure class="ba3 ba3-before"><img src="assets/product/ba-denim-0.webp" alt="Винтажная джинсовая куртка — Фото на полу" loading="lazy" decoding="async"><figcaption><span class="lbl">Было</span>Фото на полу</figcaption></figure>
+    <figure class="ba3 ba3-after"><img src="assets/product/ba-denim-1.webp" alt="Винтажная джинсовая куртка — Editorial" loading="lazy" decoding="async"><figcaption><span class="lbl">Стало</span>Editorial</figcaption></figure>
+    <figure class="ba3 ba3-after"><img src="assets/product/ba-denim-2.webp" alt="Винтажная джинсовая куртка — На модели, маркетплейс" loading="lazy" decoding="async"><figcaption><span class="lbl">Стало</span>На модели, маркетплейс</figcaption></figure>
+  </div>
+</section>
+
+<section class="case-band reveal" style="margin-top:110px; padding-top:50px; border-top:1px solid var(--line);">
   <h2>Кейс: Babylon Store — сафари-костюм</h2>
   <span class="case-tag">6 сцен · 1 товар</span>
 </section>
