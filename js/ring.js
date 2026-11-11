@@ -44,7 +44,70 @@
 
   const norm = a => { a = ((a + 180) % 360 + 360) % 360 - 180; return a; };
 
+  // Phones and touch tablets: a plain swipe gallery instead of the scroll-driven 3D ring.
+  // The 3D ring hijacks vertical scrolling and repaints every card every frame, which stutters on phones.
+  const FLAT = window.matchMedia('(max-width: 760px), (hover: none) and (pointer: coarse)').matches;
+
+  function flatRing(root){
+    const stage = root.querySelector('.ring-stage');
+    const cards = Array.from(root.querySelectorAll('.ring-card'));
+    const counter = root.querySelector('.ring-count');
+    const n = cards.length;
+    if(!n) return;
+    root.classList.add('ring-flat', 'ready');
+    let current = 0, timer = null;
+    const pad = i => String(i + 1).padStart(2, '0');
+    function setActive(i){
+      current = i;
+      cards.forEach((c, k) => {
+        c.classList.toggle('is-active', k === i);
+        const v = c.querySelector('video');
+        if(v && k !== i) v.pause();
+      });
+      if(counter) counter.textContent = pad(i) + ' / ' + String(n).padStart(2, '0');
+      clearTimeout(timer);
+      const v = cards[i].querySelector('video');
+      if(v && !reduce){
+        // start a clip only once the swipe has settled on it
+        timer = setTimeout(() => {
+          if(current !== i) return;
+          if(!v.src && v.dataset.src) v.src = v.dataset.src;
+          const p = v.play(); if(p) p.catch(() => {});
+        }, 400);
+      }
+    }
+    function nearest(){
+      const mid = stage.scrollLeft + stage.clientWidth / 2;
+      let best = 0, bd = Infinity;
+      cards.forEach((c, k) => { const d = Math.abs(c.offsetLeft + c.offsetWidth / 2 - mid); if(d < bd){ bd = d; best = k; } });
+      return best;
+    }
+    let raf = 0;
+    stage.addEventListener('scroll', () => {
+      if(raf) return;
+      raf = requestAnimationFrame(() => { raf = 0; const i = nearest(); if(i !== current) setActive(i); });
+    }, { passive: true });
+    function go(i){
+      i = Math.max(0, Math.min(n - 1, i));
+      const c = cards[i];
+      stage.scrollTo({ left: c.offsetLeft - (stage.clientWidth - c.offsetWidth) / 2, behavior: reduce ? 'auto' : 'smooth' });
+    }
+    const prev = root.querySelector('.ring-prev'), next = root.querySelector('.ring-next');
+    if(prev) prev.addEventListener('click', () => go(current - 1));
+    if(next) next.addEventListener('click', () => go(current + 1));
+    cards.forEach((c, i) => c.addEventListener('click', () => { if(i !== current) go(i); else openLightbox(c); }));
+    if('IntersectionObserver' in window){
+      new IntersectionObserver(entries => entries.forEach(en => {
+        const v = cards[current].querySelector('video');
+        if(en.isIntersecting) setActive(current);
+        else { clearTimeout(timer); if(v) v.pause(); }
+      }), { threshold: 0.35 }).observe(stage);
+    }
+    if(counter) counter.textContent = pad(0) + ' / ' + String(n).padStart(2, '0');
+  }
+
   rings.forEach(root => {
+    if(FLAT){ flatRing(root); return; }
     const block = root.closest('.work-block');
     const track = root.querySelector('.ring-track');
     const stage = root.querySelector('.ring-stage');
