@@ -107,9 +107,13 @@ h1 em, h2 em, h3 em{
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(2,10,8,0.62);
-  backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--line);
+}
+/* blur lives on a pseudo-element: backdrop-filter on .masthead itself would trap the fixed mobile menu inside the header */
+.masthead::before{
+  content:""; position:absolute; inset:0; z-index:-1;
+  background: rgba(2,10,8,0.62);
+  -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
 }
 .masthead-inner{
   display:flex;
@@ -170,6 +174,12 @@ h1 em, h2 em, h3 em{
   }
   .mast-nav.open{ opacity:1; transform: translateY(0); pointer-events:auto; }
   .mast-toggle{ display:block; }
+  .masthead .mast-nav{ background: var(--space); align-items: flex-start; justify-content: flex-start; gap: 0; padding: 12px var(--gutter) 40px; font-size: 13px; z-index: 99; }
+  .masthead .mast-nav a:not(.lang-switch){ display:block; width:100%; padding: 22px 0; border-bottom: 1px solid var(--line); font-size: 15px; opacity: 1; color: var(--star); }
+  .masthead .mast-nav a.active{ color: var(--brass); }
+  .masthead .mast-nav a.active::after{ display:none; }
+  .masthead .mast-nav .lang-switch{ margin-top: 28px; }
+  body.nav-lock{ overflow: hidden; }
 }
 
 /* ---------- Buttons ---------- */

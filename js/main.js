@@ -1,10 +1,11 @@
-// Mobile nav toggle
+// Mobile nav toggle (closes on link tap too)
 const toggle = document.querySelector('.mast-toggle');
 const nav = document.querySelector('.mast-nav');
 if(toggle && nav){
   toggle.addEventListener('click', () => {
     nav.classList.toggle('open');
     toggle.setAttribute('aria-expanded', nav.classList.contains('open'));
+    document.body.classList.toggle('nav-lock', nav.classList.contains('open'));
   });
   nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
 }
@@ -102,3 +103,8 @@ if('IntersectionObserver' in window && revealEls.length){
   if(!watching && document.fonts && document.fonts.ready) document.fonts.ready.then(() => setTimeout(start, 300));
   setTimeout(start, watching ? 6000 : 2000);
 })();
+
+document.querySelectorAll('.mast-nav a').forEach(a => a.addEventListener('click', () => {
+  const n = document.querySelector('.mast-nav'), tg = document.querySelector('.mast-toggle');
+  if(n && n.classList.contains('open')){ n.classList.remove('open'); document.body.classList.remove('nav-lock'); if(tg) tg.setAttribute('aria-expanded','false'); }
+}));
