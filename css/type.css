@@ -1,0 +1,69 @@
+/* Nova Vision — heading style: straight capitals with wide tracking, no italic accent words.
+   Loaded after each page's own <style>, so these rules take precedence over the older per-page sizes. */
+
+h1, h2, h3{
+  font-family: var(--display);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  line-height: 1.18;
+}
+/* accent words inside headings read as part of the line */
+h1 em, h2 em, h3 em,
+.hero-title em, .work-title h3 em, .ba-head h2 em, .ba3-intro h2 em,
+.cta-band h2 em, .ct-inner h1 em, .case-band h2 em{
+  font-family: inherit;
+  font-style: normal;
+  font-weight: inherit;
+  font-size: 1em;
+  letter-spacing: inherit;
+  color: inherit;
+}
+
+/* first screen */
+.hero-title{
+  font-size: clamp(44px, 8.4vw, 132px);
+  font-weight: 300;
+  letter-spacing: 0.2em;
+  line-height: 1.04;
+  margin-right: -0.2em;
+}
+
+/* page titles */
+.page-hero h1, .ab-hero h1, .ct-inner h1{
+  font-size: clamp(28px, 4.6vw, 60px);
+  font-weight: 300;
+  letter-spacing: 0.14em;
+  line-height: 1.12;
+}
+
+/* section titles */
+.ba-head h2, .ba3-intro h2, .works-intro h2, .stack h2, .process h2, .cta-band h2{
+  font-size: clamp(24px, 3.2vw, 42px);
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  line-height: 1.2;
+}
+.work-title h3{
+  font-size: clamp(22px, 2.7vw, 38px);
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  line-height: 1.18;
+}
+.case-band h2, .pipeline-head h2, .lost h1{
+  font-size: clamp(18px, 2.2vw, 26px);
+  letter-spacing: 0.12em;
+}
+
+/* small headings */
+.ba3-head h3, .stack-item h3, .step-label h3{
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+}
+
+@media (max-width: 760px){
+  h1, h2, h3{ letter-spacing: 0.08em; }
+  .hero-title{ letter-spacing: 0.16em; }
+  .page-hero h1, .ab-hero h1, .ct-inner h1{ letter-spacing: 0.1em; }
+}
