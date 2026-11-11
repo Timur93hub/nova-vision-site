@@ -23,7 +23,7 @@
 <link rel="alternate" hreflang="ru" href="https://novavision.uz/">
 <link rel="alternate" hreflang="en" href="https://novavision.uz/en/">
 <link rel="alternate" hreflang="x-default" href="https://novavision.uz/">
-<link rel="stylesheet" href="../css/style.css?v=10">
+<link rel="stylesheet" href="../css/style.css?v=11">
 <style>
   .hero{
     position:relative;
@@ -303,6 +303,7 @@
     min-height: 0;
     perspective: 1800px;
     perspective-origin: 50% 45%;
+    container-type: size;
     cursor: grab;
     user-select: none;
     -webkit-user-select: none;
@@ -316,8 +317,8 @@
   .ring-card{
     position: absolute; left: 50%; top: 50%;
     border: 0;
-    width: var(--cw);
-    height: var(--ch);
+    width: min(var(--cw), calc(84cqh * 0.6));
+    height: min(var(--ch), 84cqh); /* never taller than the stage, so cards stay clear of the title and buttons */
     margin: 0;
     border-radius: 14px;
     overflow: hidden;
@@ -382,7 +383,9 @@
     .works{ padding-top: 90px; }
     .work-head{ grid-template-columns: 1fr; gap: 14px; }
     .work-num{ padding-top: 0; }
-    .work-meta{ flex-direction: row; align-items: center; justify-content: space-between; }
+    .work-meta{ flex-direction: row; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 16px; }
+    .work-tag{ white-space: normal; line-height: 1.5; }
+    .work-link{ white-space: nowrap; }
     .work-block{ height: 165vh; }
     .work-sticky{ padding-top: 22px; }
     .work-title p{ display: none; }
@@ -478,10 +481,6 @@
 <section class="hero">
   <div class="hero-star" aria-hidden="true"></div>
   <div class="hero-orbit-label" aria-hidden="true">AI Studio · Tashkent</div>
-  <button type="button" class="reel-portal" data-reel aria-label="Watch the showreel full screen">
-    <video src="../assets/showreel.mp4?v=2" poster="../assets/showreel.webp" autoplay muted loop playsinline preload="auto"></video>
-    <span class="reel-label"><span class="reel-rec">Showreel 2026</span><span class="play" aria-hidden="true">▶</span></span>
-  </button>
   <div class="hero-content">
     <div class="hero-eyebrow">AI photo and video studio</div>
     <h1 class="hero-title">Nova<br><em>Vision</em></h1>
@@ -574,7 +573,7 @@
       </div>
       <div class="work-meta">
         <span class="work-tag">Cases · “Broccoli”, “Runaways from the Plov”</span>
-        <a class="work-link" href="cartoons.html">Full case →</a>
+        <a class="work-link" href="cartoons.html">All cases →</a>
       </div>
     </header>
     <div class="ring" data-ring tabindex="0" aria-roledescription="carousel" aria-label="Animation">
@@ -772,7 +771,7 @@
 </div>
 
 <script src="../js/space.js?v=3"></script>
-<script src="../js/main.js?v=4"></script>
+<script src="../js/main.js?v=5"></script>
 <script src="../js/ring.js?v=4"></script>
 </body>
 </html>
