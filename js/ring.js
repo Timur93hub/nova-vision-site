@@ -114,9 +114,15 @@
         c.classList.toggle('is-active', on);
         const v = c.querySelector('video');
         if(v){
+          clearTimeout(c._nvLoad);
           if(on && inView && !reduce){
-            if(!v.src && v.dataset.src) v.src = v.dataset.src;
-            const p = v.play(); if(p) p.catch(() => {});
+            if(!v.src && v.dataset.src){
+              // fetch a video only once its card has settled in front, so scrolling past a ring doesn't download every clip
+              c._nvLoad = setTimeout(() => {
+                if(current !== i || !inView) return;
+                v.src = v.dataset.src; const p = v.play(); if(p) p.catch(() => {});
+              }, 550);
+            } else { const p = v.play(); if(p) p.catch(() => {}); }
           } else { v.pause(); }
         }
       });
