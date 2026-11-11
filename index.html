@@ -394,6 +394,30 @@
     .ring-dots{ display: none; }
   }
 
+  /* ---- Phones / touch: flat swipe galleries, no scroll pinning ---- */
+  @media (max-width: 760px), (hover: none) and (pointer: coarse){
+    .work-block{ height: auto; }
+    .work-sticky{ position: relative; top: auto; height: auto; overflow: visible; padding: 56px 0 40px; }
+    .works{ padding-top: 24px; }
+    .ring-flat .ring-stage{
+      container-type: normal; flex: none; perspective: none; cursor: auto;
+      overflow-x: auto; overflow-y: hidden; scroll-snap-type: x mandatory; overscroll-behavior-x: contain;
+      scrollbar-width: none; margin-top: 22px; padding: 4px 0 10px;
+    }
+    .ring-flat .ring-stage::-webkit-scrollbar{ display: none; }
+    .ring-flat .ring-track{ position: static; inset: auto; transform: none; display: flex; gap: 12px; width: max-content; padding: 0 var(--gutter); }
+    .ring-flat .ring-card{
+      --h: min(118vw, 62svh, 560px);
+      position: relative; left: auto; top: auto; transform: none !important; flex: none;
+      height: var(--h); width: calc(var(--h) * 0.6);
+      opacity: 1 !important; will-change: auto; scroll-snap-align: center;
+      box-shadow: 0 0 0 1px rgba(230,251,246,0.08);
+    }
+    .ring-flat .ring-card::before{ display: none; }
+    .ring-flat .ring-card.is-active{ box-shadow: 0 0 0 1px rgba(70,228,185,0.45); }
+    .ring-flat .ring-ui{ margin-top: 14px; }
+  }
+
   /* Lightbox */
   .lightbox{
     position: fixed; inset: 0; z-index: 300;
@@ -528,11 +552,6 @@
 </section>
 
 <section class="works" id="works">
-  <div class="works-intro wrap reveal">
-    <p class="eyebrow">Портфолио · 05 направлений</p>
-    <h2>Пять направлений,<br><em>одна студия</em></h2>
-    <p class="works-lead">Прокручивайте страницу — галереи вращаются вместе со скроллом. Можно крутить и вручную: стрелками или свайпом. Нажмите на работу в центре, чтобы открыть её целиком.</p>
-  </div>
   <article class="work-block" id="motion">
     <div class="work-sticky">
     <header class="work-head wrap reveal">
@@ -773,6 +792,6 @@
 
 <script src="js/space.js?v=3"></script>
 <script src="js/main.js?v=5"></script>
-<script src="js/ring.js?v=9"></script>
+<script src="js/ring.js?v=10"></script>
 </body>
 </html>
