@@ -119,6 +119,11 @@
   .look-caption .loc{ font-family: var(--mono); font-size: 11px; letter-spacing:0.06em; opacity:0.75; }
   .look.tall{ aspect-ratio: 3/4; }
   .look.wide{ aspect-ratio: 4/3.1; }
+  .case-note-row{ grid-template-columns: minmax(0,1fr) minmax(0,1fr); align-items: center; }
+  .case-note{ padding: clamp(24px, 4vw, 64px); display:flex; flex-direction:column; gap: 18px; }
+  .case-note h3{ font-size: clamp(18px, 2vw, 24px); }
+  .case-note p{ margin:0; color: var(--star-dim); font-size: 15.5px; line-height: 1.75; max-width: 460px; }
+  @media (max-width: 760px){ .case-note-row{ grid-template-columns: 1fr; } .case-note{ padding: 28px var(--gutter) 8px; } }
   .look.square{ aspect-ratio: 1/1; }
   .look.full{ aspect-ratio: 16/9; }
 
@@ -201,11 +206,34 @@
   <div class="page-hero-top">
     <h1>Мультфильмы</h1>
     <div class="page-meta">
-      2 проекта · Брокколи, Сбежавшие из плова<br>
+      3 проекта · Арбузик, Брокколи, Сбежавшие из плова<br>
       Персонажи и анимационные ролики
     </div>
   </div>
-  <p class="lede">Полный цикл мультипликационного проекта: от разработки характеров и внешности персонажей до анимированного ролика. Ниже — два кейса: «Брокколи» и «Сбежавшие из плова».</p>
+  <p class="lede">Полный цикл мультипликационного проекта: от разработки характеров и внешности персонажей до анимированного ролика. Ниже — три кейса: «Арбузик», «Брокколи» и «Сбежавшие из плова».</p>
+</section>
+
+<section class="case-band reveal">
+  <h2>Кейс: «Арбузик»</h2>
+  <span class="case-tag">Персонаж · рекламный мультфильм · 25 сек</span>
+</section>
+
+<section class="spread">
+  <div class="look-trio reveal">
+    <div class="look"><img src="assets/cartoons/arbuz-01.webp" alt="Арбузик летит на дроне с пакетом arbuz над городом" loading="lazy"><div class="look-caption"><span class="num">Сцена 01</span><span class="loc">Доставка дроном</span></div></div>
+    <div class="video-block">
+      <div class="video-tag"><span class="dot"></span> Рекламный мультфильм · 25 сек</div>
+      <video src="assets/cartoons/arbuz-reel.mp4?v=1" poster="assets/cartoons/arbuz-reel.webp" autoplay muted loop playsinline preload="metadata"></video>
+    </div>
+    <div class="look"><img src="assets/cartoons/arbuz-02.webp" alt="Арбузик собирает заказ: яблоко, батон и молоко летят в пакет" loading="lazy"><div class="look-caption"><span class="num">Сцена 02</span><span class="loc">На складе</span></div></div>
+  </div>
+  <div class="look-row reveal case-note-row">
+    <div class="look square"><img src="assets/cartoons/arbuz-03.webp" alt="Арбузик — персонаж в лётных очках и красном шарфе" loading="lazy"><div class="look-caption"><span class="num">Персонаж</span><span class="loc">Арбузик</span></div></div>
+    <div class="case-note">
+      <h3>Персонаж с нуля</h3>
+      <p>Весёлый арбуз в лётных очках и красном шарфе — герой ролика о доставке дроном. Сначала разработали внешность и характер, затем провели его через все сцены ролика: склад, полёт над городом, вручение заказа семье. Ролик на казахском языке.</p>
+    </div>
+  </div>
 </section>
 
 <section class="case-band reveal">

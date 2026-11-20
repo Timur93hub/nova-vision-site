@@ -119,6 +119,11 @@
   .look-caption .loc{ font-family: var(--mono); font-size: 11px; letter-spacing:0.06em; opacity:0.75; }
   .look.tall{ aspect-ratio: 3/4; }
   .look.wide{ aspect-ratio: 4/3.1; }
+  .case-note-row{ grid-template-columns: minmax(0,1fr) minmax(0,1fr); align-items: center; }
+  .case-note{ padding: clamp(24px, 4vw, 64px); display:flex; flex-direction:column; gap: 18px; }
+  .case-note h3{ font-size: clamp(18px, 2vw, 24px); }
+  .case-note p{ margin:0; color: var(--star-dim); font-size: 15.5px; line-height: 1.75; max-width: 460px; }
+  @media (max-width: 760px){ .case-note-row{ grid-template-columns: 1fr; } .case-note{ padding: 28px var(--gutter) 8px; } }
   .look.square{ aspect-ratio: 1/1; }
   .look.full{ aspect-ratio: 16/9; }
 
@@ -201,11 +206,34 @@
   <div class="page-hero-top">
     <h1>Animation</h1>
     <div class="page-meta">
-      2 projects · Broccoli, Runaways from the Plov<br>
+      3 projects · Arbuzik, Broccoli, Runaways from the Plov<br>
       Characters and animated shorts
     </div>
   </div>
-  <p class="lede">A full-cycle animation project: from developing the characters’ personalities and looks to an animated short. Below are two cases: “Broccoli” and “Runaways from the Plov”.</p>
+  <p class="lede">A full-cycle animation project: from developing the characters’ personalities and looks to an animated short. Below are three cases: “Arbuzik”, “Broccoli” and “Runaways from the Plov”.</p>
+</section>
+
+<section class="case-band reveal">
+  <h2>Case: “Arbuzik”</h2>
+  <span class="case-tag">Character · animated ad · 25 sec</span>
+</section>
+
+<section class="spread">
+  <div class="look-trio reveal">
+    <div class="look"><img src="../assets/cartoons/arbuz-01.webp" alt="Arbuzik flies over the city on a drone with an arbuz bag" loading="lazy"><div class="look-caption"><span class="num">Scene 01</span><span class="loc">Drone delivery</span></div></div>
+    <div class="video-block">
+      <div class="video-tag"><span class="dot"></span> Animated ad · 25 sec</div>
+      <video src="../assets/cartoons/arbuz-reel.mp4?v=1" poster="../assets/cartoons/arbuz-reel.webp" autoplay muted loop playsinline preload="metadata"></video>
+    </div>
+    <div class="look"><img src="../assets/cartoons/arbuz-02.webp" alt="Arbuzik packs an order: an apple, a baguette and milk fly into the bag" loading="lazy"><div class="look-caption"><span class="num">Scene 02</span><span class="loc">At the warehouse</span></div></div>
+  </div>
+  <div class="look-row reveal case-note-row">
+    <div class="look square"><img src="../assets/cartoons/arbuz-03.webp" alt="Arbuzik, a character in flying goggles and a red scarf" loading="lazy"><div class="look-caption"><span class="num">Character</span><span class="loc">Arbuzik</span></div></div>
+    <div class="case-note">
+      <h3>A character from scratch</h3>
+      <p>A cheerful watermelon in flying goggles and a red scarf is the hero of a drone-delivery ad. We designed his look and personality first, then carried him through every scene: the warehouse, the flight over the city, handing the order to a family. The ad is in Kazakh.</p>
+    </div>
+  </div>
 </section>
 
 <section class="case-band reveal">
